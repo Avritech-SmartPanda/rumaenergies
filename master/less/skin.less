@@ -1,20 +1,6 @@
 @import "for";
 @import "mixins";
 
-// Selection
-::selection {
-	color: @color-primary-inverse;
-	background: @color-primary;
-}
-
-// Variables
-:root {
-	--primary: @color-primary;
-	--secondary: @color-secondary;
-	--tertiary: @color-tertiary;
-	--quaternary: @color-quaternary;
-}
-
 // Basic
 a {
 	color: @color-primary;
@@ -47,81 +33,6 @@ html {
 	}
 }
 
-// SVG Colors
-html {
-	.for(@colors-list); .-each(@value) {
-		@name:  extract(@value, 1);
-		@color:  extract(@value, 2);
-
-		.svg-fill-color-@{name} {
-			fill: @color !important;
-			svg {
-				path, rect, line, polyline, polygon {
-					fill: @color !important;
-				}
-			}
-		}
-
-		.svg-fill-color-hover-@{name} {
-			&:hover {
-				fill: @color !important;
-			}
-			svg:hover {
-				path, rect, line, polyline, polygon {
-					fill: @color !important;
-				}
-			}
-		}
-
-		.svg-stroke-color-@{name} {
-			stroke: @color !important;
-			svg {
-				path, rect, line, polyline, polygon {
-					stroke: @color !important;
-				}
-			}
-		}
-
-		.svg-stroke-color-hover-@{name} {
-			&:hover {
-				stroke: @color !important;
-			}
-			svg:hover {
-				path, rect, line, polyline, polygon {
-					stroke: @color !important;
-				}
-			}
-		}
-	}
-}
-
-// SVG Animations
-.svg-animation-effect-1-hover {
-	&:hover {
-		svg {
-			path, polygon, polyline, rect {
-				stroke: @color-primary;
-			}
-		}
-	}
-
-	.for(@colors-list); .-each(@value) {
-		@name:  extract(@value, 1);
-		@color:  extract(@value, 2);
-
-		&.svg-animation-effect-1-hover-@{name} {
-			&:hover {
-				svg {
-					path, polygon, polyline, rect {
-						stroke: @color;
-					}
-				}
-			}
-		}
-
-	}
-}
-
 // Gradient Font Color
 .gradient-text-color {
 	color: @color-primary;
@@ -144,42 +55,7 @@ html {
 		.bg-hover-@{name}:hover {
 			background-color: @color !important;
 		}
-
-		.bg-color-after-@{name}:after {
-			background-color: @color !important;
-		}
-
-		.bg-color-hover-after-@{name}:after:hover {
-			background-color: @color !important;
-		}
-
-		.bg-color-before-@{name}:before {
-			background-color: @color !important;
-		}
-
-		.bg-color-hover-before-@{name}:before:hover {
-			background-color: @color !important;
-		}
 	}
-}
-
-// Background Gradient
-.bg-gradient {
-	background-color: @color-primary !important;
-	background-image: linear-gradient(to right, @color-primary 0%, @color-secondary 100%) !important;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{color-primary}', endColorstr='@{color-secondary}', GradientType=1 );
-}
-
-.bg-gradient-to-top {
-	background-color: @color-primary !important;
-	background-image: linear-gradient(to top, @color-primary 0%, @color-secondary 100%) !important;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{color-primary}', endColorstr='@{color-secondary}', GradientType=1 );
-}
-
-.bg-gradient-to-bottom {
-	background-color: @color-primary !important;
-	background-image: linear-gradient(to bottom, @color-primary 0%, @color-secondary 100%) !important;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{color-primary}', endColorstr='@{color-secondary}', GradientType=1 );
 }
 
 /* Color Transition */
@@ -330,24 +206,10 @@ html {
 	}
 }
 
-// Nav Link
-.nav-link {
-	color: @color-primary;
-	&:hover {
-		color: lighten(@color-primary, 5%);
-	}
-	&:focus {
-		color: lighten(@color-primary, 5%);
-	}
-	&:active {
-		color: darken(@color-primary, 5%);
-	}
-}
-
 // Section Scroll Nav
-.section-scroll-dots-navigation-colored {
+.section-scroll-dots-navigation.scroll-dots-navigation-colored {
 	> ul {
-    	> li.active {
+    	> li {
     		> a {
 			    &:before {
 			    	background: @color-primary;
@@ -380,6 +242,7 @@ html {
 }
 
 .sort-source {
+
 	 &.sort-source-style-3 {
 		 > li {
 		 	&.active {
@@ -419,14 +282,6 @@ html {
 	}
 }
 
-// Overlay Color Gradient
-.overlay-gradient {
-	&:before {
-		background-color: @color-tertiary !important;
-		background-image: linear-gradient(to right, @color-tertiary 0%, @color-quaternary 100%) !important;
-	}
-}
-
 // Buttons
 .btn-link {
 	color: @color-primary;
@@ -446,10 +301,6 @@ html {
 
 		.btn-@{name} {
 			.buttonBackground(@color, @color-inverse);
-			--color: @color;
-			--hover: lighten(@color, 7.5%);
-			--disabled: @color;
-			--active: darken(@color, 7.5%);
 		}
 
 		.btn-@{name}-scale-2 {
@@ -461,19 +312,6 @@ html {
 			background-color: darken(@color, 7.5%) !important;
 			background-image: none !important;
 			border-color: darken(@color, 10%) darken(@color, 10%) darken(@color, 20%) !important;
-		}
-
-		// Overwrite BS5 btn-check colors
-		.btn-check {
-			&:active,
-			&:checked,
-			&:focus {
-				& + .btn-@{name} {
-					background-color: darken(@color, 5%);
-					border-color: @color @color darken(@color, 5%);
-					color: @color-inverse;
-				}
-			}
 		}
 	}
 }
@@ -529,25 +367,18 @@ html {
 				}
 			}
 		}
-		.btn-with-arrow-solid {
-			&.btn-@{name} {
-				span {
-					background-color: darken(@color, 5%);
-				}
-			}
-		}
 	}
 }
 
-// Button Gradient (mix of primary and secondary color)
+// Button Gradient
 .btn-gradient:not(.btn-outline) {
 
-	background: linear-gradient(135deg, @color-primary 0%, @color-secondary 80%) !important;
+	background: linear-gradient(135deg, @color-primary 0%, @color-secondary 80%);
 	color: @color-primary-inverse;
 
 	&:hover,
 	&.hover {
-		background: linear-gradient(135deg, lighten(@color-primary, 7.5%) 0%, lighten(@color-secondary, 7.5%) 80%) !important;
+		background: linear-gradient(135deg, lighten(@color-primary, 7.5%) 0%, lighten(@color-secondary, 7.5%) 80%);
 		color: @color-primary-inverse;
 	}
 
@@ -558,7 +389,7 @@ html {
 
 	&.disabled,
 	&:disabled {
-		background: linear-gradient(135deg, @color-primary 0%, @color-secondary 80%) !important;
+		background: linear-gradient(135deg, @color-primary 0%, @color-secondary 80%);
 	}
 
 	&:active,
@@ -592,82 +423,20 @@ html {
 
 	&:active,
 	&.active {
-		border-image: linear-gradient(135deg, darken(@color-primary, 7.5%) 0%, darken(@color-secondary, 7.5%) 80%);
+		border-image: linear-gradient(135deg, darken(@color-primary, 7.5%) 0%, darken(@color-secondary, 7.5%) 80%) !important;
 		color: darken(@color-primary, 7.5%);
-	}
-
-}
-
-// Button Gradient Primary (mix of primary and darken primary color)
-.btn-gradient-primary:not(.btn-outline) {
-
-	background: linear-gradient(135deg, lighten(@color-primary, 4%) 0%, darken(@color-primary, 2%) 80%) !important;
-	color: @color-primary-inverse;
-
-	&:hover,
-	&.hover {
-		background: linear-gradient(135deg, lighten(@color-primary, 3%) 0%, lighten(@color-primary, 7.5%) 80%) !important;
-		color: @color-primary-inverse;
-	}
-
-	&:focus,
-	&.focus {
-		box-shadow: 0 0 0 3px fade(@color-primary, 50%);
-	}
-
-	&.disabled,
-	&:disabled {
-		background: linear-gradient(135deg, lighten(@color-primary, 4%) 80%, darken(@color-primary, 2%) 0%) !important;
-	}
-
-	&:active,
-	&.active {
-		background: linear-gradient(135deg, lighten(@color-primary, 3%) 0%, lighten(@color-primary, 7.5%) 80%) !important;
-		color: @color-primary-inverse !important;
-	}
-
-}
-
-.btn-gradient-primary.btn-outline {
-
-	border-image: linear-gradient(135deg, @color-primary 0%, lighten(@color-primary, 8%) 80%);
-	color: @color-primary;
-
-	&:hover,
-	&.hover {
-		border-image: linear-gradient(135deg, lighten(@color-primary, 7.5%) 0%, lighten(@color-primary, 7.5%) 80%);
-		color: lighten(@color-primary, 7.5%);
-	}
-
-	&:focus,
-	&.focus {
-		box-shadow: 0 0 0 3px fade(@color-primary, 50%);
-	}
-
-	&.disabled,
-	&:disabled {
-		border-image: linear-gradient(135deg, @color-primary 0%, lighten(@color-primary, 8%) 80%);
-	}
-
-	&:active,
-	&.active {
-		border-image: linear-gradient(135deg, lighten(@color-primary, 7.5%) 0%, lighten(@color-primary, 7.5%) 80%);
-		color: lighten(@color-primary, 7.5%);
 	}
 
 }
 
 // Pagination
 .pagination {
-	> a,
-	> a:hover,
-	> a:focus,
 	> li > a,
 	> li > span,
 	> li > a:hover,
 	> li > span:hover,
 	> li > a:focus,
-	> li > span:focus, {
+	> li > span:focus {
 		color: @color-primary;
 	}
 	> .active > a,
@@ -712,14 +481,6 @@ body.dark .pagination > .active > a {
 .custom-control-input:checked~.custom-control-label::before,
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: @color-primary;
-}
-
-// Custom Checkbox Switch
-.custom-checkbox-switch {
-	&:checked {
-		background-color: @color-primary;
-		border-color: @color-primary;
-	}
 }
 
 // Alerts
@@ -771,23 +532,6 @@ html {
 	}
 }
 
-/* Mark */
-html {
-	.for(@colors-list); .-each(@value) {
-		@name:  extract(@value, 1);
-		@color:  extract(@value, 2);
-
-		.mark.mark-gradient {
-			&.mark-gradient-@{name} {
-				&:before {
-					background: rgba(@color, 1);
-					background: linear-gradient(90deg, rgba(@color, 1) 0%, rgba(@color, 0) 100%);
-				}
-			}
-		}
-	}
-}
-
 // Process
 .process {
 	.process-step-circle {
@@ -800,16 +544,6 @@ html {
 				.process-step-circle-content {
 					color: @color-primary-inverse !important;
 				}
-			}
-		}
-	}
-
-	// Process Shapes
-	&.process-shapes {
-		.process-step-circle {
-			.process-step-circle-content,
-			&:before, &:after {
-				background-color: @color-primary;
 			}
 		}
 	}
@@ -974,32 +708,22 @@ html {
 
 		.toggle-@{name} {
 			.toggle {
-				label,
-				.toggle-title {
+				label {
 					color: @color;
 					border-left-color: @color;
 					border-right-color: @color;
 				}
-				&.active {
-					> label,
-					> .toggle-title {
-						background-color: @color;
-						border-color: @color;
-						color: @color-inverse;
-					}
-				}
-			}
-			&.toggle-simple .toggle {
-				> label:after,
-				> .toggle-title:after {
+				&.active > label {
 					background-color: @color;
+					border-color: @color;
+					color: @color-inverse;
 				}
 			}
-			&.toggle-minimal .toggle.active {
-				> label,
-				> .toggle-title {
-					color: @color;
-				}
+			&.toggle-simple .toggle > label:after {
+				background-color: @color;
+			}
+			&.toggle-minimal .toggle.active > label {
+				color: @color;
 			}
 		}
 	}
@@ -1078,7 +802,7 @@ html {
 	color: @color-primary;
 }
 
-.owl-carousel:not(.nav-arrows-1):not(.show-nav-title) .owl-nav button[class*="owl-"] {
+.owl-carousel .owl-nav button[class*="owl-"] {
 
 	background-color: @color-primary;
 	border-color: @color-primary @color-primary darken(@color-primary, 10%);
@@ -1101,7 +825,7 @@ html {
 
 .owl-carousel {
 	&.nav-with-transparency {
-		&:not(.nav-style-1):not(.show-nav-title):not(.nav-arrows-1) {
+		&:not(.nav-style-1):not(.show-nav-title) {
 			.owl-nav {
 				button[class*="owl-"] {
 					background-color: fade(@color-primary, 40%);
@@ -1127,47 +851,6 @@ html {
 			}
 		}
 	}
-	&.nav-svg-arrows-1 {
-		.owl-nav {
-			.owl-prev, .owl-next {
-				svg {
-					polygon {
-						fill: @color-primary;
-						stroke: @color-primary;
-					}
-				}
-			}
-		}
-	}
-	&.nav-arrows-1 {
-		.owl-nav {
-			.owl-prev, .owl-next {
-				color: @color-primary;
-			}
-		}
-	}
-}
-
-// Carousel Center Active Item 2
-.owl-carousel {
-	&.carousel-center-active-item-2 {
-		.owl-item {
-			&.active {
-				> div {
-				    background: @color-primary;
-				}
-			}
-		}
-	}
-}
-
-// Bottom Inside Shadow
-.owl-carousel.carousel-bottom-inside-shadow {
-	.owl-stage-outer {
-		&:after {
-			background-image: linear-gradient(360deg, @color-primary 0%, transparent 100%);
-		}
-	}
 }
 
 // Tabs
@@ -1176,14 +859,13 @@ html.dark body {
 	.tabs {
 		.nav-tabs {
 			.nav-link, .nav-link:hover,
-			.nav-link.active {
+			li.active .nav-link {
 				color: @color-primary;
 			}
 
 			.nav-link:hover,
 			.nav-link:focus,
-			.nav-link.active,
-			&.nav-justified .nav-link.active,
+			li.active .nav-link,
 			&.nav-justified .nav-link:hover,
 			&.nav-justified .nav-link:focus {
 				border-top-color: @color-primary;
@@ -1192,9 +874,9 @@ html.dark body {
 		&.tabs-bottom {
 			.nav-tabs {
 				li .nav-link:hover,
-				.nav-link.active,
-				.nav-link.active:hover,
-				.nav-link.active:focus {
+				li.active .nav-link,
+				li.active .nav-link:hover,
+				li.active .nav-link:focus {
 					border-bottom-color: @color-primary;
 				}
 			}
@@ -1202,9 +884,9 @@ html.dark body {
 		&.tabs-vertical.tabs-left {
 			.nav-tabs {
 				li .nav-link:hover,
-				.nav-link.active,
-				.nav-link.active:hover,
-				.nav-link.active:focus {
+				li.active .nav-link,
+				li.active .nav-link:hover,
+				li.active .nav-link:focus {
 					border-left-color: @color-primary;
 				}
 			}
@@ -1212,19 +894,19 @@ html.dark body {
 		&.tabs-vertical.tabs-right {
 			.nav-tabs {
 				li .nav-link:hover,
-				.nav-link.active,
-				.nav-link.active:hover,
-				.nav-link.active:focus {
+				li.active .nav-link,
+				li.active .nav-link:hover,
+				li.active .nav-link:focus {
 					border-right-color: @color-primary;
 				}
 			}
 		}
 		&.tabs-simple {
 			.nav-tabs {
-				> li .nav-link.active,
-				> li .nav-link.active:focus,
+				> li.active .nav-link,
+				> li.active .nav-link:focus,
 				> li .nav-link:hover,
-				> li .nav-link.active:hover {
+				> li.active .nav-link:hover {
 					border-top-color: @color-primary;
 					color: @color-primary;
 				}
@@ -1254,10 +936,12 @@ html.dark body {
 							&:hover {
 								border-top-color: @color;
 							}
+						}
 
-							&.active,
-							&.active:hover,
-							&.active:focus {
+						&.active {
+							.nav-link,
+							.nav-link:hover,
+							.nav-link:focus {
 								border-top-color: @color;
 								color: @color;
 							}
@@ -1271,32 +955,11 @@ html.dark body {
 					&,
 					&.nav-justified {
 						li {
-							.nav-link {
-								&:hover,
-								&.active,
-								&.active:hover,
-								&.active:focus {
-									border-bottom-color: @color;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.tabs-simple {
-				.nav-tabs {
-					&,
-					&.nav-justified {
-						li {
-							.nav-link {
-								&:hover,
-								&.active,
-								&.active:hover,
-								&.active:focus {
-									color: @color !important;
-									border-bottom-color: @color;
-								}
+							.nav-link:hover,
+							&.active .nav-link,
+							&.active .nav-link:hover,
+							&.active .nav-link:focus {
+								border-bottom-color: @color;
 							}
 						}
 					}
@@ -1306,26 +969,22 @@ html.dark body {
 			&.tabs-vertical {
 				&.tabs-left {
 					li {
-						.nav-link {
-							&:hover,
-							&.active,
-							&.active:hover,
-							&.active:focus {
-								border-left-color: @color;
-							}
+						.nav-link:hover,
+						&.active .nav-link,
+						&.active .nav-link:hover,
+						&.active .nav-link:focus {
+							border-left-color: @color;
 						}
 					}
 				}
 
 				&.tabs-right {
 					li {
-						.nav-link {
-							&:hover,
-							&.active,
-							&.active:hover,
-							&.active:focus {
-								border-right-color: @color;
-							}
+						.nav-link:hover,
+						&.active .nav-link,
+						&.active .nav-link:hover,
+						&.active .nav-link:focus {
+							border-right-color: @color;
 						}
 					}
 				}
@@ -1338,31 +997,23 @@ html[dir="rtl"] {
 	.tabs {
 		&.tabs-vertical.tabs-left {
 			.nav-tabs {
-				li {
-					.nav-link {
-						&:hover
-						&.active,
-						&.active:hover,
-						&.active:focus {
-							border-right-color: @color-primary;
-							border-left-color: transparent;
-						}
-					}
+				li .nav-link:hover,
+				li.active .nav-link,
+				li.active .nav-link:hover,
+				li.active .nav-link:focus {
+					border-right-color: @color-primary;
+					border-left-color: transparent;
 				}
 			}
 		}
 		&.tabs-vertical.tabs-right {
 			.nav-tabs {
-				li {
-					.nav-link {
-						&:hover
-						&.active,
-						&.active:hover,
-						&.active:focus {
-							border-right-color: transparent;
-							border-left-color: @color-primary;
-						}
-					}
+				li .nav-link:hover,
+				li.active .nav-link,
+				li.active .nav-link:hover,
+				li.active .nav-link:focus {
+					border-right-color: transparent;
+					border-left-color: @color-primary;
 				}
 			}
 		}
@@ -1457,25 +1108,6 @@ html {
 	}
 }
 
-// Highlight Text
-html {
-	.for(@colors-list); .-each(@value) {
-		@name:  extract(@value, 1);
-		@color:  extract(@value, 2);
-		@color-inverse:  extract(@value, 3);
-
-		.highlight-@{name} {
-			background-image: linear-gradient(90deg, fade(#FFF,0%) 50%,@color 0);
-			&.highlight-bg-opacity {
-				background-image: linear-gradient(90deg, fade(#FFF, 0%) 50%, fade(@color, 20%) 0);
-			}
-			&.highlight-change-text-color {
-				color: @color-inverse;
-			}
-		}
-	}
-}
-
 // Parallax
 .parallax blockquote i.fa-quote-left {
 	color: @color-primary;
@@ -1505,26 +1137,6 @@ html {
 					background-color: @color !important;
 					a {
 						color: @color-inverse;
-					}
-				}
-			}
-		}
-
-		.accordion-modern-status-@{name}.accordion-modern-status {
-			> .card {
-				.card-header {
-					a {
-						&:not(.collapsed) {
-							background-color: @color !important;
-							color: @color-inverse !important;
-						}
-					}
-				}
-				&:hover {
-					.card-header {
-						a.collapsed {
-							color: @color !important;
-						}
 					}
 				}
 			}
@@ -2363,7 +1975,7 @@ html {
 	.header-nav-features {
 		.header-nav-features-search-reveal-big-search {
 			.form-control {
-				border-bottom-color: @color-primary;
+				border-bottom-color: #0088cc;
 			}
 		}
 	}
@@ -2415,75 +2027,6 @@ html {
 .circular-bar.only-icon {
 	[class*="fa-"], .icons {
 		color: @color-primary;
-	}
-}
-
-// Form Control
-.form-control {
-	.for(@colors-list); .-each(@value) {
-		@name:  extract(@value, 1);
-		@color:  extract(@value, 2);
-		@color-inverse:  extract(@value, 3);
-
-		&.bg-@{name},
-		&.bg-color-@{name} {
-			color: @color-inverse;
-			border-color: @color;
-
-			&::-webkit-input-placeholder {
-				color: darken(@color-inverse, 10%);
-			}
-
-			&::-moz-placeholder {
-				color: darken(@color-inverse, 10%);
-			}
-
-			&:-ms-input-placeholder {
-				color: darken(@color-inverse, 10%);
-			}
-
-			&:-moz-placeholder {
-				color: darken(@color-inverse, 10%);
-			}
-		}
-
-		.testimonial-@{name} {
-			blockquote {
-				background: lighten(@color, 5%);
-			}
-
-			.testimonial-arrow-down {
-				border-top-color: lighten(@color, 5%);
-			}
-
-			&.testimonial-style-7 {
-				background: lighten(@color, 5%);
-			}
-		}
-
-		.testimonial-quotes-@{name} {
-			blockquote {
-				&:before, &:after {
-					color: @color-primary !important;
-				}
-			}
-		}
-
-	}
-}
-
-// Form Range
-.form-range {
-	&::-webkit-slider-thumb {
-		background-color: @color-primary;
-		&:active {
-			background-color: fade(@color-primary, 25%);
-		}
-	}
-	&:focus {
-		&::-webkit-slider-thumb {
-			box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem fade(@color-primary, 25%);
-		}
 	}
 }
 
@@ -2954,11 +2497,6 @@ ul.history li .featured-box .box-content {
 	border-top-color: @color-primary;
 }
 
-// Portfolio
-.portfolio-list .portfolio-item.portfolio-item-new:after {
-	background: linear-gradient(135deg, @color-primary 0%, @color-secondary 80%);
-}
-
 // Blog
 .recent-posts .date, article.post .post-date {
 	.month {
@@ -3072,47 +2610,6 @@ html {
 	.cart-totals tr.total .amount {
 		color: @color-primary;
 	}
-
-	.products {
-		.product {
-			.quick-view {
-				background: fade(@color-primary, 70%);
-			}
-			&:hover .quick-view {
-				&:hover {
-					background: @color-primary;
-				}
-			}
-		}
-	}
-}
-
-.product {
-	.product-thumb-info {
-		.addtocart-btn-wrapper {
-			.addtocart-btn {
-				&:hover {
-					color: @color-primary-inverse;
-					background: @color-primary;
-				}
-			}
-		}
-		.countdown-offer-wrapper {
-			background: @color-primary;
-		}
-	}
-}
-
-// Dropdown
-.dropdown-menu {
-	&.dropdown-menu-arrow-centered {
-		a {
-			&:focus,
-			&:active {
-				background-color: @color-primary;
-			}
-		}
-	}
 }
 
 // Footer
@@ -3177,90 +2674,6 @@ html {
 	}
 }
 
-// Cursor Effect
-.cursor-inner {
-	background-color: @color-primary;
-	&.cursor-inner-plus {
-    	&:before {
-		    color: @color-primary;
-    	}
-    }
-}
-
-.cursor-outer {
-	border-color: @color-primary;
-}
-
-// Loading Overlay
-// Cubes
-.cssload-thecube {
-	.cssload-cube {
-		&:before {
-			background-color: @color-primary;
-		}
-	}
-}
-
-// CubeProgress
-.cssload-cube-progress {
-	border-color: @color-primary;
-}
-.cssload-cube-progress-inner {
-	background-color: @color-primary;
-}
-
-// Float Rings
-.cssload-float-rings-inner {
-	&.cssload-one {
-		border-bottom-color: @color-primary;
-	}
-	&.cssload-two {
-		border-right-color: @color-primary;
-	}
-	&.cssload-three {
-		border-top-color: @color-primary;
-	}
-}
-
-// Float Bars
-.cssload-float-bars-loading, 
-.cssload-float-bars-loading:after, 
-.cssload-float-bars-loading:before {
-	background: @color-primary;
-}
-
-// Speeding Wheel
-.cssload-speeding-wheel {
-	border-top-color: @color-primary;
-	border-bottom-color: @color-primary;
-}
-
-// Zenith
-.cssload-zenith {
-	box-shadow: 3px 3px 1px @color-primary;
-}
-
-// Spinning Square Effect
-.cssload-spinning-square-loading {
-	background: @color-primary;
-	&:before {
-		background: @color-secondary;
-	}
-	&:after {
-		background: @color-primary-inverse;
-	}
-}
-
-// Pulse Effect
-.cssload-pulse-loader {
-	background: @color-primary;
-}
-
-// Map Pin
-.map-rounded-pin {
-	background: @color-primary;
-}
-
 // Boxed
 html.boxed .body {
 	border-top-color: @color-primary;
@@ -3287,7 +2700,7 @@ html.boxed .body {
 	.input-group-lg > .input-group-addon,
 	.input-group-lg > .input-group-btn > .btn,
 	.invalid-tooltip,
-	.btn:not(.btn-rounded):not(.btn-circle),
+	.btn:not(.btn-rounded),
 	.btn-group-4 > .btn:not(.btn-rounded),
 	.btn-sm,
 	.btn-group-2 > .btn:not(.btn-rounded),
@@ -3357,6 +2770,8 @@ html.boxed .body {
 	#header .header-nav-main nav > ul > li.dropdown:hover > a,
 	#header .header-nav-top .dropdown-menu,
 	.slider-container .tparrows,
+	.nivo-slider .theme-default .nivoSlider,
+	.nivo-slider .theme-default .nivoSlider img,
 	.home-intro-compact,
 	html.dark #header,
 	html.boxed .body,
@@ -3456,8 +2871,7 @@ html.boxed .body {
 	.product-info img,
 	.product-info + .product-info,
 	.img-thumbnail.img-thumbnail-hover-icon:before,
-	.product-thumb-info,
-	.accordion.accordion-modern-2 > .card .card-header a {
+	.product-thumb-info {
 		border-radius: 0 !important;
 	}
 

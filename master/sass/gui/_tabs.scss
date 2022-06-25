@@ -1,7 +1,7 @@
 /* Tabs */
 .tabs {
     border-radius: corner-values(4px);
-	margin-bottom: 20px;
+	margin-bottom: $spacement-lg;
 }
 
 .nav-tabs {
@@ -22,10 +22,7 @@
 
 		.nav-link {
 			border-radius: corner-values(5px 5px 0 0);
-			font-size: 13px;
-			font-weight: 600;
-			letter-spacing: -0.2px;
-			padding: .7rem 1.5rem;
+			font-size: 14px;
 		    transition: all .2s;
 
 			margin-#{$right}: 1px;
@@ -49,8 +46,15 @@
 			}
 
 			&:active,
-			&:hover,
 			&:focus {
+				border-bottom: 0;
+			}
+		}
+
+		&.active {
+			.nav-link,
+			.nav-link:hover,
+			.nav-link:focus {
 				background: #FFF;
 				border-#{$left}-color: #EEE;
 				border-#{$right}-color: #EEE;
@@ -58,7 +62,6 @@
 				color: #CCC;
 			}
 		}
-		
 	}
 }
 
@@ -78,7 +81,7 @@
 
 /* Bottom Tabs */
 .tabs.tabs-bottom {
-	margin: 0 0 20px 0;
+	margin: 0 0 $spacement-lg 0;
 	padding: 0;
 
 	.tab-content {
@@ -103,17 +106,8 @@
 
 			.nav-link {
 				border-radius: corner-values(0 0 5px 5px);
-				font-size: 13px;
+				font-size: 14px;
 				margin-#{$right}: 1px;
-				border-bottom: 3px solid #CCC;
-				border-top-color: transparent !important;
-
-				&.active,
-				&.active:hover,
-				&.active:focus {
-					border-bottom: 3px solid #CCC;
-					border-top-color: transparent !important;
-				}
 
 				&,
 				&:hover {
@@ -126,6 +120,15 @@
 				&:hover {
 					border-bottom: 3px solid #CCC;
 					border-top: 1px solid #EEE;
+				}
+			}
+
+			&.active {
+				.nav-link,
+				.nav-link:hover,
+				.nav-link:focus {
+					border-bottom: 3px solid #CCC;
+					border-top-color: transparent !important;
 				}
 			}
 		}
@@ -167,14 +170,15 @@
 					border-bottom: none;
 					border-top: none
 				}
+			}
 
-				&.active,
-				&.active:hover,
-				&.active:focus {
+			&.active {
+				.nav-link,
+				.nav-link:hover,
+				.nav-link:focus {
 					border-top: none;
 				}
 			}
-
 		}
 	}
 }
@@ -215,15 +219,16 @@
 				&:hover {
 					border-#{$left}-color: #CCC;
 				}
+			}
 
-				&.active,
-				&.active:hover,
-				&.active:focus {
+			&.active {
+				.nav-link,
+				.nav-link:hover,
+				.nav-link:focus {
 					border-#{$left}: 3px solid #CCC;
 					border-#{$right}-color: #FFF;
 				}
 			}
-
 		}
 	}
 }
@@ -261,20 +266,19 @@
 				margin-#{$right}: 1px;
 				margin-#{$left}: 1px;
 
-				
-
 				&:hover {
 					border-#{$right}-color: #CCC;
 				}
+			}
 
-				&.active,
-				&.active:hover,
-				&.active:focus {
+			&.active {
+				.nav-link,
+				.nav-link:hover,
+				.nav-link:focus {
 					border-#{$right}: 3px solid #CCC;
 					border-#{$left}: 1px solid #FFF;
 				}
 			}
-
 		}
 	}
 }
@@ -311,28 +315,31 @@
 			&:focus {
 				border-bottom: 1px solid #DDD;
 			}
+		}
 
-			&.active {
-				border-bottom: 1px solid #FFF;
-			}
-
-			&.active,
-			&.active:hover,
-			&.active:focus {
+		&.active {
+			.nav-link,
+			.nav-link:hover,
+			.nav-link:focus {
 				background: #FFF;
 				border-#{$left}-color: #EEE;
 				border-#{$right}-color: #EEE;
 				border-top-width: 3px;
 			}
+		}
 
-			&.active,
-			&.active:hover,
-			&.active:focus {
-				border-top-width: 3px ;
-			}
-			
-			&.active:hover {
+		&.active {
+			.nav-link {
+				&,
+				&:hover,
+				&:focus {
+					border-top-width: 3px ;
+				}
 				border-bottom: 1px solid #FFF;
+
+				&:hover {
+					border-bottom: 1px solid #FFF;
+				}
 			}
 		}
 	}
@@ -347,12 +354,6 @@
 			.nav-link {
 				margin-#{$right}: 0;
 				border-top-color: transparent;
-
-				&.active,
-				&.active:hover,
-				&.active:focus {
-					border-top-color: transparent;
-				}
 			}
 
 			&:first-child {
@@ -368,6 +369,13 @@
 				}
 			}
 
+			&.active {
+				.nav-link,
+				.nav-link:hover,
+				.nav-link:focus {
+					border-top-color: transparent;
+				}
+			}
 		}
 	}
 }
@@ -392,7 +400,7 @@
 				line-height: 100%;
 				position: relative;
 				&:before {
-					font-family: 'Font Awesome 6 Free';
+					font-family: 'Font Awesome 5 Free';
 					font-weight: 900;
 					font-size: 10px;
 					content: "\f054";
@@ -412,14 +420,12 @@
 		 li:first-child .nav-link {
 			border-radius: corner-values(5px 5px 0 0);
 		}
-		li {
-			.nav-link.active {
-				&, &:hover, &:focus {
-					border-right-color: #eee;
-				}
+		 li.active .nav-link {
+			&, &:hover, &:focus {
+				border-right-color: #eee;
 			}
 		}
-		li:last-child .nav-link {
+		 li:last-child .nav-link {
 			border-radius: corner-values(0 0 5px 5px);
 		}
 	}
@@ -469,7 +475,7 @@
 		margin-bottom: 10px;
 		> li {
 			margin-left: 0;
-			margin-bottom: 20px;
+			margin-bottom: $spacement-lg;
 			.nav-link, .nav-link:hover, .nav-link:focus {
 				padding: 15px 30px;
 				background: none;
@@ -488,19 +494,9 @@
 		margin: 0;
 		box-shadow: none;
 	}
-
-	// Simple Full Width Line
-	&.tabs-simple-full-width-line {
-		.nav-tabs {
-			border-bottom: 3px solid #eee;
-			> li {
-				margin-bottom: -3px;
-			}
-		}
-	}
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 575px) {
 
 	.tabs {
@@ -545,54 +541,54 @@
 	}
 }
 
-// Tabs To Accordion
+//tabs to accordion
+
 .responsive-tabs-container {
 
 	.tab-pane {
-	  	margin-bottom: 15px;
+	  margin-bottom: 15px;
 	}
   
 	.accordion-link {
-	  	display: none;
-	  	margin-bottom: 10px;
-	  	padding: 10px 15px;
-	  	background-color: #f7f7f7;
-	  	border-radius: 3px;
-	  	border: 1px solid #ebebeb;
+	  display: none;
+	  margin-bottom: 10px;
+	  padding: 10px 15px;
+	  background-color: #f7f7f7;
+	  border-radius: 3px;
+	  border: 1px solid #ebebeb;
 	}
   
 	@mixin accordion-toggle(){
-	  	.nav-tabs {
-			display: none;
-	  	}
+	  .nav-tabs {
+		display: none;
+	  }
   
-	  	.accordion-link {
-			display: block;
-	  	}
+	  .accordion-link {
+		display: block;
+	  }
 	}
   
 	@media (max-width: 767px) {
-	  	&.accordion-xs {
-			@include accordion-toggle();
-	  	}
+	  &.accordion-xs {
+		@include accordion-toggle();
+	  }
 	}
   
 	@media (min-width: 768px) and (max-width: 991px) {
-	  	&.accordion-sm {
-			@include accordion-toggle();
-	  	}
+	  &.accordion-sm {
+		@include accordion-toggle();
+	  }
 	}
   
 	@media (min-width: 992px) and (max-width: 1199px) {
-	  	&.accordion-md {
-			@include accordion-toggle();
-	  	}
+	  &.accordion-md {
+		@include accordion-toggle();
+	  }
 	}
   
 	@media (min-width: 1200px) {
-	  	&.accordion-lg {
-			@include accordion-toggle();
-	  	}
+	  &.accordion-lg {
+		@include accordion-toggle();
+	  }
 	}
-
-}
+  }

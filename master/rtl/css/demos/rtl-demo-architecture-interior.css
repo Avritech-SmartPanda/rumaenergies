@@ -1,4 +1,4 @@
-body {
+a, span, p, b, strong, li, h1, h2, h3, h4, h5, h6 {
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -105,24 +105,39 @@ body {
 	}
 }
 
-.lineProgressFrom {
-	stroke-dashoffset: 1550 !important;
-	transition: ease stroke-dashoffset 8s !important;
+@keyframes lineProgress {
+	from {
+		stroke-dashoffset: 1550;
+	}
+
+	to {
+		stroke-dashoffset: 0;
+	}
 }
 
-.lineProgressTo {
-	stroke-dashoffset: 0 !important;
+.lineProgress {
+	animation-name: lineProgress;
 }
 
-.lineProgressAndFillFrom {
-	stroke-dashoffset: 1550;
-	fill-opacity: 0;
-	transition: ease stroke-dashoffset 3s, ease fill-opacity 1s 2s !important;
+@keyframes lineProgressAndFill {
+	0% {
+		stroke-dashoffset: 1550;
+		fill-opacity: 0;
+	}
+
+	75% {
+		stroke-dashoffset: 300;
+		fill-opacity: 0;
+	}
+
+	100% {
+		stroke-dashoffset: 300;
+		fill-opacity: 1;
+	}
 }
 
-.lineProgressAndFillTo {
-	stroke-dashoffset: 300;
-	fill-opacity: 1;
+.lineProgressAndFill {
+	animation-name: lineProgressAndFill;
 }
 
 .custom-btn-color-1 {
@@ -181,8 +196,4 @@ body {
 
 .inner-page .main {
 	padding-top: 100px;
-}
-
-#header.side-header-hide [data-plugin-scrollable] {
-	display: none;
 }

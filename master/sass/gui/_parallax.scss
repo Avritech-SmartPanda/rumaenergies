@@ -7,22 +7,6 @@
 	position: relative;
 	clear: both;
 
-	&.parallax-mouse {
-		width: 100%;	
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-
-		.parallax-mouse-object {
-			position: absolute;
-			top: 0;
-			left: 0;
-			object-fit: contain;
-		}
-	}
-
 	&:not(.page-header):not(.match-height):not([class*="section-height-"]) {
 		margin: 70px 0;
 		padding: 50px 0;
@@ -54,11 +38,5 @@
 	.parallax-background {
 		background-attachment: scroll !important;
 		background-position: 50% 50% !important;
-	}
-}
-
-.parallax-background {
-	& + .container {
-		position: relative;
 	}
 }

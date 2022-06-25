@@ -1,7 +1,7 @@
 /*
 Name: 			One Page Agency
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function( $ ) {
@@ -11,17 +11,65 @@ Theme Version:	9.7.0
 	var $window = $(window);
 
 	/*
-	* Header
+	* Slider Options
 	*/
-	var $header = $('#header');
-
-	window.onscroll = function() {
-		if (window.pageYOffset > $header.offset().top) {
-			$('html').addClass('sticky-header-active');
-		} else {
-			$('html').removeClass('sticky-header-active');
+	var sliderOptions = {
+		sliderType: 'standard',
+		sliderLayout: 'fullscreen',
+		delay: 5000,
+		responsiveLevels: [1920, 1200, 992, 500],
+		gridwidth: [1170, 970, 750],
+		gridheight: 700,
+		autoHeight: "on",
+		spinner: "off",
+		fullScreenAlignForce: "off",
+		fullScreenOffset: "",
+		disableProgressBar: "on",
+		navigation: {
+			keyboardNavigation: "on",
+			keyboard_direction: "horizontal",
+			mouseScrollNavigation: "off",
+			onHoverStop: "off",
+			touch: {
+				touchenabled: "on",
+				swipe_threshold: 75,
+				swipe_min_touches: 1,
+				swipe_direction: "horizontal",
+				drag_block_vertical: false
+			},
+			arrows: {
+				enable: true,
+				style: "custom-rev-arrows-style-1",
+				left : {
+			        container:"slider",
+			        h_align:"left",
+		            v_align:"center",
+		            h_offset:0,
+		            v_offset:0,
+			    },
+			    right : {
+		            container:"slider",
+		            v_align:"center",
+		            h_align:"right",
+		            h_offset:0,
+		            v_offset:0
+			    }
+			}
+		},
+		parallax:{
+			type:"on",
+			levels:[20,40,60,80,100],
+			origo:"enterpoint",
+			speed:400,
+			bgparallax:"on",
+			disable_onmobile:"off"
 		}
-	};
+	}
+		
+	/*
+	* Slider Init
+	*/
+	$('#revolutionSlider').revolution(sliderOptions);
 
 	/*
 	* Collapse Menu Button
@@ -48,14 +96,14 @@ Theme Version:	9.7.0
 	/*
 	Load More
 	*/
-	var portfolioLoadMore = {
+	var loadMore = {
 
 		pages: 0,
 		currentPage: 1,
-		$wrapper: $('#portfolioLoadMoreWrapper'),
-		$btn: $('#portfolioLoadMore'),
-		$btnWrapper: $('#portfolioLoadMoreBtnWrapper'),
-		$loader: $('#portfolioLoadMoreLoader'),
+		$wrapper: $('#loadMoreWrapper'),
+		$btn: $('#loadMore'),
+		$btnWrapper: $('#loadMoreBtnWrapper'),
+		$loader: $('#loadMoreLoader'),
 
 		build: function() {
 
@@ -70,15 +118,23 @@ Theme Version:	9.7.0
 
 			} else {
 
+				// init isotope
+				self.$wrapper.isotope();
+
 				self.$btn.on('click', function() {
 					self.loadMore();
 				});
 
-				// Infinite Scroll
-				if(self.$btn.hasClass('btn-portfolio-infinite-scroll')) {
-					theme.fn.intObs( '#portfolioLoadMore', "$('#portfolioLoadMore').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					}, true );
+				// Lazy Load
+				if(self.$btn.hasClass('btn-lazy-load')) {
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}
@@ -86,15 +142,14 @@ Theme Version:	9.7.0
 		},
 		loadMore: function() {
 
-			var self = this,
-				ajax_url = ( self.$wrapper.data('ajax-url') ) ? self.$wrapper.data('ajax-url') : 'ajax/portfolio-ajax-load-more-';
+			var self = this;
 
 			self.$btn.hide();
-			self.$loader.addClass('portfolio-load-more-loader-showing').show();
+			self.$loader.show();
 
 			// Ajax
 			$.ajax({
-				url: ajax_url + (parseInt(self.currentPage)+1) + '.html',
+				url: 'ajax/demo-one-page-agency-ajax-load-more-' + (parseInt(self.currentPage)+1) + '.html',
 				complete: function(data) {
 
 					var $items = $(data.responseText);
@@ -127,11 +182,7 @@ Theme Version:	9.7.0
 							});
 						});
 
-						self.$loader.removeClass('portfolio-load-more-loader-showing').hide();
-
-						self.$wrapper.waitForImages(function(){
-							self.$wrapper.isotope('layout');
-						});
+						self.$loader.hide();
 
 					}, 1000);
 
@@ -142,78 +193,14 @@ Theme Version:	9.7.0
 
 	}
 
-	if($('#portfolioLoadMoreWrapper').get(0)) {
-		portfolioLoadMore.build();
-	}
-
-	/*
-	* Ajax on Modal
-	*/
-	theme.fn.execOnceTroughEvent( 'a[data-ajax-on-modal]', 'mouseover.trigger.ajax.on.modal', function(){
-		$('a[data-ajax-on-modal]').magnificPopup({
-			type: 'ajax',
-			tLoading: '<div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
-			mainClass: 'portfolio-ajax-modal',
-			closeBtnInside: true,
-			gallery: {
-				enabled: true
-			},
-			callbacks: {
-				ajaxContentAdded: function() {
-
-					// Wrapper
-					var $wrapper = $('.portfolio-ajax-modal');
-
-					// Close
-					$wrapper.find('a[data-ajax-portfolio-close]').on('click', function(e) {
-						e.preventDefault();
-						$.magnificPopup.close();
-					});
-
-					// Remove Next and Close
-					if($('a[data-ajax-on-modal]').length <= 1) {
-						
-						$wrapper.find('a[data-ajax-portfolio-prev], a[data-ajax-portfolio-next]').remove();
-
-					} else {
-
-						// Prev
-						$wrapper.find('a[data-ajax-portfolio-prev]').on('click', function(e) {
-							e.preventDefault();
-							$('.mfp-arrow-left').trigger('click');
-							return false;
-						});
-
-						// Next
-						$wrapper.find('a[data-ajax-portfolio-next]').on('click', function(e) {
-							e.preventDefault();
-							$('.mfp-arrow-right').trigger('click');
-							return false;
-						});
-
-					}
-
-					// Carousel
-					$(function() {
-						$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
-							var $this = $(this),
-								opts;
-
-							var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
-							if (pluginOptions)
-								opts = pluginOptions;
-
-							$this.themePluginCarousel(opts);
-						});
-					});
-
-				}
-			}
-		});
+	$window.on('load', function() {
+		if($('#loadMoreWrapper').get(0)) {
+			loadMore.build();
+		}
 	});
 
 	/*
-	* Dialog with CSS animation
+	Dialog with CSS animation
 	*/
 	$('.popup-with-zoom-anim').magnificPopup({
 		type: 'inline',
@@ -230,5 +217,42 @@ Theme Version:	9.7.0
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in'
 	});
+
+	/*
+	* Map and Contact Position
+	*/
+	var customContactPos = {
+		$elements: $('.custom-contact-pos'),
+		build: function() {
+			var self = this;
+
+			self.init();
+		},
+		init: function() {
+			var self = this,
+				elementHeight = [];
+
+			// Get Map and Contact Box Height
+			self.$elements.each(function(){
+				elementHeight.push($(this).outerHeight());
+			});
+
+			// Set Map and Contact box with same height
+			self.$elements.each(function(){
+				$(this).css({
+					height: Math.max.apply(null, elementHeight)
+				})
+			});
+
+			// Set contact-box position over google maps
+			$('.custom-contact-box').css({
+				'margin-top': -Math.max.apply(null, elementHeight)
+			});
+		}
+	}
+
+	if( $('.custom-contact-pos').get(0) ) {
+		customContactPos.build();
+	}
 
 }).apply( this, [ jQuery ]);

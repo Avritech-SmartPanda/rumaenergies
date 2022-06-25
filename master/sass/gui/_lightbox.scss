@@ -17,7 +17,7 @@ button.mfp-arrow {
 	}
 	&:after {
     	content: "\f053";
-		font-family: 'Font Awesome 6 Free';
+		font-family: 'Font Awesome 5 Free';
 	    font-weight: 900;
 	    border: none !important;
 	}
@@ -59,7 +59,7 @@ button.mfp-arrow {
 .mfp-close,
 .mfp-close-btn-in .mfp-close {
 	font-family: $font-primary;
-	font-weight: 600;
+	font-weight: $font-weight-semibold;
 	font-size: 22px;
 	color: #838383;
 	@include if-rtl() {
@@ -201,15 +201,6 @@ button.mfp-arrow {
 	}
 	&.dialog-lg {
 		max-width: 900px;
-	}
-
-	// Close Button Out of Dialog
-	&.mfp-close-out {
-		.mfp-close {
-			top: -50px;
-			#{$right}: -15px;
-			color: #FFF;
-		}
 	}
 }
 

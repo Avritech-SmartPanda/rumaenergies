@@ -145,7 +145,7 @@
 				}
 			}
 
-			// Slider With Overlay Opacity Level
+			/* Slider With Overlay Opacity Level */
 			@for $i from 0 through 10 {
 				&.slide-overlay-level-#{$i} {
 					.slotholder:after {
@@ -163,7 +163,6 @@
     width: 57px;
     height: 57px;
     border-radius: 100%;
-    text-indent: -9999px;
 	&:before {
 		content: '';
 		position: absolute;
@@ -215,7 +214,7 @@
 			#{$left}: -30px !important;
 			border-radius: corner-values(0 4px 4px 0);
 			&:before {
-				font-family: 'Font Awesome 6 Free';
+				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 				content: "\f053";
 				@include if-rtl {
@@ -231,7 +230,7 @@
 			#{$left}: auto !important;
 			border-radius: corner-values(4px 0 0 4px);
 			&:before {
-				font-family: 'Font Awesome 6 Free';
+				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 				content: "\f054";
 				@include if-rtl {
@@ -347,6 +346,11 @@
 	}
 }
 
+/* Slider IE Fix */
+html.ie .forcefullwidth_wrapper_tp_banner {
+	overflow: hidden;
+}
+
 /* Embed Border */
 .rev_slider embed,
 .rev_slider iframe,
@@ -389,7 +393,7 @@
 	}
 }
 
-// Responsive
+/* Responsive */
 @media (min-width: 992px) {
 
 	.slider-contact-form {
@@ -408,6 +412,31 @@ html.boxed {
 	.slider-container {
 		width: 100% !important;
 		left: auto !important;
+	}
+}
+
+/* Home Slider - Nivo Slider */
+.nivo-slider {
+	position: relative;
+	.theme-default {
+		.nivoSlider {
+			border-radius: corner-values(.3rem .3rem 0 0);
+			box-shadow: none;
+			margin-top: 10px;
+			img {
+				border-radius: corner-values(.3rem .3rem 0 0);
+			}
+		}
+		.nivo-controlNav {
+			margin-top: -72px;
+			position: absolute;
+			z-index: 99;
+			#{$right}: 5px;
+			bottom: -17px;
+		}
+		.nivo-caption {
+			padding-#{$left}: 20px;
+		}
 	}
 }
 

@@ -50,7 +50,7 @@ Pull requests are always welcome. We love those!
 
 ## Documentations
 
-Documentation is currently generated using `generate.php` file from `gh-pages` branch.
+Documentation is currently generated using `generate.php` file from `gh-pages` brunch.
 
   - Modify `generate.php`.
   - Run `php generate.php > index.html`.

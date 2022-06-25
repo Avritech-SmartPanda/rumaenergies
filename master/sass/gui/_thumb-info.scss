@@ -23,7 +23,7 @@
 			max-height: 330px;
 		}
 
-		&:after, .thumb-info-wrapper-overlay:before {
+		&:after {
 			content: "";
 			background: transparentize($color-dark, 0.2);
 			transition: all 0.3s;
@@ -37,41 +37,6 @@
 			display: block;
 			opacity: 0;
 			z-index: 1;
-		}
-
-		.thumb-info-wrapper-overlay {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			left: auto;
-			top: auto;
-			&:before {
-				opacity: 1;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				border-radius: 0;
-			}
-		}
-
-		&.thumb-info-wrapper-link {
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-			> a {
-				display: block;
-				padding-top: 72%;
-				text-indent: -9999px;
-			}
-		}
-	}
-
-	&.thumb-info-wrapper-direction-aware {
-		.thumb-info-wrapper {
-			&:after {
-				display: none !important;
-			}
 		}
 	}
 
@@ -132,17 +97,6 @@
 		font-size: 17px;
 		padding: 13px 21px 2px;
 		bottom: 13%;
-
-		&.thumb-info-title-vert-align {
-			bottom: auto;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		&.thumb-info-title-top {
-			bottom: auto;
-			top: 13%;
-		}
 	}
 
 	.thumb-info-type {
@@ -332,31 +286,6 @@
 		}
 	}
 
-	&.thumb-info-show-button-hover {
-		.btn {
-			opacity: 0;
-		}
-		.btn, .thumb-info-type {
-			transition: opacity .3s ease-out;
-		}
-		.thumb-info-title {
-			transform: translate3d(0,35px,0);
-			transition: transform .3s ease-out;
-			bottom: 0;
-		}
-		&:hover {
-			.btn {
-				opacity: 1;
-			}
-			.thumb-info-type {
-				opacity: 0;
-			}
-			.thumb-info-title {
-				transform: translate3d(0,-20px,0);
-			}
-		}
-	}
-
 	&.thumb-info-bottom-info-linear {
 		.thumb-info-title {
 			background: linear-gradient(to top, transparentize(#FFF, 0.2) 0, transparent 100%) repeat scroll 0 0 rgba(255, 255, 255, 0);
@@ -530,31 +459,6 @@
 		}
 	}
 
-	&.thumb-info-show-image-hover {
-		img {
-			opacity: 0;
-		}
-
-		.thumb-info-title {
-			background: transparent;
-			color: #333;
-		}
-
-		.thumb-info-inner {
-			transition: cubic-bezier(.55,0,.1,1) top 500ms;
-		}
-
-		&:hover {
-			img {
-				opacity: 1;
-			}
-
-			.thumb-info-title {
-				color: #FFF;
-			}
-		}
-	}
-
 	&.thumb-info-no-borders {
 		&, img {
 			border: 0;
@@ -623,17 +527,6 @@
 		}
 	}
 
-	&.thumb-info-slow-image-zoom-hover {
-		img {
-			transition: transform 2s;
-		}
-		&:hover {
-			img {
-				transform: scale(1.5, 1.5);
-			}
-		}
-	}
-
 	&.thumb-info-no-overlay {
 		.thumb-info-wrapper {
 			&:after {
@@ -644,40 +537,6 @@
 
 	&.thumb-info-no-bg {
 		background: transparent;
-	}
-
-	&.thumb-info-swap-content {
-		.thumb-info-swap-content-wrapper {
-			> * {
-			    transition: cubic-bezier(.55,0,.1,1) all 300ms;
-			}
-			> :nth-child(1) {
-				max-width: 100%;
-				text-align: center;
-				bottom: 0%;
-				margin: 0;
-				position: absolute;
-				width: 100%;
-				left: 0;
-			}
-			> :nth-child(2) {
-				display: inline-block;
-				transform: translateY(120%);
-				opacity: 0;
-			}
-		}
-		&:hover {
-			.thumb-info-swap-content-wrapper {
-				> :nth-child(1) {
-					transform: translateY(-120%);
-					opacity: 0;
-				}
-				> :nth-child(2) {
-					transform: none;
-					opacity: 1;
-				}
-			}
-		}
 	}
 
 }
@@ -728,16 +587,16 @@
 
 /* Thumb Info Side Image  */
 .thumb-info-side-image {
-	display: flex;
 	.thumb-info-side-image-wrapper {
 		padding: 0;
+		float: $left;
 		margin-#{$right}: 20px;
 	}
 }
 
 .thumb-info-side-image-right {
-	display: flex;
 	.thumb-info-side-image-wrapper {
+		float: $right;
 		margin-#{$left}: 20px;
 		margin-#{$right}: 0;
 	}
@@ -794,7 +653,7 @@
 	}
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 991px) {
 
 	.thumb-info {
@@ -805,45 +664,5 @@
 			font-size: 11px;
 		}
 	}	
-
-}
-
-// Container
-.thumb-info-container-full-img {
-	overflow: hidden;
-	position: relative;
-
-	.thumb-info-container-full-img-large {
-		opacity: 0;
-		transform: scale(1.025);
-		transition: all .85s cubic-bezier(.23,1,.32,1);
-		transition-property: opacity, transform;
-		display: flex;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-position: 50% 0;
-		&.active {
-			opacity: 1 !important;
-		}
-	}
-
-	.thumb-info-wrapper {
-		img {
-			transition: all .85s cubic-bezier(.23,1,.32,1);
-			transition-property: opacity, transform;
-		}
-	}
-
-	.owl-stage-outer:hover {
-		.thumb-info-wrapper {
-			img {
-				opacity: 0;
-			}
-		}
-	}
 
 }

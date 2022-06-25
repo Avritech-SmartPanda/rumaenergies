@@ -17,7 +17,7 @@
 			    position: absolute;
 			    right: 1.1rem;
 			    top: 50%;
-			    font-family: 'Font Awesome 6 Free';
+			    font-family: 'Font Awesome 5 Free';
 			    font-weight: bold;
 			    transform: translate3d(0, -50%, 0);
 			    border: 0;
@@ -50,33 +50,4 @@
 		}
 	}
 
-}
-
-.dropdown-menu {
-	&.dropdown-menu-arrow-centered {
-		&:before {
-			right: auto;
-			left: 50%;
-		    transform: translate3d(-50%, -6px, 0);
-		}
-	}
-	&.dropdown-menu-arrow-centered-style-2 {
-		border: 0;
-		margin-top: -2px;
-		margin-left: -2px;
-		padding: 0;
-		box-shadow: 0 10px 30px 10px rgba(0, 0, 0, 0.05);
-		background: #FFF;
-		padding: 3px;
-		min-width: 180px;
-		z-index: 10000;
-		margin-right: 0;
-		margin-top: 1px;
-		transition: opacity .2s ease-out;
-		border-radius: 0;
-	}
-}
-
-.dropdown-item:not(.btn):hover {
-	text-decoration: none;
 }

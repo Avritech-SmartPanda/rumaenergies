@@ -6,24 +6,10 @@
  *
  * NOTE: this file must be saved in UTF-8 encoding.
  *
- * bootstrap-star-rating v4.1.2
- * http://plugins.krajee.com/star-rating
- *
- * Copyright: 2013 - 2021, Kartik Visweswaran, Krajee.com
- *
- * Licensed under the BSD 3-Clause
- * https://github.com/kartik-v/bootstrap-star-rating/blob/master/LICENSE.md
- */  
-(function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof module === 'object' && typeof module.exports === 'object') { 
-        factory(require('jquery'));
-    } else { 
-        factory(window.jQuery);
-    }
-}(function ($) {
+ * @see http://github.com/kartik-v/bootstrap-star-rating
+ * @author Kartik Visweswaran <kartikv2@gmail.com>
+ */
+(function ($) {
     "use strict";
     $.fn.ratingLocales['ro'] = {
         defaultCaption: '{rating} stele',
@@ -42,4 +28,4 @@
         clearButtonTitle: 'Sterge',
         clearCaption: 'Fara vot'
     };
-}));
+})(window.jQuery);

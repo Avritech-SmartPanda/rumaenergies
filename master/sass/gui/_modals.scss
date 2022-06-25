@@ -18,12 +18,6 @@
 	display: block;
 }
 
-.modal-header {
-	.btn-close {
-		text-indent: -99999px;
-	}
-}
-
 .modal-footer {
 	>:not(:first-child) {
 		margin-#{$left}: .25rem;

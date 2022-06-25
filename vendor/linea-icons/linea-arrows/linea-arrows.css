@@ -16,7 +16,7 @@
 		url('linea-arrows.svg#linea-arrows') format('svg');
 }
 
-.lai {
+.lar {
 	font-family: "linea-arrows";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -29,412 +29,412 @@
 }
 
 
-.lai-anticlockwise:before {
+.lar-arrows-anticlockwise:before {
 	content: "\e000";
 }
-.lai-anticlockwise-dashed:before {
+.lar-arrows-anticlockwise-dashed:before {
 	content: "\e001";
 }
-.lai-button-down:before {
+.lar-arrows-button-down:before {
 	content: "\e002";
 }
-.lai-button-off:before {
+.lar-arrows-button-off:before {
 	content: "\e003";
 }
-.lai-button-on:before {
+.lar-arrows-button-on:before {
 	content: "\e004";
 }
-.lai-button-up:before {
+.lar-arrows-button-up:before {
 	content: "\e005";
 }
-.lai-check:before {
+.lar-arrows-check:before {
 	content: "\e006";
 }
-.lai-circle-check:before {
+.lar-arrows-circle-check:before {
 	content: "\e007";
 }
-.lai-circle-down:before {
+.lar-arrows-circle-down:before {
 	content: "\e008";
 }
-.lai-circle-downleft:before {
+.lar-arrows-circle-downleft:before {
 	content: "\e009";
 }
-.lai-circle-downright:before {
+.lar-arrows-circle-downright:before {
 	content: "\e00a";
 }
-.lai-circle-left:before {
+.lar-arrows-circle-left:before {
 	content: "\e00b";
 }
-.lai-circle-minus:before {
+.lar-arrows-circle-minus:before {
 	content: "\e00c";
 }
-.lai-circle-plus:before {
+.lar-arrows-circle-plus:before {
 	content: "\e00d";
 }
-.lai-circle-remove:before {
+.lar-arrows-circle-remove:before {
 	content: "\e00e";
 }
-.lai-circle-right:before {
+.lar-arrows-circle-right:before {
 	content: "\e00f";
 }
-.lai-circle-up:before {
+.lar-arrows-circle-up:before {
 	content: "\e010";
 }
-.lai-circle-upleft:before {
+.lar-arrows-circle-upleft:before {
 	content: "\e011";
 }
-.lai-circle-upright:before {
+.lar-arrows-circle-upright:before {
 	content: "\e012";
 }
-.lai-clockwise:before {
+.lar-arrows-clockwise:before {
 	content: "\e013";
 }
-.lai-clockwise-dashed:before {
+.lar-arrows-clockwise-dashed:before {
 	content: "\e014";
 }
-.lai-compress:before {
+.lar-arrows-compress:before {
 	content: "\e015";
 }
-.lai-deny:before {
+.lar-arrows-deny:before {
 	content: "\e016";
 }
-.lai-diagonal:before {
+.lar-arrows-diagonal:before {
 	content: "\e017";
 }
-.lai-diagonal2:before {
+.lar-arrows-diagonal2:before {
 	content: "\e018";
 }
-.lai-down:before {
+.lar-arrows-down:before {
 	content: "\e019";
 }
-.lai-down-double:before {
+.lar-arrows-down-double:before {
 	content: "\e01a";
 }
-.lai-downleft:before {
+.lar-arrows-downleft:before {
 	content: "\e01b";
 }
-.lai-downright:before {
+.lar-arrows-downright:before {
 	content: "\e01c";
 }
-.lai-drag-down:before {
+.lar-arrows-drag-down:before {
 	content: "\e01d";
 }
-.lai-drag-down-dashed:before {
+.lar-arrows-drag-down-dashed:before {
 	content: "\e01e";
 }
-.lai-drag-horiz:before {
+.lar-arrows-drag-horiz:before {
 	content: "\e01f";
 }
-.lai-drag-left:before {
+.lar-arrows-drag-left:before {
 	content: "\e020";
 }
-.lai-drag-left-dashed:before {
+.lar-arrows-drag-left-dashed:before {
 	content: "\e021";
 }
-.lai-drag-right:before {
+.lar-arrows-drag-right:before {
 	content: "\e022";
 }
-.lai-drag-right-dashed:before {
+.lar-arrows-drag-right-dashed:before {
 	content: "\e023";
 }
-.lai-drag-up:before {
+.lar-arrows-drag-up:before {
 	content: "\e024";
 }
-.lai-drag-up-dashed:before {
+.lar-arrows-drag-up-dashed:before {
 	content: "\e025";
 }
-.lai-drag-vert:before {
+.lar-arrows-drag-vert:before {
 	content: "\e026";
 }
-.lai-exclamation:before {
+.lar-arrows-exclamation:before {
 	content: "\e027";
 }
-.lai-expand:before {
+.lar-arrows-expand:before {
 	content: "\e028";
 }
-.lai-expand-diagonal1:before {
+.lar-arrows-expand-diagonal1:before {
 	content: "\e029";
 }
-.lai-expand-horizontal1:before {
+.lar-arrows-expand-horizontal1:before {
 	content: "\e02a";
 }
-.lai-expand-vertical1:before {
+.lar-arrows-expand-vertical1:before {
 	content: "\e02b";
 }
-.lai-fit-horizontal:before {
+.lar-arrows-fit-horizontal:before {
 	content: "\e02c";
 }
-.lai-fit-vertical:before {
+.lar-arrows-fit-vertical:before {
 	content: "\e02d";
 }
-.lai-glide:before {
+.lar-arrows-glide:before {
 	content: "\e02e";
 }
-.lai-glide-horizontal:before {
+.lar-arrows-glide-horizontal:before {
 	content: "\e02f";
 }
-.lai-glide-vertical:before {
+.lar-arrows-glide-vertical:before {
 	content: "\e030";
 }
-.lai-hamburger1:before {
+.lar-arrows-hamburger1:before {
 	content: "\e031";
 }
-.lai-hamburger-2:before {
+.lar-arrows-hamburger-2:before {
 	content: "\e032";
 }
-.lai-horizontal:before {
+.lar-arrows-horizontal:before {
 	content: "\e033";
 }
-.lai-info:before {
+.lar-arrows-info:before {
 	content: "\e034";
 }
-.lai-keyboard-alt:before {
+.lar-arrows-keyboard-alt:before {
 	content: "\e035";
 }
-.lai-keyboard-cmd:before {
+.lar-arrows-keyboard-cmd:before {
 	content: "\e036";
 }
-.lai-keyboard-delete:before {
+.lar-arrows-keyboard-delete:before {
 	content: "\e037";
 }
-.lai-keyboard-down:before {
+.lar-arrows-keyboard-down:before {
 	content: "\e038";
 }
-.lai-keyboard-left:before {
+.lar-arrows-keyboard-left:before {
 	content: "\e039";
 }
-.lai-keyboard-return:before {
+.lar-arrows-keyboard-return:before {
 	content: "\e03a";
 }
-.lai-keyboard-right:before {
+.lar-arrows-keyboard-right:before {
 	content: "\e03b";
 }
-.lai-keyboard-shift:before {
+.lar-arrows-keyboard-shift:before {
 	content: "\e03c";
 }
-.lai-keyboard-tab:before {
+.lar-arrows-keyboard-tab:before {
 	content: "\e03d";
 }
-.lai-keyboard-up:before {
+.lar-arrows-keyboard-up:before {
 	content: "\e03e";
 }
-.lai-left:before {
+.lar-arrows-left:before {
 	content: "\e03f";
 }
-.lai-left-double-32:before {
+.lar-arrows-left-double-32:before {
 	content: "\e040";
 }
-.lai-minus:before {
+.lar-arrows-minus:before {
 	content: "\e041";
 }
-.lai-move:before {
+.lar-arrows-move:before {
 	content: "\e042";
 }
-.lai-move2:before {
+.lar-arrows-move2:before {
 	content: "\e043";
 }
-.lai-move-bottom:before {
+.lar-arrows-move-bottom:before {
 	content: "\e044";
 }
-.lai-move-left:before {
+.lar-arrows-move-left:before {
 	content: "\e045";
 }
-.lai-move-right:before {
+.lar-arrows-move-right:before {
 	content: "\e046";
 }
-.lai-move-top:before {
+.lar-arrows-move-top:before {
 	content: "\e047";
 }
-.lai-plus:before {
+.lar-arrows-plus:before {
 	content: "\e048";
 }
-.lai-question:before {
+.lar-arrows-question:before {
 	content: "\e049";
 }
-.lai-remove:before {
+.lar-arrows-remove:before {
 	content: "\e04a";
 }
-.lai-right:before {
+.lar-arrows-right:before {
 	content: "\e04b";
 }
-.lai-right-double:before {
+.lar-arrows-right-double:before {
 	content: "\e04c";
 }
-.lai-rotate:before {
+.lar-arrows-rotate:before {
 	content: "\e04d";
 }
-.lai-rotate-anti:before {
+.lar-arrows-rotate-anti:before {
 	content: "\e04e";
 }
-.lai-rotate-anti-dashed:before {
+.lar-arrows-rotate-anti-dashed:before {
 	content: "\e04f";
 }
-.lai-rotate-dashed:before {
+.lar-arrows-rotate-dashed:before {
 	content: "\e050";
 }
-.lai-shrink:before {
+.lar-arrows-shrink:before {
 	content: "\e051";
 }
-.lai-shrink-diagonal1:before {
+.lar-arrows-shrink-diagonal1:before {
 	content: "\e052";
 }
-.lai-shrink-diagonal2:before {
+.lar-arrows-shrink-diagonal2:before {
 	content: "\e053";
 }
-.lai-shrink-horizonal2:before {
+.lar-arrows-shrink-horizonal2:before {
 	content: "\e054";
 }
-.lai-shrink-horizontal1:before {
+.lar-arrows-shrink-horizontal1:before {
 	content: "\e055";
 }
-.lai-shrink-vertical1:before {
+.lar-arrows-shrink-vertical1:before {
 	content: "\e056";
 }
-.lai-shrink-vertical2:before {
+.lar-arrows-shrink-vertical2:before {
 	content: "\e057";
 }
-.lai-sign-down:before {
+.lar-arrows-sign-down:before {
 	content: "\e058";
 }
-.lai-sign-left:before {
+.lar-arrows-sign-left:before {
 	content: "\e059";
 }
-.lai-sign-right:before {
+.lar-arrows-sign-right:before {
 	content: "\e05a";
 }
-.lai-sign-up:before {
+.lar-arrows-sign-up:before {
 	content: "\e05b";
 }
-.lai-slide-down1:before {
+.lar-arrows-slide-down1:before {
 	content: "\e05c";
 }
-.lai-slide-down2:before {
+.lar-arrows-slide-down2:before {
 	content: "\e05d";
 }
-.lai-slide-left1:before {
+.lar-arrows-slide-left1:before {
 	content: "\e05e";
 }
-.lai-slide-left2:before {
+.lar-arrows-slide-left2:before {
 	content: "\e05f";
 }
-.lai-slide-right1:before {
+.lar-arrows-slide-right1:before {
 	content: "\e060";
 }
-.lai-slide-right2:before {
+.lar-arrows-slide-right2:before {
 	content: "\e061";
 }
-.lai-slide-up1:before {
+.lar-arrows-slide-up1:before {
 	content: "\e062";
 }
-.lai-slide-up2:before {
+.lar-arrows-slide-up2:before {
 	content: "\e063";
 }
-.lai-slim-down:before {
+.lar-arrows-slim-down:before {
 	content: "\e064";
 }
-.lai-slim-down-dashed:before {
+.lar-arrows-slim-down-dashed:before {
 	content: "\e065";
 }
-.lai-slim-left:before {
+.lar-arrows-slim-left:before {
 	content: "\e066";
 }
-.lai-slim-left-dashed:before {
+.lar-arrows-slim-left-dashed:before {
 	content: "\e067";
 }
-.lai-slim-right:before {
+.lar-arrows-slim-right:before {
 	content: "\e068";
 }
-.lai-slim-right-dashed:before {
+.lar-arrows-slim-right-dashed:before {
 	content: "\e069";
 }
-.lai-slim-up:before {
+.lar-arrows-slim-up:before {
 	content: "\e06a";
 }
-.lai-slim-up-dashed:before {
+.lar-arrows-slim-up-dashed:before {
 	content: "\e06b";
 }
-.lai-square-check:before {
+.lar-arrows-square-check:before {
 	content: "\e06c";
 }
-.lai-square-down:before {
+.lar-arrows-square-down:before {
 	content: "\e06d";
 }
-.lai-square-downleft:before {
+.lar-arrows-square-downleft:before {
 	content: "\e06e";
 }
-.lai-square-downright:before {
+.lar-arrows-square-downright:before {
 	content: "\e06f";
 }
-.lai-square-left:before {
+.lar-arrows-square-left:before {
 	content: "\e070";
 }
-.lai-square-minus:before {
+.lar-arrows-square-minus:before {
 	content: "\e071";
 }
-.lai-square-plus:before {
+.lar-arrows-square-plus:before {
 	content: "\e072";
 }
-.lai-square-remove:before {
+.lar-arrows-square-remove:before {
 	content: "\e073";
 }
-.lai-square-right:before {
+.lar-arrows-square-right:before {
 	content: "\e074";
 }
-.lai-square-up:before {
+.lar-arrows-square-up:before {
 	content: "\e075";
 }
-.lai-square-upleft:before {
+.lar-arrows-square-upleft:before {
 	content: "\e076";
 }
-.lai-square-upright:before {
+.lar-arrows-square-upright:before {
 	content: "\e077";
 }
-.lai-squares:before {
+.lar-arrows-squares:before {
 	content: "\e078";
 }
-.lai-stretch-diagonal1:before {
+.lar-arrows-stretch-diagonal1:before {
 	content: "\e079";
 }
-.lai-stretch-diagonal2:before {
+.lar-arrows-stretch-diagonal2:before {
 	content: "\e07a";
 }
-.lai-stretch-diagonal3:before {
+.lar-arrows-stretch-diagonal3:before {
 	content: "\e07b";
 }
-.lai-stretch-diagonal4:before {
+.lar-arrows-stretch-diagonal4:before {
 	content: "\e07c";
 }
-.lai-stretch-horizontal1:before {
+.lar-arrows-stretch-horizontal1:before {
 	content: "\e07d";
 }
-.lai-stretch-horizontal2:before {
+.lar-arrows-stretch-horizontal2:before {
 	content: "\e07e";
 }
-.lai-stretch-vertical1:before {
+.lar-arrows-stretch-vertical1:before {
 	content: "\e07f";
 }
-.lai-stretch-vertical2:before {
+.lar-arrows-stretch-vertical2:before {
 	content: "\e080";
 }
-.lai-switch-horizontal:before {
+.lar-arrows-switch-horizontal:before {
 	content: "\e081";
 }
-.lai-switch-vertical:before {
+.lar-arrows-switch-vertical:before {
 	content: "\e082";
 }
-.lai-up:before {
+.lar-arrows-up:before {
 	content: "\e083";
 }
-.lai-up-double-33:before {
+.lar-arrows-up-double-33:before {
 	content: "\e084";
 }
-.lai-upleft:before {
+.lar-arrows-upleft:before {
 	content: "\e085";
 }
-.lai-upright:before {
+.lar-arrows-upright:before {
 	content: "\e086";
 }
-.lai-vertical:before {
+.lar-arrows-vertical:before {
 	content: "\e087";
 }
 

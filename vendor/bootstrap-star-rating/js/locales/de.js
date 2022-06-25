@@ -6,24 +6,10 @@
  *
  * NOTE: this file must be saved in UTF-8 encoding.
  *
- * bootstrap-star-rating v4.1.2
- * http://plugins.krajee.com/star-rating
- *
- * Copyright: 2013 - 2021, Kartik Visweswaran, Krajee.com
- *
- * Licensed under the BSD 3-Clause
- * https://github.com/kartik-v/bootstrap-star-rating/blob/master/LICENSE.md
+ * @see http://github.com/kartik-v/bootstrap-star-rating
+ * @author Kartik Visweswaran <kartikv2@gmail.com>
  */
-(function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof module === 'object' && typeof module.exports === 'object') { 
-        factory(require('jquery'));
-    } else { 
-        factory(window.jQuery);
-    }
-}(function ($) {
+(function ($) {
     "use strict";
     $.fn.ratingLocales['de'] = {
         defaultCaption: '{rating} Sterne',
@@ -39,7 +25,7 @@
             4.5: 'Viereinhalb Sterne',
             5: 'Fünf Sterne'
         },
-        clearButtonTitle: 'Zurücksetzen',
-        clearCaption: 'Nicht bewertet'
+        clearButtonTitle: 'Zuücksetzen',
+        clearCaption: 'Nicht Bewertet'
     };
-}));
+})(window.jQuery);

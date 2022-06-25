@@ -1,6 +1,6 @@
 /* Toggles */
 .toggle {
-	margin: 10px 0 20px;
+	margin: 10px 0 $spacement-lg;
 	position: relative;
 	clear: both;
 	.toggle {
@@ -17,8 +17,7 @@
 			width: 100%;
 			z-index: 2;
 		}
-		label,
-		.toggle-title {
+		label {
 			transition: all .15s ease-out;
 			background: #f7f7f7;
 			border-#{$left}: 3px solid #CCC;
@@ -26,12 +25,10 @@
 			color: #CCC;
 			display: block;
 			min-height: 20px;
-			padding: side-values(12px 20px 12px 15px);
+			padding: side-values(12px 20px 12px 10px);
 			position: relative;
 			cursor: pointer;
-			font-weight: 600;
-			letter-spacing: -0.2px;
-			text-decoration: none !important;
+			font-weight: 400;
 			&:-moz-selection {
 				background: none;
 			}
@@ -42,6 +39,9 @@
 				&.fa-plus {
 					display: inline;
 				}
+			}
+			&:selection {
+				background: none;
 			}
 			&:before {
 				content: " ";
@@ -94,8 +94,7 @@
 				display: none;
 			}
 		}
-		> label,
-		> .toggle-title {
+		> label {
 			background: #f7f7f7;
 			border-color: #CCC;
 			&:before {
@@ -114,8 +113,7 @@
 
 	&.toggle-sm {
 		.toggle {
-			> label,
-			> .toggle-title {
+			> label {
 				font-size: 0.9em;
 				padding: 6px 20px 6px 10px;
 			}
@@ -127,8 +125,7 @@
 
 	&.toggle-lg {
 		.toggle {
-			> label,
-			> .toggle-title {
+			> label {
 				font-size: 1.1em;
 				padding: 16px 20px 16px 20px;
 			}
@@ -140,8 +137,7 @@
 
 	&.toggle-simple {
 		.toggle {
-			> label,
-			> .toggle-title {
+			> label {
 				border-radius: 0;
 				border: 0;
 				background: transparent;
@@ -170,7 +166,7 @@
 					#{$right}: auto;
 					margin-top: 0;
 					top: 12px;
-					font-family: 'Font Awesome 6 Free';
+					font-family: 'Font Awesome 5 Free';
 					font-weight: 900;
 					content: "\f067";
 					z-index: 2;
@@ -181,14 +177,11 @@
 					transform: none;
 				}
 			}
-			&.active {
-				> label,
-				> .toggle-title {
-					background: transparent;
-					color: $color-dark;
-					&:before {
-						content: "\f068";
-					}
+			&.active > label {
+				background: transparent;
+				color: $color-dark;
+				&:before {
+					content: "\f068";
 				}
 			}
 		}
@@ -197,8 +190,7 @@
 	&.toggle-minimal {
 		.toggle {
 			margin: 0;
-			> label,
-			> .toggle-title {
+			> label {
 			    background: transparent;
 			    color: $color-font-default;
 			    border-left: 0;
@@ -208,12 +200,9 @@
 		        padding: 12px 20px 12px 0;
 		        font-weight: 600;
 			}
-			&.active {
-				> label,
-				> .toggle-title {
-					background: transparent;
-					border-bottom-color: #CCC;
-				}
+			&.active > label {
+				background: transparent;
+				border-bottom-color: #CCC;
 			}
 		}
 	}

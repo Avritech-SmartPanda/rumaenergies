@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Oswald', sans-serif;
 }
 
-body {
+p, a, span, li, strong, b {
 	font-family: 'Montserrat', sans-serif;
 }
 
 .custom-primary-font {
-	font-family: 'Poppins', sans-serif !important;
+	font-family: 'Oswald', sans-serif !important;
 }
 
 .custom-secondary-font {
@@ -36,10 +36,6 @@ body {
 	font-size: 1.3em !important;
 }
 
-.custom-fs-2 {
-	font-size: 3.34rem !important;
-}
-
 .text-3 {
 	font-size: 1.1em !important;
 }
@@ -47,7 +43,7 @@ body {
 .custom-btn-style-1 {
 	background-color: #000 !important;
 	border-color: #000 !important;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	font-size: 1.1rem;
 	color: #FFF !important;
 	padding: 0.5rem 1.5rem !important;
@@ -57,12 +53,6 @@ body {
 	.custom-mobile-scale-1 {
 		transform: scale(0.6);
 	}
-}
-
-.custom-slider-dot {
-	width: 12px;
-	height: 12px;
-	border-radius: 100%;
 }
 
 @keyframes lineProgress {
@@ -204,10 +194,10 @@ body {
 }
 
 #header .header-nav-main nav > ul > li > a {
-	font-family: 'Poppins', sans-serif;
-	font-size: 0.9rem;
-	font-weight: 600;
-	letter-spacing: -0.5px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 0.96rem;
+	font-weight: 400;
+	letter-spacing: 0;
 }
 
 @media (min-width: 992px) {
@@ -335,7 +325,7 @@ body {
 
 .custom-menu-item .custom-menu-item-details {
 	display: flex;
-	justify-content: space-between;
+	justify-content: between;
 }
 
 .custom-menu-item .custom-menu-item-details .custom-menu-item-title,

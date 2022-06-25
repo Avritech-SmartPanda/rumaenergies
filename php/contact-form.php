@@ -2,7 +2,7 @@
 /*
 Name: 			Contact Form
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 namespace PortoContactForm;
@@ -20,7 +20,7 @@ require 'php-mailer/src/SMTP.php';
 require 'php-mailer/src/Exception.php';
 
 // Step 1 - Enter your email address below.
-$email = 'daphneavril@outlook.com';
+$email = 'you@domain.com';
 
 // If the e-mail is not working, change the debug option to 2 | $debug = 2;
 $debug = 0;
@@ -45,7 +45,7 @@ foreach($_POST as $label => $value) {
 		$value = implode(', ', $value);
 	}
 
-	$message .= $label.": " . nl2br(htmlspecialchars($value, ENT_QUOTES)) . "<br>";
+	$message .= $label.": " . htmlspecialchars($value, ENT_QUOTES) . "<br>\n";
 }
 
 $mail = new PHPMailer(true);
@@ -75,7 +75,7 @@ try {
 	$mail->SetFrom($email, $fromName);
 
 	// Repply To
-	if( isset($_POST['email']) && !empty($_POST['email']) ) {
+	if( isset($_POST['email']) ) {
 		$mail->AddReplyTo($_POST['email'], $fromName);
 	}
 

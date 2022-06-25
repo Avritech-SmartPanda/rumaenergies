@@ -1,7 +1,7 @@
 /*
 Name: 			View - Contact
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function($) {
@@ -14,11 +14,11 @@ Theme Version:	9.7.0
 	
 	// No White Space
 	$.validator.addMethod("noSpace", function(value, element) {
-		if( $(element).attr('required') ) {
-			return value.search(/^(?! *$)[^]+$/) == 0;
-		}
+    	if( $(element).attr('required') ) {
+    		return value.search(/[a-zA-Z0-9À-žа-яА-ЯёЁα-ωΑ-Ω\s\u0621-\u064A\u0660-\u0669 ]/i) == 0;
+    	}
 
-		return true;
+    	return true;
 	}, 'Please fill this empty field.');
 
 	/*
@@ -35,19 +35,6 @@ Theme Version:	9.7.0
 	*/
 	$('.contact-form').each(function(){
 		$(this).validate({
-			errorPlacement: function(error, element) {
-				if(element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
-					error.appendTo(element.closest('.form-group'));
-				} else if( element.is('select') && element.closest('.custom-select-1') ) {
-					error.appendTo(element.closest('.form-group'));
-				} else {
-					if( element.closest('.form-group').length ) {
-						error.appendTo(element.closest('.form-group'));
-					} else {
-						error.insertAfter(element);
-					}
-				}
-			},
 			submitHandler: function(form) {
 
 				var $form = $(form),
@@ -64,11 +51,7 @@ Theme Version:	9.7.0
 					data = {};
 
 				$(formData).each(function(index, obj){
-					if( data[obj.name] ) {
-						data[obj.name] = data[obj.name] + ', ' + obj.value;						
-					} else {
-						data[obj.name] = obj.value;
-					}
+				    data[obj.name] = obj.value;
 				});
 
 				// Google Recaptcha v2
@@ -159,9 +142,7 @@ Theme Version:	9.7.0
 			}
 		},
 		errorPlacement: function(error, element) {
-			if(element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
-				error.appendTo(element.closest('.form-group'));
-			} else if( element.is('select') && element.closest('.custom-select-1') ) {
+			if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
 				error.appendTo(element.closest('.form-group'));
 			} else {
 				error.insertAfter(element);
@@ -174,15 +155,6 @@ Theme Version:	9.7.0
 	*/
 	$('.contact-form-recaptcha-v3').each(function(){
 		$(this).validate({
-			errorPlacement: function(error, element) {
-				if(element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
-					error.appendTo(element.closest('.form-group'));
-				} else if( element.is('select') && element.closest('.custom-select-1') ) {
-					error.appendTo(element.closest('.form-group'));
-				} else {
-					error.insertAfter(element);
-				}
-			},
 			submitHandler: function(form) {
 
 				var $form = $(form),
@@ -194,10 +166,7 @@ Theme Version:	9.7.0
 
 				$submitButton.val( $submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...' ).attr('disabled', true);
 
-				var recaptchaSrcURL = $('#google-recaptcha-v3').attr('src'),
-					newURL          = new URL(recaptchaSrcURL),
-					site_key        = newURL.searchParams.get("render");
-
+				var site_key = $('#google-recaptcha-v3').attr('src').split("render=")[1];
 				grecaptcha.execute(site_key, {action: 'contact_us'}).then(function(token) {
 
 					// Fields Data

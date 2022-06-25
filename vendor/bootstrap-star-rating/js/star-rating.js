@@ -1,31 +1,38 @@
 /*!
- * bootstrap-star-rating v4.1.2
+ * bootstrap-star-rating v4.0.4
  * http://plugins.krajee.com/star-rating
  *
  * Author: Kartik Visweswaran
- * Copyright: 2013 - 2021, Kartik Visweswaran, Krajee.com
+ * Copyright: 2013 - 2018, Kartik Visweswaran, Krajee.com
  *
  * Licensed under the BSD 3-Clause
  * https://github.com/kartik-v/bootstrap-star-rating/blob/master/LICENSE.md
  */
 (function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-    } else if (typeof module === 'object' && typeof module.exports === 'object') {
-        factory(require('jquery'));
-    } else {
-        factory(window.jQuery);
+    "use strict";
+    //noinspection JSUnresolvedVariable
+    if (typeof define === 'function' && define.amd) { // jshint ignore:line
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory); // jshint ignore:line
+    } else { // noinspection JSUnresolvedVariable
+        if (typeof module === 'object' && module.exports) { // jshint ignore:line
+            // Node/CommonJS
+            // noinspection JSUnresolvedVariable
+            module.exports = factory(require('jquery')); // jshint ignore:line
+        } else {
+            // Browser globals
+            factory(window.jQuery);
+        }
     }
 }(function ($) {
-    'use strict';
+    "use strict";
 
     $.fn.ratingLocales = {};
     $.fn.ratingThemes = {};
 
     var $h, Rating;
 
-    // Global helper methods and constants
+    // global helper methods and constants
     $h = {
         NAMESPACE: '.rating',
         DEFAULT_MIN: 0,
@@ -52,21 +59,16 @@
             if (!skipOff) {
                 $el.off(ev);
             }
-            $el.on(ev, function (e) {
-                var cb = $.proxy(callback, self);
-                cb(e);
-            });
+            $el.on(ev, callback);
         }
     };
 
-    // Rating constructor
+    // rating constructor
     Rating = function (element, options) {
         var self = this;
         self.$element = $(element);
         self._init(options);
     };
-
-    // Rating prototype
     Rating.prototype = {
         constructor: Rating,
         _parseAttr: function (vattr, options) {
@@ -119,13 +121,6 @@
                 self.step = $h.DEFAULT_STEP;
             }
             self.diff = self.max - self.min;
-            self._setDefault('minThreshold', self.min);
-            if (self.minThreshold < self.min) {
-                self.minThreshold = self.min;
-            }
-            if (self.minThreshold > self.max) {
-                self.minThreshold = self.max;
-            }
         },
         _initHighlight: function (v) {
             var self = this, w, cap = self._getCaption();
@@ -165,25 +160,22 @@
         },
         _generateRating: function () {
             var self = this, $el = self.$element, $rating, $container, w;
-            $container = self.$container = $(document.createElement('div')).insertBefore($el);
+            $container = self.$container = $(document.createElement("div")).insertBefore($el);
             $h.addCss($container, self._getContainerCss());
-            self.$rating = $rating = $(document.createElement('div')).attr('class', 'rating-stars').appendTo($container)
+            self.$rating = $rating = $(document.createElement("div")).attr('class', 'rating-stars').appendTo($container)
                 .append(self._getStars('empty')).append(self._getStars('filled'));
-            if (self.keyboardEnabled) {
-                self.$rating.attr('tabindex', self.tabindex);
-            }
             self.$emptyStars = $rating.find('.empty-stars');
             self.$filledStars = $rating.find('.filled-stars');
             self._renderCaption();
             self._renderClear();
             self._initHighlight();
-            self._initStarTitles();
-            var i = 1;
+            self._initCaptionTitle();
+            $container.append($el);
             if (self.rtl) {
                 w = Math.max(self.$emptyStars.outerWidth(), self.$filledStars.outerWidth());
                 self.$emptyStars.width(w);
             }
-            $container.insertBefore($el);
+            $el.appendTo($rating);
         },
         _getCaption: function () {
             var self = this;
@@ -208,7 +200,7 @@
                 return;
             }
             self._addContent('caption', '<div class="caption">' + html + '</div>');
-            self.$caption = self.$container.find('.caption');
+            self.$caption = self.$container.find(".caption");
         },
         _renderClear: function () {
             var self = this, css, $clr = self.clearElement ? $(self.clearElement) : '';
@@ -218,7 +210,7 @@
             css = self._getClearClass();
             if ($clr.length) {
                 $h.addCss($clr, css);
-                $clr.attr({'title': self.clearButtonTitle}).html(self.clearButton);
+                $clr.attr({"title": self.clearButtonTitle}).html(self.clearButton);
                 self.$clear = $clr;
                 return;
             }
@@ -248,8 +240,7 @@
             }
         },
         _init: function (options) {
-            var self = this, $el = self.$element.attr('tabindex', -1).addClass('rating-input'), v,
-                m = self.minThreshold;
+            var self = this, $el = self.$element.addClass('rating-input'), v;
             self.options = options;
             $.each(options, function (key, value) {
                 self[key] = value;
@@ -265,28 +256,25 @@
             if (self.displayOnly) {
                 self.inactive = true;
                 self.showClear = false;
-                self.hoverEnabled = false;
-                self.hoverChangeCaption = false;
-                self.hoverChangeStars = false;
+                self.showCaption = false;
             }
             self._generateRating();
             self._initEvents();
             self._listen();
-            if (!$h.isEmpty(m) && ($h.isEmpty($el.val()) || $el.val() < m)) {
-                $el.val(m);
-            }
             v = self._parseValue($el.val());
             $el.val(v);
             return $el.removeClass('rating-loading');
         },
-        _initCaptionTitle: function () {
+        _initCaptionTitle: function() {
             var self = this, caption;
-            caption = self.fetchCaption(self.$element.val());
-            self.$rating.attr('title', $(caption).text());
+            if (self.showCaptionAsTitle) {
+                caption = self.fetchCaption(self.$element.val());
+                self.$rating.attr('title', $(caption).text());
+            }
         },
-        _trigChange: function (params) {
+        _trigChange: function(params) {
             var self = this;
-            self._initStarTitles();
+            self._initCaptionTitle();
             self.$element.trigger('change').trigger('rating:change', params);
         },
         _initEvents: function () {
@@ -307,7 +295,7 @@
                     }
                 },
                 _noMouseAction: function (e) {
-                    return !self.mouseEnabled || !self.hoverEnabled || self.inactive || (e && e.isDefaultPrevented());
+                    return !self.hoverEnabled || self.inactive || (e && e.isDefaultPrevented());
                 },
                 initTouch: function (e) {
                     //noinspection JSUnresolvedVariable
@@ -321,7 +309,7 @@
                     //noinspection JSUnresolvedVariable
                     touches = !$h.isEmpty(ev.touches) ? ev.touches : ev.changedTouches;
                     pos = self.events._getTouchPosition(touches[0]);
-                    if (e.type === 'touchend') {
+                    if (e.type === "touchend") {
                         self._setStars(pos);
                         params = [self.$element.val(), self._getCaption()];
                         self._trigChange(params);
@@ -405,66 +393,24 @@
                     if (!self.inactive) {
                         self.reset();
                     }
-                },
-                focus: function (e) {
-                    self.$rating.focus();
-                    self.$element.trigger('rating:focus');
-                },
-                blur: function (e) {
-                    self.$element.trigger('rating:blur');
-                },
-                keydown: function (e) {
-                    if (self.inactive || !self.keyboardEnabled) {
-                        return;
-                    }
-                    var $el = self.$element, v = $el.val(), isUpdated = false, step = parseFloat(self.step),
-                        precision = $h.getDecimalPlaces(step), upKey = self.rtl ? 37 : 39, dnKey = self.rtl ? 39 : 37,
-                        val = v ? parseFloat(v) : 0, key = parseInt(e.which || e.keyCode || 0, 10);
-                    if (key === upKey && val < self.max) { // key right (increase)
-                        val += step;
-                        isUpdated = true;
-                    }
-                    if (key === dnKey && val > self.minThreshold) { // key left (decrease)
-                        val -= step;
-                        isUpdated = true
-                    }
-                    if (isUpdated) {
-                        val = $h.applyPrecision(val, precision);
-                        $el.val(val);
-                        self._trigChange([val, self._getCaption()])
-                        self.showStars($el.val());
-                        self.$rating.focus();
-                    }
-                    if (key === 37 || key === 39) {
-                        $el.trigger('rating:keydown', [val, self._getCaption()]);
-                    }
-
                 }
             };
         },
         _listen: function () {
             var self = this, $el = self.$element, $form = $el.closest('form'), $rating = self.$rating,
-                $clear = self.$clear, events = self.events, ns = $h.NAMESPACE,
-                mouseEvents = 'mouseenter' + ns + ' mouseleave' + ns, $stars = self.$rating.find('.star');
-            $h.handler($rating, 'touchstart touchmove touchend', events.initTouch);
-            $h.handler($rating, 'click touchstart', events.starClick);
-            $h.handler($rating, 'mousemove', events.starMouseMove);
-            $h.handler($rating, 'mouseleave', events.starMouseLeave);
-            $h.handler($rating, 'keydown', events.keydown);
-            $h.handler($rating, 'blur', events.blur);
+                $clear = self.$clear, events = self.events;
+            $h.handler($rating, 'touchstart touchmove touchend', $.proxy(events.initTouch, self));
+            $h.handler($rating, 'click touchstart', $.proxy(events.starClick, self));
+            $h.handler($rating, 'mousemove', $.proxy(events.starMouseMove, self));
+            $h.handler($rating, 'mouseleave', $.proxy(events.starMouseLeave, self));
             if (self.showClear && $clear.length) {
-                $h.handler($clear, 'click touchstart', events.clearClick);
-                $h.handler($clear, 'mousemove', events.clearMouseMove);
-                $h.handler($clear, 'mouseleave', events.clearMouseLeave);
+                $h.handler($clear, 'click touchstart', $.proxy(events.clearClick, self));
+                $h.handler($clear, 'mousemove', $.proxy(events.clearMouseMove, self));
+                $h.handler($clear, 'mouseleave', $.proxy(events.clearMouseLeave, self));
             }
             if ($form.length) {
-                $h.handler($form, 'reset', events.resetForm, true);
+                $h.handler($form, 'reset', $.proxy(events.resetForm, self), true);
             }
-            $stars.off(mouseEvents).on(mouseEvents, function (e) {
-                var $star = $(this), index = $star.index(), status = $star.parent().attr('class').slice(0, -1);
-                self.$element.trigger('rating:' + e.type, [index + 1, status, $star]);
-            });
-            $h.handler(self.$container, 'click', events.focus);
             return $el;
         },
         _getStars: function (type) {
@@ -474,32 +420,6 @@
             }
             return stars + '</span>';
         },
-        _initStarTitles: function (val) {
-            var self = this;
-            if (self.showCaptionAsTitle) {
-                self._initCaptionTitle();
-                return;
-            }
-            var starTitles = self.starTitles, setTitles;
-            setTitles = function ($stars) {
-                var i = 1, title;
-                $stars.each(function () {
-                    var $star = $(this), j, title;
-                    if (typeof starTitles === 'function') {
-                        j = i === Math.floor(val) ? val : i;
-                        title = starTitles(j);
-                    } else {
-                        title = starTitles[i];
-                    }
-                    if (title) {
-                        $star.attr({title: title});
-                    }
-                    i++;
-                });
-            };
-            setTitles(self.$emptyStars.find('.star'));
-            setTitles(self.$filledStars.find('.star'));
-        },
         _setStars: function (pos) {
             var self = this, out = arguments.length ? self.calculate(pos) : self.calculate(), $el = self.$element,
                 v = self._parseValue(out.val);
@@ -507,12 +427,12 @@
             self.$filledStars.css('width', out.width);
             self._setCaption(out.caption);
             self.cache = out;
-            self._initStarTitles(v);
             return $el;
         },
         showStars: function (val) {
             var self = this, v = self._parseValue(val);
             self.$element.val(v);
+            self._initCaptionTitle();
             return self._setStars();
         },
         calculate: function (pos) {
@@ -527,15 +447,14 @@
             factor = (self.diff * pos) / (maxWidth * self.step);
             factor = self.rtl ? Math.floor(factor) : Math.ceil(factor);
             val = $h.applyPrecision(parseFloat(self.min + factor * self.step), precision);
-            val = Math.max(Math.min(val, self.max), self.minThreshold);
+            val = Math.max(Math.min(val, self.max), self.min);
             return self.rtl ? (self.max - val) : val;
         },
         getWidthFromValue: function (val) {
             var self = this, min = self.min, max = self.max, factor, $r = self.$emptyStars, w;
-            if (!val || val <= self.min || min === max) {
+            if (!val || val <= min || min === max) {
                 return 0;
             }
-            val = Math.max(val, self.minThreshold);
             w = $r.outerWidth();
             factor = w ? $r.width() / w : 1;
             if (val >= max) {
@@ -545,13 +464,13 @@
         },
         fetchCaption: function (rating) {
             var self = this, val = parseFloat(rating) || self.clearValue, css, cap, capVal, cssVal, caption,
-                vCap = self.starCaptions, vCss = self.starCaptionClasses, width = self.getWidthFromValue(val);
+                vCap = self.starCaptions, vCss = self.starCaptionClasses;
             if (val && val !== self.clearValue) {
                 val = $h.applyPrecision(val, $h.getDecimalPlaces(self.step));
             }
-            cssVal = typeof vCss === 'function' ? vCss(val, width) : vCss[val];
-            capVal = typeof vCap === 'function' ? vCap(val, width) : vCap[val];
-
+            cssVal = typeof vCss === "function" ? vCss(val) : vCss[val];
+            capVal = typeof vCap === "function" ? vCap(val) : vCap[val];
+            // noinspection RegExpRedundantEscape
             cap = $h.isEmpty(capVal) ? self.defaultCaption.replace(/\{rating}/g, val) : capVal;
             css = $h.isEmpty(cssVal) ? self.clearCaptionClass : cssVal;
             caption = (val === self.clearValue) ? self.clearCaption : cap;
@@ -627,12 +546,11 @@
     };
 
     $.fn.rating.defaults = {
-        theme: 'krajee-svg',
+        theme: '',
         language: 'en',
         stars: 5,
-        tabindex: 0,
-        keyboardEnabled: true,
-        mouseEnabled: true,
+        filledStar: '<i class="glyphicon glyphicon-star"></i>',
+        emptyStar: '<i class="glyphicon glyphicon-star-empty"></i>',
         containerClass: '',
         size: 'md',
         animate: true,
@@ -641,27 +559,25 @@
         showClear: true,
         showCaption: true,
         starCaptionClasses: {
-            0.5: 'caption-badge caption-danger',
-            1: 'caption-badge caption-danger',
-            1.5: 'caption-badge caption-warning',
-            2: 'caption-badge caption-warning',
-            2.5: 'caption-badge caption-info',
-            3: 'caption-badge caption-info',
-            3.5: 'caption-badge caption-primary',
-            4: 'caption-badge caption-primary',
-            4.5: 'caption-badge caption-success',
-            5: 'caption-badge caption-success'
+            0.5: 'label label-danger badge-danger',
+            1: 'label label-danger badge-danger',
+            1.5: 'label label-warning badge-warning',
+            2: 'label label-warning badge-warning',
+            2.5: 'label label-info badge-info',
+            3: 'label label-info badge-info',
+            3.5: 'label label-primary badge-primary',
+            4: 'label label-primary badge-primary',
+            4.5: 'label label-success badge-success',
+            5: 'label label-success badge-success'
         },
-        filledStar: '<span class="krajee-icon krajee-icon-star"></span>', // krajee-svg theme
-        emptyStar: '<span class="krajee-icon krajee-icon-star"></span>',  // krajee-svg theme
-        clearButton: '<span class="krajee-icon-clear"></span>',           // krajee-svg theme
+        clearButton: '<i class="glyphicon glyphicon-minus-sign"></i>',
         clearButtonBaseClass: 'clear-rating',
         clearButtonActiveClass: 'clear-rating-active',
-        clearCaptionClass: 'caption-badge caption-secondary',
+        clearCaptionClass: 'label label-default badge-secondary',
         clearValue: null,
         captionElement: null,
         clearElement: null,
-        showCaptionAsTitle: false,
+        showCaptionAsTitle: true,
         hoverEnabled: true,
         hoverChangeCaption: true,
         hoverChangeStars: true,
@@ -681,13 +597,6 @@
             3.5: 'Three & Half Stars',
             4: 'Four Stars',
             4.5: 'Four & Half Stars',
-            5: 'Five Stars'
-        },
-        starTitles: {
-            1: 'One Star',
-            2: 'Two Stars',
-            3: 'Three Stars',
-            4: 'Four Stars',
             5: 'Five Stars'
         },
         clearButtonTitle: 'Clear',

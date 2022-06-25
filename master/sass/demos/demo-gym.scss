@@ -4,7 +4,7 @@
 $primary-font: 'Poppins', sans-serif;
 
 // Set Demo Font Family
-body {
+h1, h2, h3, h4, h5, h6, a, p, span {
 	font-family: $primary-font;
 }
 
@@ -179,7 +179,7 @@ h4 {
 }
 
 .custom-wide-section {
-	height: 16.6vw;
+	height: 15.8vw;
 	min-height: 290px;
 }
 
@@ -260,6 +260,7 @@ h4 {
 
 // Header
 #header .header-nav-main.header-nav-main-slide nav > ul > li > span > a {
+    font-family: $primary-font;
     text-transform: none;
     font-weight: 500;
     font-size: 14px;
@@ -403,7 +404,7 @@ h4 {
 
 				&::before {
 					font-family: simple-line-icons;
-					top: auto;
+					top: 27px;
 					@include if-ltr() {
 						content: "\e605";
 					}
@@ -750,7 +751,7 @@ h4 {
 	}
 }
 
-.social-icons.custom-social-icons {
+.custom-social-icons {
 	li {
 		box-shadow: none !important;
 

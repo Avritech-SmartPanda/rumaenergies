@@ -1,10 +1,5 @@
-body {
-	min-width: 100%;
-	width: 100vw;
-}
-
 .custom-secondary-font {
-	font-family: "Poppins", sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 .custom-box-shadow-1 {
@@ -49,7 +44,6 @@ body {
 		background: #212529 !important;
 	}
 }
-
 /* Header Social Icons */
 html.sticky-header-active #header .header-social-icons > li > a:hover > i {
 	color: #FFF !important;
@@ -134,7 +128,6 @@ html.sticky-header-active #header .header-social-icons > li > a > i {
 		transform: translate3d(-50%, -50%, 0) scale(1.1);
 	}
 }
-
 /* Custom Screens */
 .custom-screens-carousel {
 	position: relative;

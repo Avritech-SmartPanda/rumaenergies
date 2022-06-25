@@ -2,7 +2,7 @@
 @import "../config/imports";
 
 //CONFIG
-$font-secondary: "Poppins", Arial, sans-serif;
+$font-secondary: "Open Sans", Arial, sans-serif;
 
 $custom-font-size-1: 2em;
 $custom-font-size-2: 3.5em;
@@ -116,7 +116,7 @@ html.photography-demo-2 {
 					width: 24px;
 					height: 24px;
 					border: none;
-					background: transparent !important;
+					background: transparent;
 					color: #FFF !important;
 				}
 			}
@@ -156,7 +156,7 @@ html.photography-demo-2 {
 		&.tp-rightarrow {
 			
 			&:before {
-				font-family: 'Font Awesome 6 Free';
+				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 				content: "\f054";
 				font-size: 14px;
@@ -166,7 +166,7 @@ html.photography-demo-2 {
 		&.tp-leftarrow {
 			
 			&:before {
-				font-family: 'Font Awesome 6 Free';
+				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 				content: "\f053";
 				font-size: 14px;
@@ -209,7 +209,7 @@ html.photography-demo-2 {
 
 			button.owl-prev {
 				&:before {
-					font-family: "Font Awesome 6 Free" !important;
+					font-family: "Font Awesome 5 Free" !important;
 					content: if-ltr("\f053" !important, "\f054" !important);
 					left: -1px !important;
 				}
@@ -217,7 +217,7 @@ html.photography-demo-2 {
 
 			button.owl-next {
 				&:before {
-					font-family: "Font Awesome 6 Free" !important;
+					font-family: "Font Awesome 5 Free" !important;
 					content: if-ltr("\f054" !important, "\f053" !important);
 					left: -1px !important;
 				}
@@ -233,14 +233,14 @@ html.photography-demo-2 {
 		}
 
 		.prev:before {
-			font-family: "Font Awesome 6 Free" !important;
+			font-family: "Font Awesome 5 Free" !important;
 			content: if-ltr("\f053" !important, "\f054" !important);
 			left: 20px !important;
 			font-weight: 900 !important;
 		}
 
 		.next:before {
-			font-family: "Font Awesome 6 Free" !important;
+			font-family: "Font Awesome 5 Free" !important;
 			content: if-ltr("\f054" !important, "\f053" !important);
 			left: 24px !important;
 		    font-weight: 900 !important;
@@ -627,7 +627,7 @@ html.photography-demo-2 {
 											> a {
 												&:after {
 													content: if-ltr("\f105","\f104");
-													font-family: 'Font Awesome 6 Free';
+													font-family: 'Font Awesome 5 Free';
 													font-weight: 900;
 													border: none;
 													margin: 0;

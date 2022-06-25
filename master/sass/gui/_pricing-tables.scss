@@ -105,7 +105,7 @@
 		}
 	}
 
-	// Responsive
+	/* Responsive */
 	@media(max-width: 767px) {
 		.plan {
 			&.plan-featured {
@@ -177,51 +177,5 @@
 		        border-radius: 0 0 4px 4px;
 			}
 		}
-	}
-}
-
-/* Price Menu */
-.price-menu-item {
-	.price-menu-item-details {
-		display: flex;
-		justify-content: space-between;
-		position: relative;
-		.price-menu-item-title {
-			position: relative;
-			padding-bottom: 10px;
-		}
-		.price-menu-item-price {
-			position: relative;
-			top: -5px;
-			strong {
-				font-size: 1.3rem;
-				> span {
-					font-size: 0.6em;
-				}
-			}
-		}
-		.price-menu-item-line {
-			position: absolute;
-			width: 100%;
-			bottom: 0;
-			border-bottom: dashed 1px #777;
-		}
-	}
-
-	.price-menu-item-img {
-		img {
-			border-radius: 50%;
-			max-width: 60px;
-			height: auto;
-		}
-	}
-
-	.price-menu-item-desc {
-		position: relative;
-		margin-top: 5px;
-	}
-
-	& + .price-menu-item {
-		margin-top: 25px;
 	}
 }

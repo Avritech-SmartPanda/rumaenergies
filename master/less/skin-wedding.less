@@ -1,51 +1,11 @@
 @import "variables";
 
-@border-radius: 0;
+@color-primary: #ef3447;
 
-@color-primary: #60635c;
+@color-secondary: #62c3d3;
 
-@color-secondary: #f4f0ed;
+@color-tertiary: #3aabdd;
 
-@color-tertiary: #333;
-
-@color-quaternary: #999;
+@color-quaternary: #242424;
 
 @import "skin";
-
-// Header
-@media (min-width: 992px) {
-	#header {
-		.header-nav.header-nav-line {
-			&:not(.header-nav-light-text) {
-				nav {
-					> ul {
-						> li {
-							> a {
-								color: @color-primary;
-							}
-							&:hover {
-								> a {
-									color: lighten(@color-primary, 5%);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-// Slider
-.slider {
-	.slotholder:after {
-		background-color: @color-primary;
-	}
-}
-
-// Custom Thumb Info Style
-.custom-thumb-info-style-1 {
-	.thumb-info-wrapper:after {
-		background: @color-primary;
-	}
-}

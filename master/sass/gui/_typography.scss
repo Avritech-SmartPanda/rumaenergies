@@ -86,38 +86,18 @@ p.drop-caps {
 
 /* Default Font Style */
 .default-font {
-	font-family: $font-primary !important;
+	font-family: $font-primary;
 }
 
 /* Alternative Font Style */
 .alternative-font {
 	color: #CCC;
-	font-family: $font-secondary !important;
+	font-family: $font-secondary;
 	font-size: 1.6em;
 }
 
 .alternative-font-2 {
-	font-family: $font-tertiary !important;
-}
-
-.alternative-font-3 {
-	font-family: 'Segoe Script', 'Zapfino', 'Savoye LET' !important;
-}
-
-.alternative-font-4 {
-	font-family: 'Poppins', Arial, sans-serif !important;
-}
-
-.alternative-font-5 {
-	font-family: 'Open Sans', Arial, sans-serif !important;
-}
-
-.alternative-font-6 {
-	font-family: 'Montserrat', Arial, sans-serif !important;
-}
-
-.alternative-font-7 {
-	font-family: 'Jost', sans-serif !important;
+	font-family: $font-tertiary;
 }
 
 /* Gradient Text */
@@ -141,27 +121,4 @@ p.drop-caps {
 .text-default,
 .text-color-default {
 	color: #777 !important;
-}
-
-/* Marquee */
-.marquee {
-	overflow: hidden;
-	white-space: nowrap;
-}
-
-/* Mark */
-.mark {
-	&.mark-gradient {
-		position: relative;
-		z-index: 0;
-		&:before {
-			content: '';
-			height: 30%;
-			width: 100%;
-			bottom: 15%;
-			position: absolute;
-			left: -2%;
-			z-index: -1;
-		}
-	}
 }

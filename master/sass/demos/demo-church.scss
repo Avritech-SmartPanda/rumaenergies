@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $secondary-font;
 }
 
-body {
+a, p, span, input {
 	font-family: $primary-font;
 }
 
@@ -173,7 +173,6 @@ p {
 // Custom Buttons Styles
 .custom-btn-style-1 {
 	padding: 12px 25px !important;
-	font-weight: 800;
 }
 
 // Custom Text Colors
@@ -492,63 +491,6 @@ p {
 
 		a {
 		    color: #8C8C8C !important;
-		}
-	}
-}
-
-// Header
-@media(min-width: 992px) {
-	#header {
-		.header-nav-main {
-			nav {
-				> ul {
-					> li {
-						> a {
-							padding: 0.6rem 1.5rem;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-#header {
-	.header-nav-features {
-		&:before {
-			background: rgba(0, 0, 0, 0.23);
-		}
-	}
-}
-
-// Carousel Slider
-.custom-carousel-arrows-style-1 {
-	.owl-nav {
-		.owl-next, 
-		.owl-prev {
-			width: 45px !important;
-			height: 80px !important;
-			background: rgba(16, 16, 25, 0.5);
-			&:hover {
-				background: rgba(16, 16, 25, 1);
-			}
-
-			&:before {
-				content: '' !important;
-				position: absolute !important;
-			    top: 50% !important;
-			    left: 70% !important;
-			    width: 30px;
-			    height: 30px;
-			    border-top: 1px solid #FFF;
-			    border-left: 1px solid #FFF;
-				transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-			}
-		}
-
-		.owl-next {
-			transform: rotate(180deg) !important;
-		    transform-origin: 50% 25%;
 		}
 	}
 }
@@ -1345,7 +1287,7 @@ ul.custom-comments-style {
 }
 
 #googlemaps {
-	height: 96px;
+	min-height: 96px;
 }
 
 /*

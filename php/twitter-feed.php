@@ -2,7 +2,7 @@
 /*
 Name: 			Twitter Feed
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 require_once('tweet-php/TweetPHP.php');

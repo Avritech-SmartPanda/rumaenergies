@@ -26,7 +26,6 @@
 		border-bottom: 0;
 		margin: -1px;
 		a {
-			cursor: pointer;
 			display: block;
 			padding: 10px 20px;
 			&:hover, &:focus {
@@ -52,7 +51,7 @@
 		.card-header {
 			a {
 				padding: 5px 15px;
-				font-size: 0.85em;
+				font-size: 0.9em;
 			}
 		}
 		.card-body {
@@ -94,6 +93,7 @@
 		}
 	}
 
+	/* Modern */
 	&.accordion-modern {
 		.card {
 			&:first-of-type, 
@@ -104,124 +104,6 @@
 			.card-header {
 				background-color: #F7F7F7;
 				border-radius: 0;
-			}
-		}
-	}
-
-	// Modern 2
-	&.accordion-modern-2 {
-		> .card {
-			border: 1px solid transparent !important;
-			transition: ease border-color 300ms;
-			.card-header {
-				a {
-					position: relative;
-					padding: 23px 30px;
-					background-color: #f4f4f4;
-					transition: ease background-color 300ms, ease color 300ms;
-					border-radius: 4px;
-					&:after {
-						content: '+';
-						position: absolute;
-						top: 50%;
-						#{$right}: 25px;
-						font-size: inherit;
-						font-weight: inherit;
-						transform: translate3d(0, -50%, 0) rotate(45deg);
-						transform-origin: 50% 50%;
-						transition: ease transform 300ms;
-					}
-
-					&.collapsed {
-						&:after {
-							transform: translate3d(0, -50%, 0) rotate(0deg);
-						}
-					}
-				}
-
-				& + .collapse.show,
-				& + .collapsing {
-					border: 1px solid transparent;
-				    border-top: 0;
-				}
-			}
-
-			& + .card {
-				margin-top: 17px;
-			}
-		}
-	}
-	
-	&.accordion-modern-status {
-		> .card {
-			border: 1px solid transparent !important;
-			transition: ease border-color 300ms;
-			.card-header {
-				a {
-					position: relative;
-					padding: 23px 30px;
-					background-color: #f4f4f4;
-					transition: ease background-color 300ms, ease color 300ms;
-					&:after {
-						content: '+';
-						position: absolute;
-						top: 50%;
-						#{$right}: 25px;
-						font-size: inherit;
-						font-weight: inherit;
-						transform: translate3d(0, -50%, 0) rotate(45deg);
-						transform-origin: 50% 50%;
-						transition: ease transform 300ms;
-					}
-
-					&.collapsed {
-						&:after {
-							transform: translate3d(0, -50%, 0) rotate(0deg);
-						}
-					}
-				}
-
-				& + .collapse.show,
-				& + .collapsing {
-				    border: 0;
-				}
-			}
-
-			& + .card {
-				margin-top: 17px;
-			}
-		}
-
-		&.accordion-modern-status-borders {
-			> .card {
-				border: 1px solid rgba(0, 0, 0, 0.085) !important;
-				.card-header {
-					background: transparent !important;
-					a {
-						background: transparent !important;
-					}
-				}
-			}
-		}
-
-		&.accordion-modern-status-arrow {
-			> .card {
-				.card-header {
-					a {
-						&:after {
-							transform: translate3d(0, -50%, 0) rotate(180deg);
-							font-family: 'Font Awesome 6 Free';
-							content: "\f107";
-							font-weight: 900;
-						}
-
-						&.collapsed {
-							&:after {
-								transform: translate3d(0, -50%, 0) rotate(0deg);
-							}
-						}
-					}
-				}
 			}
 		}
 	}
@@ -239,5 +121,4 @@
 			}
 		}
 	}
-
 }

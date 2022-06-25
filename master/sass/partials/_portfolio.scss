@@ -83,33 +83,6 @@
 	.portfolio-item {
 		position: relative;
 		margin-bottom: 35px;
-
-		&.portfolio-item-updated,
-		&.portfolio-item-new {
-			&:after {
-				position: absolute;
-				z-index: 1;
-				top: 10px;
-				right: 10px;
-				background: #CCC;
-				content: "NEW";
-				display: block;
-				padding: 0px 8px;
-				font-size: 9px;
-				font-weight: 600;
-				text-transform: uppercase;
-				color: #FFF;
-				border-radius: 2px;
-				line-height: 22px;
-			}
-		}
-
-		&.portfolio-item-updated {
-			&:after {
-				content: "UPDATED";
-				background: #36C57A;
-			}
-		}
 	}
 }
 
@@ -173,7 +146,7 @@
 	}
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 991px) {
 
 	.portfolio-nav, .portfolio-nav-all {

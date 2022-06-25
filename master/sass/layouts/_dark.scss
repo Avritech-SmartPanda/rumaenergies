@@ -76,9 +76,6 @@ html.dark {
 	// Headings
 	h1, h2, h3, h4, h5, h6 {
 		color: #FFF;
-		&.card-title {
-			color: #FFF;
-		}
 	}
 
 	.alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6 {
@@ -406,6 +403,11 @@ html.dark {
 		border-color: $color-dark-5;
 	}
 
+	// Sliders
+	.theme-default .nivoSlider {
+		background-color: $dark-bg;
+	}
+
 	// Custom Map
 	section.section-custom-map {
 		background-color: $color-dark;
@@ -478,14 +480,12 @@ html.dark {
 
 	// Toggles
 	.toggle {
-		> label,
-		> .toggle-title {
+		> label {
 			background-color: $color-dark-4;
 		}
 		&.toggle-simple {
 				.toggle {
-					> label,
-					> .toggle-title {
+					> label {
 						color: #FFF;
 				}
 			}
@@ -783,7 +783,7 @@ html.dark {
 	}
 
 	.google-map-borders,
-	.ratio-borders {
+	.embed-responsive-borders {
 		border-color: $color-dark-4;
 	}
 
@@ -1045,7 +1045,7 @@ html.dark {
 
 }
 
-// Responsive
+/* Responsive */
 @media (min-width: 992px) {
 	html.dark {
 

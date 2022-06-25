@@ -1,20 +1,29 @@
 @import "variables";
 
-@color-dark: #333;
+@border-radius: 0;
 
-@color-primary: #FF4313;
+@color-primary: #333b48;
 
-@color-secondary: #00a4f2;
+@color-secondary: #219cd2;
 
-@color-tertiary: #43cb83;
+@color-tertiary: #2bca6e;
 
-@color-quaternary: #f4f4f4;
+@color-quaternary: #FFF;
 
 @import "skin";
 
-// Header
-@media (min-width: 992px) {
-	html #header .header-nav:not(.header-nav-line):not(.header-nav-links) .header-nav-main nav > ul:not(:hover) > li.dropdown-full-color.dropdown-quaternary > a.active {
-	    color: @color-primary;
+// Mobile Menu Background Color
+@media(max-width: 991px) {
+	#header {
+		.header-nav-main{
+			&.header-nav-main-mobile-dark:before {
+				background-color: @color-primary;
+			}
+		}
 	}
+}
+
+// Pagination
+.pagination > a.page-link {
+	color: @color-primary;
 }

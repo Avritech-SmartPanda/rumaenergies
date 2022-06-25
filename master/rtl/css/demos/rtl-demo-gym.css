@@ -1,4 +1,4 @@
-body {
+h1, h2, h3, h4, h5, h6, a, p, span {
 	font-family: "Poppins", sans-serif;
 }
 
@@ -163,7 +163,7 @@ h4 {
 }
 
 .custom-wide-section {
-	height: 16.6vw;
+	height: 15.8vw;
 	min-height: 290px;
 }
 
@@ -241,6 +241,7 @@ h4 {
 }
 
 #header .header-nav-main.header-nav-main-slide nav > ul > li > span > a {
+	font-family: "Poppins", sans-serif;
 	text-transform: none;
 	font-weight: 500;
 	font-size: 14px;
@@ -357,7 +358,7 @@ h4 {
 
 .owl-carousel.custom-arrows-style-1 .owl-nav button.owl-prev::before, .owl-carousel.custom-arrows-style-1 .owl-nav button.owl-next::before {
 	font-family: simple-line-icons;
-	top: auto;
+	top: 27px;
 	content: "\e606";
 }
 
@@ -661,17 +662,17 @@ h4 {
 	margin-bottom: 0;
 }
 
-.social-icons.custom-social-icons li {
+.custom-social-icons li {
 	box-shadow: none !important;
 }
 
-.social-icons.custom-social-icons li a {
+.custom-social-icons li a {
 	background: transparent !important;
 	font-size: 17px;
 	color: #FFF !important;
 }
 
-.social-icons.custom-social-icons li:hover a {
+.custom-social-icons li:hover a {
 	background: transparent !important;
 	opacity: 0.7;
 }

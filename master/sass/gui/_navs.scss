@@ -4,12 +4,8 @@
 		padding-right: 0;
 	}
 	> li {
-		> a {
-			text-decoration: none;
-		}
 		> a:hover, > a:focus {
 			background: transparent;
-			text-decoration: none;
 		}
 	}
 }
@@ -32,7 +28,7 @@ ul {
 				text-decoration: none;
 				line-height: 20px;
 				&:before {
-					font-family: 'Font Awesome 6 Free';
+					font-family: 'Font Awesome 5 Free';
 					content: "\f054";
 					font-weight: 900;
 					position: absolute;
@@ -243,6 +239,14 @@ ul {
 				min-height: 45px;
 				justify-content: center;
 			}
+		}
+	}
+}
+
+html.ie {
+	.nav-active-style-1 {
+		> li {
+			min-height: 100px;
 		}
 	}
 }

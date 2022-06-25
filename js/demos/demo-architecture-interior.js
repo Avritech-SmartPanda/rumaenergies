@@ -1,7 +1,7 @@
 /*
 Name: 			Architecture & Interior Design
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function( $ ) {
@@ -45,9 +45,14 @@ Theme Version:	9.7.0
 
 				// Infinite Scroll
 				if(self.$btn.hasClass('btn-portfolio-infinite-scroll')) {
-					theme.fn.intObs( '#portfolioLoadMore', "$('#portfolioLoadMore').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					} );
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}
@@ -138,9 +143,14 @@ Theme Version:	9.7.0
 
 				// Infinite Scroll
 				if(self.$btn.hasClass('btn-portfolio-infinite-scroll')) {
-					theme.fn.intObs( '#portfolioLoadMoreBlog', "$('#portfolioLoadMoreBlog').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					} );
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}

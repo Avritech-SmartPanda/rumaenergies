@@ -1,7 +1,7 @@
 /*
 Name: 			Hotel
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function( $ ) {
@@ -36,20 +36,21 @@ Theme Version:	9.7.0
 				swipe_min_touches: 1,
 				swipe_direction: "horizontal",
 				drag_block_vertical: false
-			},
+			}
+			,
 			bullets: {
 				enable:true,
 				hide_onmobile:true,
 				hide_under:778,
-				style:"uranus",
-				tmp: '<span class="tp-bullet-inner"></span>',
+				style:"hermes",
 				hide_onleave:false,
 				direction:"horizontal",
 				h_align:"center",
 				v_align:"bottom",
 				h_offset:0,
-				v_offset:45,
-				space:7
+				v_offset:20,
+				space:5,
+				tmp:''
 			}
 		}
 	});
@@ -96,8 +97,8 @@ Theme Version:	9.7.0
 		defaultDate: '+1d',
 		startDate: '+1d',
 		autoclose: true,
-		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom left' : 'bottom left'),
-		container: '#bookFormDetails',
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#bookForm',
 		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
@@ -105,8 +106,8 @@ Theme Version:	9.7.0
 		defaultDate: '+2d',
 		startDate: '+2d',
 		autoclose: true,
-		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom left' : 'bottom left'),
-		container: '#bookFormDetails',
+		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom right' : 'bottom'),
+		container: '#bookForm',
 		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
@@ -135,6 +136,16 @@ Theme Version:	9.7.0
 				error.insertAfter(element);
 			}
 		}
+	});
+
+	// Custom Video
+	$('.play-video-custom').magnificPopup({
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
 	});
 
 }).apply( this, [ jQuery ]);

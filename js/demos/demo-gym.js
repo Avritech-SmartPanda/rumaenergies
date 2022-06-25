@@ -1,7 +1,7 @@
 /*
 Name: 			Gym
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function( $ ) {
@@ -81,64 +81,32 @@ Theme Version:	9.7.0
 	$('#revolutionSlider').revolution(sliderOptions);
 
 	// Instagram Feed
-    $(window).on('load', function(){
-
-        if( $( '.custom-instagram-feed' ).length ) {
-        
-            theme.fn.intObs('.custom-instagram-feed', function(){
-				var $this = $( this ),
-					type  = $this.data('type');
-		
-				$.ajax({
-					url: 'php/instagram-token.php?get_token=true',
-					type: 'get',
-					dataType: 'json'
-				})
-				.done(function(data) {
-					if( data.status == 'success' ) {
-						
-						var InstagramToken = data.response,
-							feed = new Instafeed({
-							accessToken: InstagramToken,
-							target: $this[0],
-							template: 
-								'<div>' +
-									'<a target="_blank" href="{{link}}">' +
-										'<img src="{{image}}" class="img-fluid" alt="{{caption}}" />' +
-									'</a>' +
-								'</div>',
-							after: function(){
-								var $wrapper = $this;
-
-								$wrapper.addClass('owl-carousel').owlCarousel({
-									items: 2,
-									nav: false,
-									dots: false,
-									loop: true,
-									navText: [],
-									autoplay: true,
-									autoplayTimeout: 6000,
-									rtl: ( $('html').attr('dir') == 'rtl' ) ? true : false
-								});
-							}
-						});
-
-						feed.run();
-
-					} else {
-						console.log('Instagram Feed Error: Token file not found. If you did not setup your access token yet, please check the template documentation at "Instagram" section.');
-					}
-					
-				})
-				.fail(function() {
-					console.log('Instagram Feed Error: By some reason the AJAX could not complete with success. Make sure you are running your project trough a local or online server.');
-				});
-				
-			}, {});
-
+	var feed = new Instafeed({
+        get: 'user',
+        userId: 'self',
+        clientId: '11111111111111111111111111111111',
+        accessToken: '1111111111.1111111.11111111111111111111111111111111',
+        resolution: 'standard_resolution',
+        template: '<div style="background: url({{image}}); background-size: cover;"><a target="_blank" href="{{link}}"></a></div>',
+        after: function(){
+        	// Init Owl Carousel Instagram
+			$('.owl-instagram').owlCarousel({
+				items: 2,
+				nav: false,
+				dots: false,
+				loop: true,
+				navText: [],
+				autoplay: true,
+				autoplayTimeout: 6000,
+				rtl: ( $('html').attr('dir') == 'rtl' ) ? true : false
+			});
         }
-
     });
+
+    // Init Instafeed
+    if( $('#instafeed').get(0) ) {
+    	feed.run();
+    }
 
     // Custom Menu Style
     if($('.custom-header-style-1').get(0)) {

@@ -1,7 +1,7 @@
 /*
 Name: 			Photography
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 // Demo Config
@@ -139,9 +139,14 @@ theme.PluginScrollToTop.initialize = function() {};
 
 				// Lazy Load
 				if(self.$btn.hasClass('btn-portfolioDetail-lazy-load')) {
-					theme.fn.intObs( '#portfolioDetailLoadMore', "$('#portfolioDetailLoadMore').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					} );
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}
@@ -196,6 +201,19 @@ theme.PluginScrollToTop.initialize = function() {};
 								});
 							});
 
+							// Lazy Load
+ 							$(function() {
+		 						$('[data-plugin-lazyload]:not(.manual)').each(function() {
+	 								var $this = $(this),
+	 									opts;
+
+	 								var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+	 								if (pluginOptions)
+	 									opts = pluginOptions;
+
+	 								$this.themePluginLazyLoad(opts);
+	 							});
+	 						});
 						});
 
 						// Ajax On Page
@@ -253,9 +271,14 @@ theme.PluginScrollToTop.initialize = function() {};
 
 				// Lazy Load
 				if(self.$btn.hasClass('btn-portfolioInfiniteScroll-lazy-load')) {
-					theme.fn.intObs( '#portfolioInfiniteScrollLoadMore', "$('#portfolioInfiniteScrollLoadMore').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					}, true );
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}

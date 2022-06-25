@@ -1,6 +1,6 @@
 /* Testimonials */
 .testimonial {
-	margin-bottom: 20px;
+	margin-bottom: $spacement-lg;
 	blockquote {
 		background: #CCC;
 		border-radius: 5px;
@@ -91,7 +91,6 @@
 			img {
 				margin: 0 auto 15px;
 				max-width: 60px;
-				max-height: 60px;
 			}
 			p {
 				text-align: center;
@@ -141,15 +140,6 @@
 			margin-#{$left}: 20px;
 			border-top: 10px solid $color-default !important;
 		}
-
-		&.testimonial-style-3-light {
-			blockquote {
-				background: #FFF !important;
-			}
-			.testimonial-arrow-down {
-				border-top: 10px solid #FFF !important;
-			}
-		}
 	}
 }
 
@@ -169,7 +159,7 @@
 			padding: 12px 30px;
 			&:before {
 				top: 5px;
-				#{$left}: 9px;
+				left: 9px;
 				color: $color-font-default;
 				font-size: 35px;
 			}
@@ -367,7 +357,7 @@
 			}
 		}
 
-		// Remove Left Quote
+		/* Remove Left Quote */
 		&.testimonial-remove-left-quote {
 			blockquote {
 				&:before {
@@ -376,7 +366,7 @@
 			}
 		}
 
-		// Remove Right Quote
+		/* Remove Right Quote */
 		&.testimonial-remove-right-quote {
 			blockquote {
 				&:after {
@@ -384,36 +374,11 @@
 				}
 			}
 		}
-
-		&.testimonial-quotes-light {
-			blockquote {
-				&:before,
-				&:after {
-					color: $color-light !important;
-				}
-			}
-		}
-
 		&.testimonial-quotes-dark {
 			blockquote {
 				&:before,
 				&:after {
 					color: $color-dark !important;
-				}
-			}
-		}
-	}
-}
-
-@media(max-width: 767px) {
-	.testimonial {
-		&.testimonial-with-quotes {
-			&.testimonial-with-quotes-mobile-remove {
-				blockquote {
-					&:before,
-					&:after {
-						content: none;
-					}
 				}
 			}
 		}

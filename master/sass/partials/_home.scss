@@ -2,7 +2,7 @@
 section.section-custom-map {
 	background: transparent url(../img/map.png) center 0 no-repeat;
 	padding: 129px 0 0;
-	margin: 20px 0 0;
+	margin: $spacement-lg 0 0;
 	border: 0;
 	section.section {
 		border-top: 0;
@@ -18,7 +18,6 @@ section.section-custom-map {
 	padding: 2.4rem 0;
 	position: relative;
 	text-align: $left;
-	letter-spacing: -0.5px;
 	p {
 		color: #FFF;
 		display: inline-block;
@@ -80,7 +79,7 @@ section.section-custom-map {
 	border-radius: corner-values(0 0 .3rem .3rem);
 	margin-top: -10px;
 	margin: -10px auto 60px;
-	max-width: 1116px;
+	max-width: 1110px;
 	p {
 		padding-#{$left}: 20px;
 	}
@@ -89,7 +88,7 @@ section.section-custom-map {
 	}
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 991px) {
 	/* Home Intro */
 	.home-intro {
@@ -260,7 +259,7 @@ section.section-custom-map {
 	}
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 991px) {
 
 	.home-concept {

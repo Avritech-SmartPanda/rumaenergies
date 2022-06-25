@@ -1,7 +1,7 @@
 /*
 Name: 			Wedding
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 (function( $ ) {
@@ -15,16 +15,15 @@ Theme Version:	9.7.0
 		sliderType: 'standard',
 		sliderLayout: 'fullwidth',
 		delay: 9000,
-		responsiveLevels: [1920, 1200, 992, 500],
-		gridwidth: [1920, 1200, 992, 500],
-		gridheight: 780,
+		gridwidth: 1170,
+		gridheight: 810,
 		disableProgressBar: 'on',
 		spinner: 'spinner3',
-		parallax: {
-			type: "mouse",
-			origo: "slidercenter",
-			speed: 2000,
-			levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+		parallax:{
+			type:"mouse",
+			origo:"slidercenter",
+			speed:2000,
+			levels:[2,3,4,5,6,7,12,16,10,50],
 		},
 		navigation: {
 			arrows: {
@@ -32,7 +31,7 @@ Theme Version:	9.7.0
 				enable: false,
 				hide_onmobile: false,
 				hide_onleave: false,
-				tmp: '<div class="tp-arr-allwrapper"><div class="tp-arr-imgholder"></div></div>',
+				tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div></div>',
 				left: {
 					h_align: "left",
 					v_align: "center",
@@ -49,159 +48,430 @@ Theme Version:	9.7.0
 		}
 	});
 
-	$('#revolutionSlider2').revolution({
-		sliderType: 'standard',
-		sliderLayout: 'fullwidth',
-		delay: 9000,
-		responsiveLevels: [1920, 1200, 992, 500],
-		gridwidth: [1920, 1200, 992, 500],
-		gridheight: 575,
-		disableProgressBar: 'on',
-		spinner: 'spinner3',
-		parallax: {
-			type: "mouse",
-			origo: "slidercenter",
-			speed: 2000,
-			levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+	/*
+	Header Logo
+	*/
+	var $headerLogo = $('.header-logo');
+
+	var showLogo = function() {
+		$headerLogo.addClass('loaded').addClass('animated fadeInUp');
+	};
+
+	fontSpy('Great Vibes', {
+		success: function() {
+			showLogo();
 		},
-		navigation: {
-			arrows: {
-				style: "hades",
-				enable: false,
-				hide_onmobile: false,
-				hide_onleave: false,
-				tmp: '<div class="tp-arr-allwrapper"><div class="tp-arr-imgholder"></div></div>',
-				left: {
-					h_align: "left",
-					v_align: "center",
-					h_offset: 10,
-					v_offset: 0
-				},
-				right: {
-					h_align: "right",
-					v_align: "center",
-					h_offset: 10,
-					v_offset: 0
-				}
-			}
+		failure: function() {
+			showLogo();	
 		}
 	});
 
-	// Our History Gallery
-	var clickedItem,
-		removeShowThumbsTimeout,
-		portfolioLightboxOptions = {
-		type: 'inline',
+	/*
+	Custom History Load More 
+	*/
+	var historyLoadMore = {
 
-		fixedContentPos: true,
-		fixedBgPos: true,
+		pages: 0,
+		currentPage: 0,
+		$wrapper: $('#historyLoadMoreWrapper'),
+		$btn: $('#historyLoadMore'),
+		$loader: $('#historyLoadMoreLoader'),
+		$btnWrapper: $('#historyLoadMoreBtnWrapper'),
 
-		overflowY: 'hidden',
+		build: function() {
 
-		closeBtnInside: true,
-		preloader: false,
+			var self = this
 
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'wedding-portfolio-gallery',
+			self.pages = self.$wrapper.data('total-pages');
 
-		callbacks: {
-			open: function(){
-				$('#thumbGalleryDetail').owlCarousel().trigger('refresh.owl.carousel');
-				$('#thumbGalleryDetail').owlCarousel().trigger('to.owl.carousel', [clickedItem, 0]);
+			if(self.pages <= 1) {
 
-				$('#thumbGalleryThumbs').owlCarousel('refresh');
+				self.$btnWrapper.remove();
+				return;
 
-				removeShowThumbsTimeout = setTimeout(function(){
-					$('#thumbGalleryThumbs').removeClass('show-thumbs');
-				}, 3000);
+			} else {
 
-				$(document).on('keydown', function( event ) {
-				    if(event.keyCode == 37) {
-				        $('#thumbGalleryDetail').trigger('prev.owl')
-				    }
-				    if(event.keyCode == 39) {
-				        $('#thumbGalleryDetail').trigger('next.owl')
-				    }
+				self.$btn.on('click', function() {
+					self.loadMore();
 				});
 
-				
-			},
-			close: function(){
-				clearTimeout(removeShowThumbsTimeout);
-				$('#thumbGalleryThumbs').addClass('show-thumbs');
-				$(document).off('keydown');
+				// Lazy Load
+				if(self.$btn.hasClass('btn-history-lazy-load')) {
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
+				}
+
+				zoomHistoryGallery(self.$wrapper);
+
 			}
+
+		},
+		loadMore: function() {
+
+			var self = this;
+
+			self.$btn.hide();
+			self.$loader.show();
+
+			// Ajax
+			$.ajax({
+				url: 'demo-wedding-history-ajax-load-more.html',
+				complete: function(data) {
+
+					var $items = $(data.responseText);
+
+					setTimeout(function() {
+
+						self.$wrapper.append($items)
+
+						self.currentPage++;
+
+						if(self.currentPage < self.pages) {
+							self.$btn.show().blur();
+						} else {
+							self.$btnWrapper.remove();
+						}
+
+						// Lightbox
+						zoomHistoryGallery(self.$wrapper);
+
+						self.$loader.hide();
+
+						// Refresh Parallax
+						$(window).trigger('scroll');
+
+					}, 1000);
+
+				}
+			});
+
 		}
+
 	}
 
-	var clickedItem = '';
-	if( $('a[href="#ourHistoryLightbox"]').length ) {
-		$('a[href="#ourHistoryLightbox"]').on('click', function(){
-			clickedItem = $(this).parent().index();
+	var zoomHistoryGallery = function($wrapper) {
+		$wrapper.magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom mfp-img-mobile',
+			image: {
+				verticalFit: true,
+				titleSrc: function(item) {
+					
+				}
+			},
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true,
+				duration: 300,
+				opener: function(element) {
+					return element.find('img');
+				}
+			},
+			callbacks: {
+				open: function() {
+					$('html').addClass('lightbox-opened');
+				},
+				close: function() {
+					$('html').removeClass('lightbox-opened');
+				}
+			}
 		});
-
-		$('a[href="#ourHistoryLightbox"]').magnificPopup(portfolioLightboxOptions);
 	}
 
 	/*
-	Thumb Gallery
+	Custom Blog Load More 
 	*/
-	if( $('#ourHistoryLightbox').get(0) ) {
-		var $thumbGalleryDetail = $('#thumbGalleryDetail'),
-			$thumbGalleryThumbs = $('#thumbGalleryThumbs'),
-			flag = false,
-			duration = 300;
+	var blogLoadMore = {
 
-		$thumbGalleryDetail
-			.owlCarousel({
-				items: 1,
-				margin: 10,
-				nav: true,
-				dots: false,
-				loop: false,
-				navText: [],
-				rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
-				onRefreshed: function(e){
-					setTimeout(function(){
-						$('.mfp-wrap.wedding-portfolio-gallery').css('opacity',1);
-					}, 300);
+		pages: 0,
+		currentPage: 0,
+		$wrapper: $('#blogLoadMoreWrapper'),
+		$btn: $('#blogLoadMore'),
+		$loader: $('#blogLoadMoreLoader'),
+		$btnWrapper: $('#blogLoadMoreBtnWrapper'),
+
+		build: function() {
+
+			var self = this
+
+			self.pages = self.$wrapper.data('total-pages');
+
+			if(self.pages <= 1) {
+
+				self.$btnWrapper.remove();
+				return;
+
+			} else {
+
+				// init isotope
+				self.$wrapper.isotope();
+
+				self.$btn.on('click', function() {
+					self.loadMore();
+				});
+
+				// Lazy Load
+				if(self.$btn.hasClass('btn-blog-lazy-load')) {
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
-			})
-			.on('changed.owl.carousel', function(e) {
-				if (!flag) {
-					flag = true;
-					$thumbGalleryThumbs.trigger('to.owl.carousel', [e.item.index-1, duration, true]);
 
-					// add class to active thumb
-					$thumbGalleryThumbs.find('.owl-item').removeClass('active-thumb');
-					$thumbGalleryThumbs.find('.owl-item:eq('+ e.item.index +')').addClass('active-thumb');
+			}
 
-					flag = false;
+		},
+		loadMore: function() {
+
+			var self = this;
+
+			self.$btn.hide();
+			self.$loader.show();
+
+			// Ajax
+			$.ajax({
+				url: 'demo-wedding-blog-ajax-load-more.html',
+				complete: function(data) {
+
+					var $items = $(data.responseText);
+
+					setTimeout(function() {
+
+						self.$wrapper.append($items)
+
+						self.$wrapper.isotope('appended', $items);
+
+						self.currentPage++;
+
+						if(self.currentPage < self.pages) {
+							self.$btn.show().blur();
+						} else {
+							self.$btnWrapper.remove();
+						}
+
+						// Carousel
+						$(function() {
+							$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
+								var $this = $(this),
+									opts;
+
+								var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+								if (pluginOptions)
+									opts = pluginOptions;
+
+								$this.themePluginCarousel(opts);
+							});
+						});
+
+						self.$loader.hide();
+
+						// Refresh Parallax
+						$(window).trigger('scroll');
+
+					}, 1000);
+
 				}
 			});
 
-		$thumbGalleryThumbs
-			.owlCarousel({
-				margin: 15,
-				items: 15,
-				nav: false,
-				center: false,
-				dots: false,
-				pagination: false,
-				rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
-			})
-			.on('click', '.owl-item', function() {
-				$thumbGalleryDetail.trigger('to.owl.carousel', [$(this).index(), duration, true]);
-
-				// add class to active thumb
-				$thumbGalleryThumbs.find('.owl-item').removeClass('active-thumb');
-				$(this).addClass('active-thumb');
-			});
-
-		// Set first item with active-thumb
-		$thumbGalleryThumbs.find('.owl-item:eq(0)').addClass('active-thumb');
+		}
 
 	}
+
+	setTimeout(function(){
+		if($('#historyLoadMoreWrapper').get(0)) {
+			historyLoadMore.build();
+		}
+
+		if($('#blogLoadMoreWrapper').get(0)) {
+			blogLoadMore.build();
+		}
+	}, 500);
+
+	/*
+	Popup with video or map
+	*/
+	$('.popup-gmaps').magnificPopup({
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
+	});
+
+	/*
+	Guestbook Form
+	*/
+	$('#guestbookSendMessage').validate({
+		submitHandler: function(form) {
+
+			var $form = $(form),
+				$messageSuccess = $('#guestBookSuccess'),
+				$messageError = $('#guestBookError'),
+				$submitButton = $(this.submitButton),
+				$errorMessage = $('#guestBookErrorMessage'),
+				submitButtonText = $submitButton.val();
+
+			$submitButton.val( $submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...' ).attr('disabled', true);
+
+			// Ajax Submit
+			$.ajax({
+				type: 'POST',
+				url: $form.attr('action'),
+				data: {
+					name: $form.find('#guestbookName').val(),
+					email: 'you@domain.com',
+					subject: 'Wedding - Guestbook',
+					message: $form.find('#guestbookMessage').val()
+				}
+			}).always(function(data, textStatus, jqXHR) {
+
+				$errorMessage.empty().hide();
+
+				if (data.response == 'success') {
+
+					$messageSuccess.removeClass('d-none');
+					$messageError.addClass('d-none');
+
+					// Reset Form
+					$form.find('.form-control')
+						.val('')
+						.blur()
+						.parent()
+						.removeClass('has-success')
+						.removeClass('has-danger')
+						.find('label.error')
+						.remove();
+
+					if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
+						$('html, body').animate({
+							scrollTop: $messageSuccess.offset().top - 80
+						}, 300);
+					}
+
+					$form.find('.form-control').removeClass('error');
+
+					$submitButton.val( submitButtonText ).attr('disabled', false);
+					
+					return;
+
+				} else if (data.response == 'error' && typeof data.errorMessage !== 'undefined') {
+					$errorMessage.html(data.errorMessage).show();
+				} else {
+					$errorMessage.html(data.responseText).show();
+				}
+
+				$messageError.removeClass('d-none');
+				$messageSuccess.addClass('d-none');
+
+				if (($messageError.offset().top - 80) < $(window).scrollTop()) {
+					$('html, body').animate({
+						scrollTop: $messageError.offset().top - 80
+					}, 300);
+				}
+
+				$form.find('.has-success')
+					.removeClass('has-success');
+					
+				$submitButton.val( submitButtonText ).attr('disabled', false);
+
+			});
+		}
+	});
+
+	/*
+	RSVP Form
+	*/
+	$('#rsvpForm').validate({
+		submitHandler: function(form) {
+
+			var $form = $(form),
+				$messageSuccess = $('#rsvpSuccess'),
+				$messageError = $('#rsvpError'),
+				$submitButton = $(this.submitButton),
+				$errorMessage = $('#rsvpErrorMessage'),
+				submitButtonText = $submitButton.val();
+
+			$submitButton.val( $submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...' ).attr('disabled', true);
+
+			// Ajax Submit
+			$.ajax({
+				type: 'POST',
+				url: $form.attr('action'),
+				data: {
+					name: $form.find('#rsvpName').val(),
+					email: 'you@domain.com',
+					subject: 'Wedding - RSVP',
+					message: 'Name' + $form.find('#rsvpName').val() + '<br>Number of guests:' + $form.find('#rsvpName').val() + '<br>Attending to:' + $form.find('#rsvpAttendingTo').val()
+				}
+			}).always(function(data, textStatus, jqXHR) {
+
+				$errorMessage.empty().hide();
+
+				if (data.response == 'success') {
+
+					$messageSuccess.removeClass('d-none');
+					$messageError.addClass('d-none');
+
+					// Reset Form
+					$form.find('.form-control')
+						.val('')
+						.blur()
+						.parent()
+						.removeClass('has-success')
+						.removeClass('has-danger')
+						.find('label.error')
+						.remove();
+
+					if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
+						$('html, body').animate({
+							scrollTop: $messageSuccess.offset().top - 80
+						}, 300);
+					}
+
+					$form.find('.form-control').removeClass('error');
+
+					$submitButton.val( submitButtonText ).attr('disabled', false);
+					
+					return;
+
+				} else if (data.response == 'error' && typeof data.errorMessage !== 'undefined') {
+					$errorMessage.html(data.errorMessage).show();
+				} else {
+					$errorMessage.html(data.responseText).show();
+				}
+
+				$messageError.removeClass('d-none');
+				$messageSuccess.addClass('d-none');
+
+				if (($messageError.offset().top - 80) < $(window).scrollTop()) {
+					$('html, body').animate({
+						scrollTop: $messageError.offset().top - 80
+					}, 300);
+				}
+
+				$form.find('.has-success')
+					.removeClass('has-success');
+					
+				$submitButton.val( submitButtonText ).attr('disabled', false);
+
+			});
+		}
+	});
 
 }).apply( this, [ jQuery ]);

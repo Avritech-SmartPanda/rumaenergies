@@ -16,7 +16,7 @@
 		url('linea-ecommerce.svg#linea-ecommerce') format('svg');
 }
 
-.lei {
+.lec {
 	font-family: "linea-ecommerce";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -29,259 +29,259 @@
 }
 
 
-.lei-bag:before {
+.lec-ecommerce-bag:before {
 	content: "a";
 }
-.lei-bag-check:before {
+.lec-ecommerce-bag-check:before {
 	content: "b";
 }
-.lei-bag-cloud:before {
+.lec-ecommerce-bag-cloud:before {
 	content: "c";
 }
-.lei-bag-download:before {
+.lec-ecommerce-bag-download:before {
 	content: "d";
 }
-.lei-bag-minus:before {
+.lec-ecommerce-bag-minus:before {
 	content: "e";
 }
-.lei-bag-plus:before {
+.lec-ecommerce-bag-plus:before {
 	content: "f";
 }
-.lei-bag-refresh:before {
+.lec-ecommerce-bag-refresh:before {
 	content: "g";
 }
-.lei-bag-remove:before {
+.lec-ecommerce-bag-remove:before {
 	content: "h";
 }
-.lei-bag-search:before {
+.lec-ecommerce-bag-search:before {
 	content: "i";
 }
-.lei-bag-upload:before {
+.lec-ecommerce-bag-upload:before {
 	content: "j";
 }
-.lei-banknote:before {
+.lec-ecommerce-banknote:before {
 	content: "k";
 }
-.lei-banknotes:before {
+.lec-ecommerce-banknotes:before {
 	content: "l";
 }
-.lei-basket:before {
+.lec-ecommerce-basket:before {
 	content: "m";
 }
-.lei-basket-check:before {
+.lec-ecommerce-basket-check:before {
 	content: "n";
 }
-.lei-basket-cloud:before {
+.lec-ecommerce-basket-cloud:before {
 	content: "o";
 }
-.lei-basket-download:before {
+.lec-ecommerce-basket-download:before {
 	content: "p";
 }
-.lei-basket-minus:before {
+.lec-ecommerce-basket-minus:before {
 	content: "q";
 }
-.lei-basket-plus:before {
+.lec-ecommerce-basket-plus:before {
 	content: "r";
 }
-.lei-basket-refresh:before {
+.lec-ecommerce-basket-refresh:before {
 	content: "s";
 }
-.lei-basket-remove:before {
+.lec-ecommerce-basket-remove:before {
 	content: "t";
 }
-.lei-basket-search:before {
+.lec-ecommerce-basket-search:before {
 	content: "u";
 }
-.lei-basket-upload:before {
+.lec-ecommerce-basket-upload:before {
 	content: "v";
 }
-.lei-bath:before {
+.lec-ecommerce-bath:before {
 	content: "w";
 }
-.lei-cart:before {
+.lec-ecommerce-cart:before {
 	content: "x";
 }
-.lei-cart-check:before {
+.lec-ecommerce-cart-check:before {
 	content: "y";
 }
-.lei-cart-cloud:before {
+.lec-ecommerce-cart-cloud:before {
 	content: "z";
 }
-.lei-cart-content:before {
+.lec-ecommerce-cart-content:before {
 	content: "A";
 }
-.lei-cart-download:before {
+.lec-ecommerce-cart-download:before {
 	content: "B";
 }
-.lei-cart-minus:before {
+.lec-ecommerce-cart-minus:before {
 	content: "C";
 }
-.lei-cart-plus:before {
+.lec-ecommerce-cart-plus:before {
 	content: "D";
 }
-.lei-cart-refresh:before {
+.lec-ecommerce-cart-refresh:before {
 	content: "E";
 }
-.lei-cart-remove:before {
+.lec-ecommerce-cart-remove:before {
 	content: "F";
 }
-.lei-cart-search:before {
+.lec-ecommerce-cart-search:before {
 	content: "G";
 }
-.lei-cart-upload:before {
+.lec-ecommerce-cart-upload:before {
 	content: "H";
 }
-.lei-cent:before {
+.lec-ecommerce-cent:before {
 	content: "I";
 }
-.lei-colon:before {
+.lec-ecommerce-colon:before {
 	content: "J";
 }
-.lei-creditcard:before {
+.lec-ecommerce-creditcard:before {
 	content: "K";
 }
-.lei-diamond:before {
+.lec-ecommerce-diamond:before {
 	content: "L";
 }
-.lei-dollar:before {
+.lec-ecommerce-dollar:before {
 	content: "M";
 }
-.lei-euro:before {
+.lec-ecommerce-euro:before {
 	content: "N";
 }
-.lei-franc:before {
+.lec-ecommerce-franc:before {
 	content: "O";
 }
-.lei-gift:before {
+.lec-ecommerce-gift:before {
 	content: "P";
 }
-.lei-graph1:before {
+.lec-ecommerce-graph1:before {
 	content: "Q";
 }
-.lei-graph2:before {
+.lec-ecommerce-graph2:before {
 	content: "R";
 }
-.lei-graph3:before {
+.lec-ecommerce-graph3:before {
 	content: "S";
 }
-.lei-graph-decrease:before {
+.lec-ecommerce-graph-decrease:before {
 	content: "T";
 }
-.lei-graph-increase:before {
+.lec-ecommerce-graph-increase:before {
 	content: "U";
 }
-.lei-guarani:before {
+.lec-ecommerce-guarani:before {
 	content: "V";
 }
-.lei-kips:before {
+.lec-ecommerce-kips:before {
 	content: "W";
 }
-.lei-lira:before {
+.lec-ecommerce-lira:before {
 	content: "X";
 }
-.lei-megaphone:before {
+.lec-ecommerce-megaphone:before {
 	content: "Y";
 }
-.lei-money:before {
+.lec-ecommerce-money:before {
 	content: "Z";
 }
-.lei-naira:before {
+.lec-ecommerce-naira:before {
 	content: "0";
 }
-.lei-pesos:before {
+.lec-ecommerce-pesos:before {
 	content: "1";
 }
-.lei-pound:before {
+.lec-ecommerce-pound:before {
 	content: "2";
 }
-.lei-receipt:before {
+.lec-ecommerce-receipt:before {
 	content: "3";
 }
-.lei-receipt-bath:before {
+.lec-ecommerce-receipt-bath:before {
 	content: "4";
 }
-.lei-receipt-cent:before {
+.lec-ecommerce-receipt-cent:before {
 	content: "5";
 }
-.lei-receipt-dollar:before {
+.lec-ecommerce-receipt-dollar:before {
 	content: "6";
 }
-.lei-receipt-euro:before {
+.lec-ecommerce-receipt-euro:before {
 	content: "7";
 }
-.lei-receipt-franc:before {
+.lec-ecommerce-receipt-franc:before {
 	content: "8";
 }
-.lei-receipt-guarani:before {
+.lec-ecommerce-receipt-guarani:before {
 	content: "9";
 }
-.lei-receipt-kips:before {
+.lec-ecommerce-receipt-kips:before {
 	content: "!";
 }
-.lei-receipt-lira:before {
+.lec-ecommerce-receipt-lira:before {
 	content: "\"";
 }
-.lei-receipt-naira:before {
+.lec-ecommerce-receipt-naira:before {
 	content: "#";
 }
-.lei-receipt-pesos:before {
+.lec-ecommerce-receipt-pesos:before {
 	content: "$";
 }
-.lei-receipt-pound:before {
+.lec-ecommerce-receipt-pound:before {
 	content: "%";
 }
-.lei-receipt-rublo:before {
+.lec-ecommerce-receipt-rublo:before {
 	content: "&";
 }
-.lei-receipt-rupee:before {
+.lec-ecommerce-receipt-rupee:before {
 	content: "'";
 }
-.lei-receipt-tugrik:before {
+.lec-ecommerce-receipt-tugrik:before {
 	content: "(";
 }
-.lei-receipt-won:before {
+.lec-ecommerce-receipt-won:before {
 	content: ")";
 }
-.lei-receipt-yen:before {
+.lec-ecommerce-receipt-yen:before {
 	content: "*";
 }
-.lei-receipt-yen2:before {
+.lec-ecommerce-receipt-yen2:before {
 	content: "+";
 }
-.lei-recept-colon:before {
+.lec-ecommerce-recept-colon:before {
 	content: ",";
 }
-.lei-rublo:before {
+.lec-ecommerce-rublo:before {
 	content: "-";
 }
-.lei-rupee:before {
+.lec-ecommerce-rupee:before {
 	content: ".";
 }
-.lei-safe:before {
+.lec-ecommerce-safe:before {
 	content: "/";
 }
-.lei-sale:before {
+.lec-ecommerce-sale:before {
 	content: ":";
 }
-.lei-sales:before {
+.lec-ecommerce-sales:before {
 	content: ";";
 }
-.lei-ticket:before {
+.lec-ecommerce-ticket:before {
 	content: "<";
 }
-.lei-tugriks:before {
+.lec-ecommerce-tugriks:before {
 	content: "=";
 }
-.lei-wallet:before {
+.lec-ecommerce-wallet:before {
 	content: ">";
 }
-.lei-won:before {
+.lec-ecommerce-won:before {
 	content: "?";
 }
-.lei-yen:before {
+.lec-ecommerce-yen:before {
 	content: "@";
 }
-.lei-yen2:before {
+.lec-ecommerce-yen2:before {
 	content: "[";
 }
 

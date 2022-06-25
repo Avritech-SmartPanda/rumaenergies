@@ -48,6 +48,15 @@ html.photography-demo-3 {
 	h1, h2, h3, h4, h5, h6, a, p, span {
 		font-family: $font-secondary;
 	}
+	
+	// IE
+	@media(min-width: 992px) {
+		&.ie {
+			#header {
+				z-index: 998;
+			}
+		}
+	}
 
 	#main {
 		@media(min-width: 992px) {

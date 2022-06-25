@@ -1,7 +1,7 @@
 /*
 Name: 			Portfolio - Examples
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 (function($) {
 
@@ -370,67 +370,65 @@ Theme Version:	9.7.0
 	/*
 	Ajax on Modal
 	*/
-	theme.fn.execOnceTroughEvent( 'a[data-ajax-on-modal]', 'mouseover.trigger.ajax.on.modal', function(){
-		$('a[data-ajax-on-modal]').magnificPopup({
-			type: 'ajax',
-			tLoading: '<div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
-			mainClass: 'portfolio-ajax-modal',
-			closeBtnInside: true,
-			gallery: {
-				enabled: true
-			},
-			callbacks: {
-				ajaxContentAdded: function() {
+	$('a[data-ajax-on-modal]').magnificPopup({
+		type: 'ajax',
+		tLoading: '<div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
+		mainClass: 'portfolio-ajax-modal',
+		closeBtnInside: true,
+		gallery: {
+			enabled: true
+		},
+		callbacks: {
+			ajaxContentAdded: function() {
 
-					// Wrapper
-					var $wrapper = $('.portfolio-ajax-modal');
+				// Wrapper
+				var $wrapper = $('.portfolio-ajax-modal');
 
-					// Close
-					$wrapper.find('a[data-ajax-portfolio-close]').on('click', function(e) {
+				// Close
+				$wrapper.find('a[data-ajax-portfolio-close]').on('click', function(e) {
+					e.preventDefault();
+					$.magnificPopup.close();
+				});
+
+				// Remove Next and Close
+				if($('a[data-ajax-on-modal]').length <= 1) {
+					
+					$wrapper.find('a[data-ajax-portfolio-prev], a[data-ajax-portfolio-next]').remove();
+
+				} else {
+
+					// Prev
+					$wrapper.find('a[data-ajax-portfolio-prev]').on('click', function(e) {
 						e.preventDefault();
-						$.magnificPopup.close();
+						$('.mfp-arrow-left').trigger('click');
+						return false;
 					});
 
-					// Remove Next and Close
-					if($('a[data-ajax-on-modal]').length <= 1) {
-						
-						$wrapper.find('a[data-ajax-portfolio-prev], a[data-ajax-portfolio-next]').remove();
-
-					} else {
-
-						// Prev
-						$wrapper.find('a[data-ajax-portfolio-prev]').on('click', function(e) {
-							e.preventDefault();
-							$('.mfp-arrow-left').trigger('click');
-							return false;
-						});
-
-						// Next
-						$wrapper.find('a[data-ajax-portfolio-next]').on('click', function(e) {
-							e.preventDefault();
-							$('.mfp-arrow-right').trigger('click');
-							return false;
-						});
-
-					}
-
-					// Carousel
-					$(function() {
-						$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
-							var $this = $(this),
-								opts;
-
-							var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
-							if (pluginOptions)
-								opts = pluginOptions;
-
-							$this.themePluginCarousel(opts);
-						});
+					// Next
+					$wrapper.find('a[data-ajax-portfolio-next]').on('click', function(e) {
+						e.preventDefault();
+						$('.mfp-arrow-right').trigger('click');
+						return false;
 					});
 
 				}
+
+				// Carousel
+				$(function() {
+					$('[data-plugin-carousel]:not(.manual), .owl-carousel:not(.manual)').each(function() {
+						var $this = $(this),
+							opts;
+
+						var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+						if (pluginOptions)
+							opts = pluginOptions;
+
+						$this.themePluginCarousel(opts);
+					});
+				});
+
 			}
-		});
+		}
 	});
 
 	/*
@@ -464,9 +462,14 @@ Theme Version:	9.7.0
 
 				// Infinite Scroll
 				if(self.$btn.hasClass('btn-portfolio-infinite-scroll')) {
-					theme.fn.intObs( '#portfolioLoadMore', "$('#portfolioLoadMore').trigger('click');", {
-						rootMargin: '0px 0px 0px 0px'
-					}, true );
+					self.$btn.appear(function() {
+						self.$btn.trigger('click');
+					}, {
+						data: undefined,
+						one: false,
+						accX: 0,
+						accY: 0
+					});
 				}
 
 			}
@@ -516,10 +519,6 @@ Theme Version:	9.7.0
 						});
 
 						self.$loader.removeClass('portfolio-load-more-loader-showing').hide();
-
-						self.$wrapper.waitForImages(function(){
-							self.$wrapper.isotope('layout');
-						});
 
 					}, 1000);
 
@@ -698,64 +697,6 @@ Theme Version:	9.7.0
 				}
 
 			}, 1000);
-
-		});
-
-	}
-
-	/*
-	Lazy Load Masonry
-	*/
-	if($('#portfolioLazyLoadMasonry').get(0)) {
-
-		var $window = $(window);
-
-		$window.on('load', function() {
-
-			var $grid = $('#portfolioLazyLoadMasonry .portfolio-list').isotope({
-				itemSelector: '.isotope-item',
-				layoutMode: 'masonry',
-				filter: '*',
-				hiddenStyle: {
-					opacity: 0
-				},
-				visibleStyle: {
-					opacity: 1
-				},
-				stagger: 30,
-				isOriginLeft: ($('html').attr('dir') == 'rtl' ? false : true)
-			});
-
-			var runningIsotope = false;
-
-			function reLayouIsotope() {
-
-				if(!runningIsotope) {
-
-					$grid.isotope('layout');
-					runningIsotope = true;
-
-					setTimeout(function() {
-						runningIsotope = false;
-					}, 1000);
-
-				}
-
-			}
-
-			$grid.isotope('on', 'layoutComplete', function () {
-				reLayouIsotope();
-			});
-
-			$window.on('scroll', function () {
-				reLayouIsotope();
-			});
-
-			$window.on('resize', function() {
-				setTimeout(function() {
-					reLayouIsotope();
-				}, 300);
-			});
 
 		});
 

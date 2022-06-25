@@ -5,8 +5,6 @@
  *
  *  Made by Ilya Makarov
  *  Under MIT License
- * 
- * Modified By Okler
  */
 !(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -327,8 +325,7 @@
           muted: settings.muted,
           defaultMuted: settings.muted,
           playbackRate: settings.playbackRate,
-          defaultPlaybackRate: settings.playbackRate,
-          playsInline: true
+          defaultPlaybackRate: settings.playbackRate
         });
     } catch (e) {
       throw new Error(NOT_IMPLEMENTED_MSG);
@@ -352,30 +349,18 @@
     })
 
     // Resize a video, when it's loaded
-    .on('canplaythrough.' + PLUGIN_NAME, function() {
+    .one('canplaythrough.' + PLUGIN_NAME, function() {
       vide.resize();
     })
 
     // Make it visible, when it's already playing
-    .on('playing.' + PLUGIN_NAME, function() {
+    .one('playing.' + PLUGIN_NAME, function() {
       $video.css({
         visibility: 'visible',
         opacity: 1
       });
       $wrapper.css('background-image', 'none');
     });
-
-    // Check if is mobile iPhone or iPad (fix for autoplay)
-    var userAgent = window.navigator.userAgent;
-	if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
-		if( settings.autoplay && settings.muted == true ) {
-			$video.css({
-		        visibility: 'visible',
-		        opacity: 1
-		    });
-		    $wrapper.css('background-image', 'none');
-		}
-	}
 
     // Resize event is available only for 'window'
     // Use another code solutions to detect DOM elements resizing

@@ -1,67 +1,139 @@
 //COMMON IMPORTS
 @import "../config/imports";
 
-$font-alternative-1: 'Tangerine', cursive;
-
-// Alternative Font
-.custom-font-1 {
-	font-family: $font-alternative-1;
-	font-weight: bold;
+// Custom Font Family
+.alternative-font {
+	font-family: 'Great Vibes', cursive !important;
+	font-size: inherit;
 }
 
+// Custom Font Size
 .custom-font-size-1 {
-	font-size: 70px !important;
+	font-size: 4em;
+}
+
+@media (max-width: 767px) {
+	.custom-font-size-1 {
+		font-size: 3em;
+	}
 }
 
 .custom-font-size-2 {
-	font-size: 50px !important;
+	font-size: 7em;
+	line-height: 100px;
 }
 
-.custom-font-size-3 {
-	font-size: 40px !important;
+@media (max-width: 767px) {
+	.custom-font-size-2 {
+		font-size: 4em;
+	}
 }
 
-.custom-font-size-4 {
-    font-size: 0.6em !important;
+// Custom Text Color
+.custom-text-color-1 {
+	color: #6a696f !important;	
+}
+
+.custom-text-color-2 {
+	color: #3e415c !important;
+}
+
+.custom-default-text-color {
+	color: #777 !important;
+}
+
+// Custom Box Shadow
+.box-shadow-custom {
+	box-shadow: 10px 10px 74px -30px rgba(0,0,0,0.33);
+}
+
+// Custom Border Radius
+.custom-border-radius {
+	border-radius: 30px !important;
+}
+
+// Custom Overlay
+.custom-overlay-1 {
+	&:before {
+		background: url(../../img/demos/wedding/custom-overlay-1.png) repeat scroll 0 0 transparent !important;
+		z-index: -4;
+	}
+}
+
+// Thumb
+.thumb-info {
+	border: 0;
 }
 
 // Logo
-.custom-logo {
-	font-family: $font-alternative-1;
-	font-size: 50px;
-	font-weight: 700;
-	display: block;
-	padding: 10px 0;
+.header-logo {
+	visibility: hidden;
+	&.loaded {
+		visibility: visible;
+	}
+}
+
+.header-logo-text {
+	display: inline-block;
+	font-family: "Great Vibes",cursive !important;
+	font-size: 36px;
+	line-height: 36px;
 }
 
 // Header
-@media (min-width: 992px) {
+#header {
+	.header-body {
+		border-top: 0;
+		height: auto !important;
+	}
+}
 
+@media (min-width: 992px) {
 	#header {
-		.header-nav-bar {
-			.header-nav {
-				min-height: 80px;
+
+		.header-nav-main {
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100vw;
+				top: 0;
+				#{$left}: 50%;
+				border-top: 1px solid #e1e4e9;
+				transform: translateX(-50%);
 			}
-		}
-		.header-nav.header-nav-line.header-nav-bottom-line {
+
 			nav {
+				display: block;
+
 				> ul {
 					> li {
 						> a {
-							letter-spacing: 3px;
-							font-weight: 400;
-							padding: 0 0.9rem !important;
-							margin: 0 0.9rem !important;
-							&:before {
-								height: 1px;
-								transform: translateX(-2px);
+							position: relative;
+							background: none !important;
+							color: #666 !important;
+							font-size: 13px;
+							font-style: normal;
+							font-weight: 600;
+							transition: ease all 300ms;
+
+							&:hover {
+								color: #ef3447 !important;
 							}
-						}
-						&:hover {
-							> a {
+
+							&.active {
+								color: #ef3447 !important;
+
 								&:before {
-									height: 1px;
-									transform: translateX(-2px);
+									content: '\f004';
+									display: block;
+									font-family: 'Font Awesome 5 Free';
+									position: absolute;
+									top: -13px;
+									left: 50%;
+									color: #ef3447;
+									line-height: 0;
+									transform: translateX(-50%);
 								}
 							}
 						}
@@ -70,360 +142,637 @@ $font-alternative-1: 'Tangerine', cursive;
 			}
 		}
 	}
-
 }
 
-@media(max-width: 991px) {
+@media (max-width: 991px) {
+
+	html.sticky-header-enabled {
+
+		#header {
+			.header-body {
+				border-bottom-color: #e9e9e9;
+				box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+				position: fixed;
+				top: 0 !important;
+
+				.header-container:nth-child(1) {
+					> .header-row {
+						> .header-column {
+							margin-right: 90px;
+							margin-bottom: -70px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
 	#header {
-		.header-logo {
-			top: 26px;
+		min-height: 70px !important;
+		.header-body {
+			min-height: 0 !important;
 		}
-		.header-btn-collapse-nav {
-			top: -23px;
-		}
-	}
-}
-
-// Slider
-.slider .slotholder:after {
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.4;
-    background: #333;
-    z-index: 1000;
-}
-
-.tp-caption-custom-1 {
-	font-family: $font-alternative-1;
-	color: transparent;
-	-webkit-text-stroke: 1px #FFF;
-	text-stroke: 1px #FFF;
-	opacity: 0.3 !important;
-}
-
-.tp-caption-custom-2 {
-	font-family: $font-alternative-1;
-	color: #FFF;
-}
-
-.tp-caption-custom-3-el-1 {
-	color: #333;
-	display: inline-block;
-	letter-spacing: 2.5px;
-	padding: 15px 80px;
-	background: url(../../img/demos/wedding/backgrounds/bg-1.svg) no-repeat 0 0;
-	background-size: cover;
-}
-
-// Custom BG
-.custom-bg-1 {
-	position: absolute;
-	width: 1200px;
-	left: -800px;
-	top: -285px;
-	transform: rotate(45deg);
-}
-
-.custom-bg-2 {
-	position: relative;
-	background: url(../../img/demos/wedding/backgrounds/bg-2.svg) no-repeat 0 0;
-	background-size: 100% 100%;
-}
-
-.custom-bg-3 {
-	position: absolute;
-	width: 1200px;
-	right: -45%;
-	transform: rotate(40deg);
-}
-
-.custom-bg-4 {
-	position: absolute;
-	width: 1200px;
-}
-
-// Custom Countdown
-.custom-countdown-1 {
-	.days, .hours, .minutes, .seconds {
-		span {
-			font-weight: bold;
-		}
-	}
-}
-
-// Custom Text
-.custom-text-1 {
-	font-family: $font-alternative-1;
-	color: transparent;
-	-webkit-text-stroke: 1px #f4f0ed;
-	text-stroke: 1px #FFF;
-	font-size: 23vw;
-	white-space: nowrap;
-	position: absolute;
-	bottom: 3%;
-}
-
-// Custom Thumb Info Style
-.custom-thumb-info-style-1:hover {
-	.thumb-info-wrapper:after {
-		opacity: 0.5 !important;
-	}
-}
-
-// Photography Lightbox
-.mfp-wrap.wedding-portfolio-gallery {
-	opacity: 0;
-	transition: ease opacity 300ms;
-}
-
-#ourHistoryLightbox {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	top: 50%;
-	left: 50%;
-	transform: translate3d(-50%, -50%, 0);
-
-	.mfp-close {
-		background-color: #60635c;
-		color: #FFF;
-		top: 0;
-		#{$right}: 0;
-		opacity: 1;
-
-		&:hover {
-			opacity: 0.7;
+		.header-nav-main {
+			&:before {
+				content: none;
+			}
 		}
 	}
 
-	.thumb-gallery {
+}
+
+// Rev Slider Dark Transparent Image Overlay
+.rev_slider {
+	.slotholder:after {
+		width: 100%;
+		height: 100%;
+		content: "";
 		position: absolute;
-		width: 100vw;
-		height: 95vh;
+		#{$left}: 0;
+		top: 0;
+		pointer-events: none;    
+		background: rgba(0, 0, 0, 0.25);
+	}
+}
+
+// Rev Slider
+.slider-container.light {
+	background: #FBF9F3;
+
+	ul {
+		perspective: 1000px;
+	}
+
+	.slider-border {
+		position: absolute;
+		width: 100%;
+		#{$left}: 0;
+		bottom: 0;
+		height: 16px;
+		background: url(../../img/demos/wedding/slider-border-bg.png);
+		background-repeat: repeat-x;
+		z-index: 30;
+	}
+}
+
+@media (max-width: 991px) {
+	.slider-container {
+		.slider-border {
+			bottom: -1px;
+		}
+	}
+}
+
+// Custom Wedding Quotes
+.testimonial.testimonial-with-quotes.custom-wedding-quotes {
+	blockquote {
+		&:before {
+			content: '';
+			background: url(../../img/demos/wedding/testimonial/custom-red-quotes.png);
+			background-size: 100% 100%;
+			width: 36px;
+			height: 22px;
+			left: 13px;
+			right: auto;
+		}
+
+		&:after {
+			content: '';
+			background: url(../../img/demos/wedding/testimonial/custom-red-quotes.png);
+			background-size: 100% 100%;
+			width: 36px;
+			height: 22px;
+			bottom: -0.5rem;
+			right: 13px;
+			transform: rotate(180deg);
+		}
+	}
+} 
+
+// Hidden Load More Dots
+.load-more-loader {
+	display: none;
+	height: 113px;
+}
+
+// Bride & Groom Section
+.thumb-bride-groom {
+	&:hover {
+		.bride-groom-photo {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.bride-groom-bg {
+		position: relative;
+		display: inline-block;
+
+		&:before {
+			content: '';
+			display: block;
+			background: url(../../img/demos/wedding/bride-groom/bride-bg.jpg);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 58%;
+			left: 50%;
+			width: 125%;
+			height: 100%;
+			z-index: -1;
+			transform: translate3d(-50%, -50%, 0);
+		}
+
+		&.groom-background-style {
+			&:before {
+				background: url(../../img/demos/wedding/bride-groom/groom-bg.jpg);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				top: 50%;
+			}
+		}
+	}
+
+	.bride-groom-photo {
+		position: relative;
+		display: inline-block;
+		width: 80%;
+		border: 10px solid #FFF;
+		border-radius: 100%;
+		margin: 50px 0;
+		overflow: hidden;
+		z-index: 1;
+
+		img {
+			width: 100%;
+			transition: all 0.3s ease;
+		}
+	}
+
+	.social-icons {
+		li {
+			box-shadow: none;
+			border: 2px solid #b7b8bc;
+			transition: all 0.3s ease;
+
+			a {
+				color: #b7b8bc !important;
+			}
+
+			&:hover {
+				border: 2px solid #ef3447;
+
+				a {
+					background: none;
+					color: #ef3447 !important;
+				}
+			}
+		}
+	}
+}
+
+// Wedding Countdown Section
+.custom-countdown-style-1 {
+	> span {
+		position: relative;
+		font-weight: 100;
+
+		&:before {
+			content: '\f004';
+			display: block;
+			font-family: 'Font Awesome 5 Free';
+			position: absolute;
+			top: 50%;
+			#{$left}: -5px;
+			font-size: 0.7rem;
+			color: #5fc3d2;
+			line-height: 0;
+			transform: translateY(-50%);
+		}
+
+		&:nth-child(1) {
+			&:before {
+				content: none;
+			}
+		}
+
+		> span {
+			font-size: 3.9rem;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.custom-countdown-style-1 {
+		> span {
+			padding: 0 15px;
+
+			&:nth-child(3) {
+				&:before {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.custom-countdown-style-1 {
+		> span {
+			&:before {
+				content: none;
+			}
+		}
+	}
+}
+
+// Testimonials Section
+.testimonials {
+	.testimonial {
+		blockquote {
+			&:before, &:after {
+				filter: brightness(7);
+			}
+
+			p {
+				font-style: normal;
+				font-family: $font-primary;
+				line-height: 1.6;
+			}
+		}
+	}	
+}
+
+// The Wedding Section - Wedding Schedule
+.the-wedding {
+	&.section {
+		background: #fbf9f3;
+		border: none;
+		z-index: 0;
+	}
+}
+
+.wedding-schedule {
+	position: relative;
+	height: 500px;
+	max-height: 500px;
+	max-width: 430px;
+	padding: 10px;
+	margin: 0 auto;
+
+	&:before {
+		content: '';
+		display: block;
+		background: url(../../img/demos/wedding/the-wedding/the-wedding-bg-colors.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+		position: absolute;
+		width: 146%;
+		height: 125%;
 		top: 50%;
+		left: 50%;
+		z-index: -3;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.wedding-schedule-photo {
+		height: 185px;
+		overflow: hidden;
+		text-align: center;
+		img {
+			position: relative;
+			width: auto;
+			border-radius: 6% 6% 0 0;
+			z-index: -2;
+			height: 190px;
+		}
+	}
+
+	.wedding-schedule-background {
+		position: absolute;
+		background: url(../../img/demos/wedding/the-wedding/the-wedding-bg-1.png);
+		background-size: 100% 100%;
+		width: 98%;
+		height: 99%;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.icon-heart-white-border {
+		position: absolute;
+		top: 34.7%;
 		left: 50%;
 		transform: translate3d(-50%, -50%, 0);
 	}
 
-	.owl-carousel {
-		.owl-item {
-			> div {
-				position: relative;
-				height: 95vh;
+	span {
+		display: block;
+	}
 
-				.img-thumbnail {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					width: 100%;
-					padding: 0;
-					border: none;
-					background: transparent;
-					text-align: center;
-					transform: translate3d(-50%, -50%, 0);
-				}
+	.btn {
+		border-radius: 20px;
+	}
+}
+
+@media (max-width: 991px) {
+
+}
+
+// Our History Section
+#historyLoadMoreWrapper {
+	li {
+		list-style: none;
+	}
+}
+
+// History Item
+.history-item {
+	.thumb-info {
+		.thumb-info-wrapper {
+			&:after {
+				background: linear-gradient(to top, rgba(36, 44, 71, 0.6) 0, transparent 100%) repeat scroll 0 0 rgba(36, 44, 71, 0);
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				#{$left}: 0;
+				width: 100%;
+				height: 80px;
+				z-index: 1;
+				opacity: 1;
+				top: auto;
 			}
-
-			img {
-				display: inline-block !important;
-				width: auto;
-				max-width: 95vw;
-				max-height: 90vh;
-				box-shadow: 0px 0px 40px -10px #000;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				#{$left}: 0;
+				width: 100%;
+				box-shadow: 0 0 190px 40px rgba(0, 0, 0, 1);
+				z-index: 1;
 			}
 		}
 
-		.owl-nav {
-			button.owl-prev,
-			button.owl-next {
-				border: 0 none;
-				border-radius: 0;
-				color: #FFF;
-				height: 80px;
-				line-height: 68px;
-				margin-top: -20px;
-				transition: all 0.3s ease;
+		.thumb-info-title {
+			background: none;
+			padding: 9px 22px 9px;
+			bottom: 6%;
+			font-size: 15px;
+			z-index: 2;
+		}
 
-				&:before {
-					font-family: simple-line-icons;
-					content: "\e605";
-					font-size: 11px;
-					@include if-rtl() {
-						content: "\e606";
-					}
-				}
+		.thumb-info-likes {
+			position: absolute;
+			bottom: 6%;
+			#{$right}: 0;
+			padding: 9px 22px 9px;
+			z-index: 2;
+
+			i {
+				border-radius: 100%;
+			}
+		}
+	}
+}
+
+// Guestbook
+#guestbookSendMessage {
+	position: relative;
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		background: url(../../img/demos/wedding/guestbook/guestbook-flower.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+		width: 17%;
+		height: 34%;
+		z-index: 10;
+	}
+
+	&:before {
+		top: 15px;
+		#{$right}: 15px;
+	}
+
+	&:after {
+		bottom: 15px;
+		#{$left}: 15px;
+		transform: rotate(180deg);
+	}
+
+	.form-content {
+		position: relative;
+		z-index: 1;
+
+		.form-row {
+			position: relative;
+			z-index: 1;
+		}
+
+		.form-control-custom {
+			text-align: $left;
+			background: none;
+			border: none;
+			border-bottom: 1px solid #b5b5b5;
+			box-shadow: none;
+			padding-left: 0;
+			padding-right: 0;
+			@include placeholder-color(#6a696f);
+		}
+	}
+}
+
+.guestbook-messages {
+	position: relative;
+	
+	.testimonial {
+		p {
+			font-family: "Open Sans", Arial, sans-serif;
+			line-height: 1.7;
+			font-style: normal;
+			text-align: $left;
+		}
+
+		blockquote {
+			&:after {
+				bottom: -0.3em;
 			}
 
-			button.owl-next {
-				&::before {
-					font-family: simple-line-icons;
-					content: "\e606";
-					@include if-rtl() {
-						content: "\e605";
-					}
+			p {
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					width: 76%;
+					border-bottom: 1px solid #fed0d2;
+					transform: translateX(-50%);
 				}
+			}
+		}
+
+		.testimonial-author {
+			p {
+				text-align: $left;
+				padding-#{$left}: 60px;
 			}
 		}
 	}
 
-	#thumbGalleryThumbs {
-		width: 98%;
-		height: 13vh;
-		position: fixed;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
+	.owl-carousel {
+		.owl-nav {
+			position: absolute;
+			bottom: -10%;
+			#{$right}: 10%;
+			top: auto;
+			
+			button.owl-prev, button.owl-next {
+				background: #76cbd9 !important;
+				border-radius: 100% !important;
+				border-color: transparent !important;
+				width: 40px;
+				height: 40px;
 
-		&:hover, &.show-thumbs {
-			.owl-stage-outer {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
+				&:active {
+					background: #76cbd9 !important;
+					border-color: transparent !important;
+					color: #FFF !important;
+				}
 
-		&.boxed-thumbs {
-			&:hover {
-				.owl-stage-outer {
-					opacity: 1;
-					transform: translateY(0);
+				&:hover {
+					background: #76cbd9 !important;
+					border-color: transparent !important;
+					color: #FFF !important;
 				}
 			}
 
-			.owl-item {
-				> div {
-					height: 20vh;
+			button.owl-prev {
+				color: #FFF !important;
 
-					.img-thumbnail {
-						height: 5.3vw;
-						overflow: hidden;
-						border: none;
-						box-shadow: none;
-					}
-				}
-
-				img {
-					width: auto;
-					height: 100%;
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate3d(-50%, -50%, 0);
-				}
-			}
-		}
-
-		&.full-proportion-thumbs {
-			&:hover {
-				.owl-stage-outer {
-					opacity: 1;
-					transform: translateY(-32%);
+				&:before {
+					content: if-ltr("\f104", "\f105");
+					font-size: 1.5rem;
+					line-height: 1.4;
+					top: -1px;
 				}
 			}
 
-			.owl-item {
-				&.active-thumb {
-					opacity: 0.5;
-				}
+			button.owl-next {
+				color: #FFF !important;
 
-				> div {
-					height: 20vh;
-
-					.img-thumbnail {
-						border: none;
-						box-shadow: none;
-						overflow: visible;
-					}
-				}
-
-				img {
-					max-height: 20vh;
-					box-shadow: none;
-					height: auto;
-					width: 100%;
+				&:before {
+					content: if-ltr("\f105", "\f104");
+					font-size: 1.5rem;
+					line-height: 1.4;
+					top: -1px;
 				}
 			}
 		}
+	}
+}
 
-		.owl-stage-outer {
-			opacity: 0;
-			transform: translateY(100%);
-			transition: ease all 300ms;
+// Custom Inner Border
+.custom-inner-border {
+	position: absolute;
+    top: 10px;
+    #{$right}: 10px;
+    bottom: 10px;
+    #{$left}: 10px;
+    border: 1px solid #fed0d2;
+    z-index: 0;
+}
+
+// Blog
+.blog-list {
+	li {
+		list-style: none;
+	}
+}
+
+.blog-item {
+	.blog-item-content {
+		display: block;
+		.author {
+			width: 100%;
+			display: block;
+			border-top: 1px solid #e1e1e1;
+			border-bottom: 1px solid #e1e1e1;
+		}
+	}
+}
+
+// RSVP
+.rsvp {
+	&.section {
+		background: #fbf9f3;
+		border: none;
+		z-index: 0;
+	}
+
+	#rsvpForm {
+		input.form-control, select.form-control {
+			background: #FFF;
+			border-color: #ebe8e0;
+			height: 55px;
+		}
+	}
+}
+
+// Custom content grid - Gift Registry
+.content-grid {
+	.content-grid-item {
+		min-height: 160px;
+		border: 1px solid #e4e4e4;
+		border-left: none;
+
+		&:first-child {
+			border-left: 1px solid #e4e4e4;
 		}
 
-		.owl-stage {
-			margin: 0 auto;
-		}
-
-		.owl-item {
-			&.active-thumb {
-				opacity: 0.5;
-			}
-
-			> div {
-				height: 20vh;
-
-				.img-thumbnail {
-					height: 5.3vw;
-					box-shadow: 0px 0px 50px -10px #000;
-					overflow: hidden;
-				}
-			}
-
-			img {
-				width: 100%;
-				height: auto;
-				max-height: none;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate3d(-50%, -50%, 0);
-			}
+		&:before, &:after {
+			content: none;
 		}
 	}
 }
 
 @media (max-width: 991px) {
-	#ourHistoryLightbox {
-		.thumb-gallery {
-			transform: translate3d(-50%, -50%, 0);
-		}
-
-		.owl-carousel {
-			.owl-item {
-				img {
-					box-shadow: 0px 0px 20px #000;
-					max-width: 89vw;
-				}
-			}
-		}
-
-		#thumbGalleryThumbs {
-			.owl-item {
-				img {
-					box-shadow: none;
-				}
+	.content-grid {
+		.content-grid-item {
+			&:nth-child(4) {
+				border-left: 1px solid #e4e4e4;
 			}
 
-			.owl-stage-outer {
-				display: none;
+			&:nth-child(4), &:nth-child(5), &:nth-child(6) {
+				border-top: 0;
 			}
 		}
 	}
 }
 
 @media (max-width: 767px) {
-	#ourHistoryLightbox {
-		.owl-carousel {
-			.owl-item {
-				img {
-					max-width: 80vw;
-				}
+	.content-grid {
+		.content-grid-item {
+			border-top: 0;
+			border-left: 1px solid #e4e4e4;
+
+			&:first-child {
+				border-top: 1px solid #e4e4e4;
 			}
 		}
+	}
+}
+
+// Isotope Item
+@media (max-width: 767px) {
+	.isotope-item {
+		text-align: $left;
 	}
 }

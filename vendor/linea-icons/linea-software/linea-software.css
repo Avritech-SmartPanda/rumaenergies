@@ -16,7 +16,7 @@
 		url('linea-software.svg#linea-software') format('svg');
 }
 
-.lsi {
+.lso {
 	font-family: "linea-software";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -29,304 +29,304 @@
 }
 
 
-.lsi-add-vectorpoint:before {
+.lso-software-add-vectorpoint:before {
 	content: "a";
 }
-.lsi-box-oval:before {
+.lso-software-box-oval:before {
 	content: "b";
 }
-.lsi-box-polygon:before {
+.lso-software-box-polygon:before {
 	content: "c";
 }
-.lsi-box-rectangle:before {
+.lso-software-box-rectangle:before {
 	content: "d";
 }
-.lsi-box-roundedrectangle:before {
+.lso-software-box-roundedrectangle:before {
 	content: "e";
 }
-.lsi-character:before {
+.lso-software-character:before {
 	content: "f";
 }
-.lsi-crop:before {
+.lso-software-crop:before {
 	content: "g";
 }
-.lsi-eyedropper:before {
+.lso-software-eyedropper:before {
 	content: "h";
 }
-.lsi-font-allcaps:before {
+.lso-software-font-allcaps:before {
 	content: "i";
 }
-.lsi-font-baseline-shift:before {
+.lso-software-font-baseline-shift:before {
 	content: "j";
 }
-.lsi-font-horizontal-scale:before {
+.lso-software-font-horizontal-scale:before {
 	content: "k";
 }
-.lsi-font-kerning:before {
+.lso-software-font-kerning:before {
 	content: "l";
 }
-.lsi-font-leading:before {
+.lso-software-font-leading:before {
 	content: "m";
 }
-.lsi-font-size:before {
+.lso-software-font-size:before {
 	content: "n";
 }
-.lsi-font-smallcapital:before {
+.lso-software-font-smallcapital:before {
 	content: "o";
 }
-.lsi-font-smallcaps:before {
+.lso-software-font-smallcaps:before {
 	content: "p";
 }
-.lsi-font-strikethrough:before {
+.lso-software-font-strikethrough:before {
 	content: "q";
 }
-.lsi-font-tracking:before {
+.lso-software-font-tracking:before {
 	content: "r";
 }
-.lsi-font-underline:before {
+.lso-software-font-underline:before {
 	content: "s";
 }
-.lsi-font-vertical-scale:before {
+.lso-software-font-vertical-scale:before {
 	content: "t";
 }
-.lsi-horizontal-align-center:before {
+.lso-software-horizontal-align-center:before {
 	content: "u";
 }
-.lsi-horizontal-align-left:before {
+.lso-software-horizontal-align-left:before {
 	content: "v";
 }
-.lsi-horizontal-align-right:before {
+.lso-software-horizontal-align-right:before {
 	content: "w";
 }
-.lsi-horizontal-distribute-center:before {
+.lso-software-horizontal-distribute-center:before {
 	content: "x";
 }
-.lsi-horizontal-distribute-left:before {
+.lso-software-horizontal-distribute-left:before {
 	content: "y";
 }
-.lsi-horizontal-distribute-right:before {
+.lso-software-horizontal-distribute-right:before {
 	content: "z";
 }
-.lsi-indent-firstline:before {
+.lso-software-indent-firstline:before {
 	content: "A";
 }
-.lsi-indent-left:before {
+.lso-software-indent-left:before {
 	content: "B";
 }
-.lsi-indent-right:before {
+.lso-software-indent-right:before {
 	content: "C";
 }
-.lsi-lasso:before {
+.lso-software-lasso:before {
 	content: "D";
 }
-.lsi-layers1:before {
+.lso-software-layers1:before {
 	content: "E";
 }
-.lsi-layers2:before {
+.lso-software-layers2:before {
 	content: "F";
 }
-.lsi-layout:before {
+.lso-software-layout:before {
 	content: "G";
 }
-.lsi-layout-2columns:before {
+.lso-software-layout-2columns:before {
 	content: "H";
 }
-.lsi-layout-3columns:before {
+.lso-software-layout-3columns:before {
 	content: "I";
 }
-.lsi-layout-4boxes:before {
+.lso-software-layout-4boxes:before {
 	content: "J";
 }
-.lsi-layout-4columns:before {
+.lso-software-layout-4columns:before {
 	content: "K";
 }
-.lsi-layout-4lines:before {
+.lso-software-layout-4lines:before {
 	content: "L";
 }
-.lsi-layout-8boxes:before {
+.lso-software-layout-8boxes:before {
 	content: "M";
 }
-.lsi-layout-header:before {
+.lso-software-layout-header:before {
 	content: "N";
 }
-.lsi-layout-header-2columns:before {
+.lso-software-layout-header-2columns:before {
 	content: "O";
 }
-.lsi-layout-header-3columns:before {
+.lso-software-layout-header-3columns:before {
 	content: "P";
 }
-.lsi-layout-header-4boxes:before {
+.lso-software-layout-header-4boxes:before {
 	content: "Q";
 }
-.lsi-layout-header-4columns:before {
+.lso-software-layout-header-4columns:before {
 	content: "R";
 }
-.lsi-layout-header-complex:before {
+.lso-software-layout-header-complex:before {
 	content: "S";
 }
-.lsi-layout-header-complex2:before {
+.lso-software-layout-header-complex2:before {
 	content: "T";
 }
-.lsi-layout-header-complex3:before {
+.lso-software-layout-header-complex3:before {
 	content: "U";
 }
-.lsi-layout-header-complex4:before {
+.lso-software-layout-header-complex4:before {
 	content: "V";
 }
-.lsi-layout-header-sideleft:before {
+.lso-software-layout-header-sideleft:before {
 	content: "W";
 }
-.lsi-layout-header-sideright:before {
+.lso-software-layout-header-sideright:before {
 	content: "X";
 }
-.lsi-layout-sidebar-left:before {
+.lso-software-layout-sidebar-left:before {
 	content: "Y";
 }
-.lsi-layout-sidebar-right:before {
+.lso-software-layout-sidebar-right:before {
 	content: "Z";
 }
-.lsi-magnete:before {
+.lso-software-magnete:before {
 	content: "0";
 }
-.lsi-pages:before {
+.lso-software-pages:before {
 	content: "1";
 }
-.lsi-paintbrush:before {
+.lso-software-paintbrush:before {
 	content: "2";
 }
-.lsi-paintbucket:before {
+.lso-software-paintbucket:before {
 	content: "3";
 }
-.lsi-paintroller:before {
+.lso-software-paintroller:before {
 	content: "4";
 }
-.lsi-paragraph:before {
+.lso-software-paragraph:before {
 	content: "5";
 }
-.lsi-paragraph-align-left:before {
+.lso-software-paragraph-align-left:before {
 	content: "6";
 }
-.lsi-paragraph-align-right:before {
+.lso-software-paragraph-align-right:before {
 	content: "7";
 }
-.lsi-paragraph-center:before {
+.lso-software-paragraph-center:before {
 	content: "8";
 }
-.lsi-paragraph-justify-all:before {
+.lso-software-paragraph-justify-all:before {
 	content: "9";
 }
-.lsi-paragraph-justify-center:before {
+.lso-software-paragraph-justify-center:before {
 	content: "!";
 }
-.lsi-paragraph-justify-left:before {
+.lso-software-paragraph-justify-left:before {
 	content: "\"";
 }
-.lsi-paragraph-justify-right:before {
+.lso-software-paragraph-justify-right:before {
 	content: "#";
 }
-.lsi-paragraph-space-after:before {
+.lso-software-paragraph-space-after:before {
 	content: "$";
 }
-.lsi-paragraph-space-before:before {
+.lso-software-paragraph-space-before:before {
 	content: "%";
 }
-.lsi-pathfinder-exclude:before {
+.lso-software-pathfinder-exclude:before {
 	content: "&";
 }
-.lsi-pathfinder-intersect:before {
+.lso-software-pathfinder-intersect:before {
 	content: "'";
 }
-.lsi-pathfinder-subtract:before {
+.lso-software-pathfinder-subtract:before {
 	content: "(";
 }
-.lsi-pathfinder-unite:before {
+.lso-software-pathfinder-unite:before {
 	content: ")";
 }
-.lsi-pen:before {
+.lso-software-pen:before {
 	content: "*";
 }
-.lsi-pen-add:before {
+.lso-software-pen-add:before {
 	content: "+";
 }
-.lsi-pen-remove:before {
+.lso-software-pen-remove:before {
 	content: ",";
 }
-.lsi-pencil:before {
+.lso-software-pencil:before {
 	content: "-";
 }
-.lsi-polygonallasso:before {
+.lso-software-polygonallasso:before {
 	content: ".";
 }
-.lsi-reflect-horizontal:before {
+.lso-software-reflect-horizontal:before {
 	content: "/";
 }
-.lsi-reflect-vertical:before {
+.lso-software-reflect-vertical:before {
 	content: ":";
 }
-.lsi-remove-vectorpoint:before {
+.lso-software-remove-vectorpoint:before {
 	content: ";";
 }
-.lsi-scale-expand:before {
+.lso-software-scale-expand:before {
 	content: "<";
 }
-.lsi-scale-reduce:before {
+.lso-software-scale-reduce:before {
 	content: "=";
 }
-.lsi-selection-oval:before {
+.lso-software-selection-oval:before {
 	content: ">";
 }
-.lsi-selection-polygon:before {
+.lso-software-selection-polygon:before {
 	content: "?";
 }
-.lsi-selection-rectangle:before {
+.lso-software-selection-rectangle:before {
 	content: "@";
 }
-.lsi-selection-roundedrectangle:before {
+.lso-software-selection-roundedrectangle:before {
 	content: "[";
 }
-.lsi-shape-oval:before {
+.lso-software-shape-oval:before {
 	content: "]";
 }
-.lsi-shape-polygon:before {
+.lso-software-shape-polygon:before {
 	content: "^";
 }
-.lsi-shape-rectangle:before {
+.lso-software-shape-rectangle:before {
 	content: "_";
 }
-.lsi-shape-roundedrectangle:before {
+.lso-software-shape-roundedrectangle:before {
 	content: "`";
 }
-.lsi-slice:before {
+.lso-software-slice:before {
 	content: "{";
 }
-.lsi-transform-bezier:before {
+.lso-software-transform-bezier:before {
 	content: "|";
 }
-.lsi-vector-box:before {
+.lso-software-vector-box:before {
 	content: "}";
 }
-.lsi-vector-composite:before {
+.lso-software-vector-composite:before {
 	content: "~";
 }
-.lsi-vector-line:before {
+.lso-software-vector-line:before {
 	content: "\\";
 }
-.lsi-vertical-align-bottom:before {
+.lso-software-vertical-align-bottom:before {
 	content: "\e000";
 }
-.lsi-vertical-align-center:before {
+.lso-software-vertical-align-center:before {
 	content: "\e001";
 }
-.lsi-vertical-align-top:before {
+.lso-software-vertical-align-top:before {
 	content: "\e002";
 }
-.lsi-vertical-distribute-bottom:before {
+.lso-software-vertical-distribute-bottom:before {
 	content: "\e003";
 }
-.lsi-vertical-distribute-center:before {
+.lso-software-vertical-distribute-center:before {
 	content: "\e004";
 }
-.lsi-vertical-distribute-top:before {
+.lso-software-vertical-distribute-top:before {
 	content: "\e005";
 }
 

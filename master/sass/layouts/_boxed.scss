@@ -18,21 +18,11 @@ html.boxed {
 	#header {
 		.header-body {
 			border-top-color: transparent;
-			border-top: 0;
 		}
 
 		&.header-effect-shrink {
 			.header-body {
 				max-width: 1200px;
-			}
-		}
-	}
-	&:not(.sticky-header-active) {
-		#header.header-effect-shrink {
-			&.header-transparent:not(.header-semi-transparent) {
-				.header-body {
-					// top: 25px !important;
-				}
 			}
 		}
 	}
@@ -47,7 +37,7 @@ html.boxed {
 	}
 	#footer {
 		margin-top: 0;
-		border-bottom: 4px solid #1A1C1E;
+		border-bottom: 4px solid $footer-bg;
 		border-radius: 0 0 5px 5px;
 	}
 	.footer-reveal {
@@ -56,8 +46,7 @@ html.boxed {
 	}
 }
 
-
-// Responsive
+/* Responsive */
 @media (min-width: 1200px) {
 
 	// Sticky Header

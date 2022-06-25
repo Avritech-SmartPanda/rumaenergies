@@ -35,9 +35,15 @@ html {
 		}
 	}
 
+	&.ie11 {
+		.scroll-to-top {
+			#{$right}: 25px;
+		}
+	}
+
 }
 
-// Responsive
+/* Responsive */
 @media (max-width: 991px) {
 
 	html .scroll-to-top.hidden-mobile {

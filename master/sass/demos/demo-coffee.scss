@@ -1,12 +1,16 @@
 //COMMON IMPORTS
 @import "../config/imports";
 
-body {
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+}
+
+p, a, span, li, strong, b {
 	font-family: 'Poppins', sans-serif;
 }
 
 .custom-primary-font {
-	font-family: 'Poppins', sans-serif !important;
+	font-family: 'Oswald', sans-serif !important;
 }
 
 .custom-secondary-font {
@@ -98,10 +102,10 @@ body {
 			> ul {
 				> li {
 					> a {
-						font-family: 'Poppins', sans-serif;
+						font-family: 'Oswald', sans-serif;
 					    font-size: 0.9rem;
 					    letter-spacing: 0;
-					    font-weight: 600;
+					    font-weight: 400;
 					}
 				}
 			}

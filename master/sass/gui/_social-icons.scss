@@ -28,77 +28,72 @@
 			}
 			&.social-icons-twitter {
 				a {
-					background: #1aa9e1 !important;
+					background: #1aa9e1;
 				}
 			}
 			&.social-icons-facebook {
 				a {
-					background: #3b5a9a !important;
+					background: #3b5a9a;
 				}
 			}
 			&.social-icons-linkedin {
 				a {
-					background: #0073b2 !important;
+					background: #0073b2;
 				}
 			}
 			&.social-icons-rss {
 				a {
-					background: #ff8201 !important;
+					background: #ff8201;
 				}
 			}
 			&.social-icons-googleplus {
 				a {
-					background: #dd4b39 !important;
+					background: #dd4b39;
 				}
 			}
 			&.social-icons-pinterest {
 				a {
-					background: #cc2127 !important;
+					background: #cc2127;
 				}
 			}
 			&.social-icons-youtube {
 				a {
-					background: #c3191e !important;
+					background: #c3191e;
 				}
 			}
 			&.social-icons-instagram {
 				a {
-					background: #7c4a3a !important;
+					background: #7c4a3a;
 				}
 			}
 			&.social-icons-skype {
 				a {
-					background: #00b0f6 !important;
+					background: #00b0f6;
 				}
 			}
 			&.social-icons-email {
 				a {
-					background: #dd4b39 !important;
+					background: #dd4b39;
 				}
 			}
 			&.social-icons-vk {
 				a {
-					background: #6383a8 !important;
+					background: #6383a8;
 				}
 			}
 			&.social-icons-xing {
 				a {
-					background: #1a7576 !important;
+					background: #1a7576;
 				}
 			}
 			&.social-icons-tumblr {
 				a {
-					background: #304e6c !important;
+					background: #304e6c;
 				}
 			}
 			&.social-icons-reddit {
 				a {
-					background: #ff4107 !important;
-				}
-			}
-			&.social-icons-whatsapp {
-				a {
-					background: #25d366 !important;
+					background: #ff4107;
 				}
 			}
 		}
@@ -113,33 +108,11 @@
 			}
 		}
 	}
-	&.social-icons-dark-2 {
-		li {
-			a {
-				background: #272a2e;
-				i {
-					color: #FFF;
-				}
-			}
-		}
-	}
 	&.social-icons-transparent {
 		li {
 			box-shadow: none;
 			a {
 				background: transparent;
-			}
-		}
-	}
-	&.social-icons-icon-gray {
-		li {
-			a {
-				color: #777 !important;
-			}
-			&:hover {
-				a {
-					color: #FFF !important;
-				}
 			}
 		}
 	}
@@ -161,29 +134,12 @@
 			}
 		}
 	}
-	&.social-icons-medium,
-	&.social-icons-md {
-		li {
-			a {
-				height: 33px;
-			    line-height: 33px;
-			    width: 33px;
-			    font-size: 0.9rem;
-			}
-		}
-	}
-	&.social-icons-big,
-	&.social-icons-lg {
+	&.social-icons-big {
 		li {
 			a {
 				height: 48px;
-				line-height: 50px;
+				line-height: 48px;
 				width: 48px;
-				@media(max-width: 400px) {
-					height: 38px;
-					line-height: 40px;
-					width: 38px;					
-				}
 			}
 		}
 	}
@@ -194,38 +150,9 @@
 			}
 		}
 	}
-	&.social-icons-clean-with-border {
-		li {
-			a {
-				background: transparent;
-				color: #FFF !important;
-			    border: 1px solid rgba(255,255,255, 0.1);
-			}
-		}
-		&.social-icons-clean-with-border-border-grey {
-			li {
-				a {
-					border: 1px solid #e7e7e7;
-				}
-			}
-		}
-		&.social-icons-clean-with-border-icon-dark {
-			li {
-				a {
-					color: #212121 !important;
-				}
-				&:hover {
-					a {
-						color: #FFF !important;
-					}
-				}
-			}
-		}
-
-	}
 }
 
-.social-icons:not(.social-icons-opacity-light):not(.social-icons-transparent):not(.social-icons-clean):not(.social-icons-clean-with-border):not(.social-icons-dark):not(.social-icons-dark-2):not(.custom-social-icons) {
+.social-icons:not(.social-icons-clean) {
 	li {
 		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 		a {
@@ -234,8 +161,7 @@
 	}
 }
 
-.social-icons-dark.social-icons-clean,
-.social-icons-dark-2.social-icons-clean {
+.social-icons-dark.social-icons-clean {
 	li {
 		a {
 			background: transparent;

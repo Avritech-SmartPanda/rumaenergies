@@ -2,7 +2,7 @@
 /*
 Name: 			Contact Form - Google Recaptcha v2
 Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.7.0
+Theme Version:	7.5.0
 */
 
 namespace PortoContactForm;
@@ -79,7 +79,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 					$value = implode(', ', $value);
 				}
 
-				$message .= $label.": " . nl2br(htmlspecialchars($value, ENT_QUOTES)) . "<br>";
+				$message .= $label.": " . htmlspecialchars($value, ENT_QUOTES) . "<br>\n";
 			}
 		}
 
@@ -110,7 +110,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 			$mail->SetFrom($email, $fromName);
 
 			// Repply To
-			if( isset($_POST['email']) && !empty($_POST['email']) ) {
+			if( isset($_POST['email']) ) {
 				$mail->AddReplyTo($_POST['email'], $fromName);
 			}
 

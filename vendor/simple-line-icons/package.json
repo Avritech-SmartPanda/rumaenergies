@@ -1,39 +1,49 @@
 {
   "_args": [
     [
-      "simple-line-icons@2.5.5",
+      {
+        "raw": "simple-line-icons@~2.4.1",
+        "scope": null,
+        "escapedName": "simple-line-icons",
+        "name": "simple-line-icons",
+        "rawSpec": "~2.4.1",
+        "spec": ">=2.4.1 <2.5.0",
+        "type": "range"
+      },
       "E:\\_OKLER\\Templates\\Porto\\HTML"
     ]
   ],
-  "_from": "simple-line-icons@2.5.5",
-  "_id": "simple-line-icons@2.5.5",
-  "_inBundle": false,
-  "_integrity": "sha512-v52iGG/qFZTSD/70yOfA1lYoN6zmjEfDjzFT6U6jNSCsh/aeVjy+8sYyTXWz1w7tLIkN2XeMmG+cLJp/0zYK4Q==",
+  "_from": "simple-line-icons@>=2.4.1 <2.5.0",
+  "_id": "simple-line-icons@2.4.1",
+  "_inCache": true,
   "_location": "/simple-line-icons",
-  "_phantomChildren": {
-    "errno": "0.1.7",
-    "graceful-fs": "4.2.3",
-    "image-size": "0.5.5",
-    "mime": "1.6.0",
-    "native-request": "1.0.7",
-    "semver": "5.7.1",
-    "tslib": "1.11.1"
+  "_nodeVersion": "6.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/simple-line-icons-2.4.1.tgz_1474471878001_0.22512383852154016"
   },
+  "_npmUser": {
+    "name": "thesabbir",
+    "email": "mail@thesabbir.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "simple-line-icons@2.5.5",
-    "name": "simple-line-icons",
+    "raw": "simple-line-icons@~2.4.1",
+    "scope": null,
     "escapedName": "simple-line-icons",
-    "rawSpec": "2.5.5",
-    "saveSpec": null,
-    "fetchSpec": "2.5.5"
+    "name": "simple-line-icons",
+    "rawSpec": "~2.4.1",
+    "spec": ">=2.4.1 <2.5.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/simple-line-icons/-/simple-line-icons-2.5.5.tgz",
-  "_spec": "2.5.5",
+  "_resolved": "https://registry.npmjs.org/simple-line-icons/-/simple-line-icons-2.4.1.tgz",
+  "_shasum": "b75bc5a0d87e530928c2ccda5735274bb256f234",
+  "_shrinkwrap": null,
+  "_spec": "simple-line-icons@~2.4.1",
   "_where": "E:\\_OKLER\\Templates\\Porto\\HTML",
   "author": {
     "name": "Sabbir Ahmed"
@@ -41,30 +51,40 @@
   "bugs": {
     "url": "https://github.com/thesabbir/simple-line-icons/issues"
   },
-  "dependencies": {
-    "less": "^3.12.2"
+  "dependencies": {},
+  "description": "Simple and elegent line icons.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "b75bc5a0d87e530928c2ccda5735274bb256f234",
+    "tarball": "https://registry.npmjs.org/simple-line-icons/-/simple-line-icons-2.4.1.tgz"
   },
-  "description": "Simple and elegant line icons.",
+  "gitHead": "ae1cf4ec75a8a32c4810a2fe7ca8c2fdf6f3e32c",
   "homepage": "https://thesabbir.github.io/simple-line-icons",
   "keywords": [
     "icon",
-    "simple-icons",
-    "simple-line-icons",
+    "simple",
     "line",
     "css",
     "webfont"
   ],
   "license": "MIT",
-  "main": "dist/styles/simple-line-icons.css",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "thesabbir",
+      "email": "mail@thesabbir.com"
+    }
+  ],
   "name": "simple-line-icons",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thesabbir/simple-line-icons.git"
   },
   "scripts": {
-    "build": "node scripts/build",
-    "postbuild": "cp -r dist/ docs/",
-    "test": "node scripts/build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "2.5.5"
+  "version": "2.4.1"
 }
