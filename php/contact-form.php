@@ -20,7 +20,7 @@ require 'php-mailer/src/SMTP.php';
 require 'php-mailer/src/Exception.php';
 
 // Step 1 - Enter your email address below.
-$email = 'you@domain.com';
+$email = 'daphneavril@outlook.com';
 
 // If the e-mail is not working, change the debug option to 2 | $debug = 2;
 $debug = 0;
@@ -30,23 +30,45 @@ $subject = ( isset($_POST['subject']) ) ? $_POST['subject'] : 'Define subject in
 
 $message = '';
 
-foreach($_POST as $label => $value) {
-	$label = ucwords($label);
+$fields = array(
+	0 => array(
+		'text' => 'Name',
+		'val' => $_POST['name']
+	),
+	1 => array(
+		'text' => 'Email address',
+		'val' => $_POST['email']
+	),
+	2 => array(
+		'text' => 'Message',
+		'val' => $_POST['message']
+	)
+);
 
-	// Use the commented code below to change label texts. On this example will change "Email" to "Email Address"
-
-	// if( $label == 'Email' ) {               
-	// 	$label = 'Email Address';              
-	// }
-
-	// Checkboxes
-	if( is_array($value) ) {
-		// Store new value
-		$value = implode(', ', $value);
-	}
-
-	$message .= $label.": " . htmlspecialchars($value, ENT_QUOTES) . "<br>\n";
+foreach ($fields as $field) {
+	$message .= $field['text'] . ": " . htmlspecialchars($field['val'], ENT_QUOTES) . "<br>\n";
 }
+
+
+
+
+// foreach($_POST as $label => $value) {
+// 	$label = ucwords($label);
+
+// 	// Use the commented code below to change label texts. On this example will change "Email" to "Email Address"
+
+// 	// if( $label == 'Email' ) {               
+// 	// 	$label = 'Email Address';              
+// 	// }
+
+// 	// Checkboxes
+// 	if( is_array($value) ) {
+// 		// Store new value
+// 		$value = implode(', ', $value);
+// 	}
+
+// 	$message .= $label.": " . htmlspecialchars($value, ENT_QUOTES) . "<br>\n";
+// }
 
 $mail = new PHPMailer(true);
 
