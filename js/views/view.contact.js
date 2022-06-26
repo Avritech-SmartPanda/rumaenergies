@@ -52,26 +52,18 @@ Theme Version:	7.5.0
 
 				$(formData).each(function (index, obj) {
 					data[obj.name] = obj.value;
-					console.log(obj.name + ': ' + obj.value);
 				});
 
 				// Google Recaptcha v2
 				if (data["g-recaptcha-response"] != undefined) {
 					data["g-recaptcha-response"] = $form.find('#g-recaptcha-response').val();
 				}
-				console.log(data),
 					// Ajax Submit
 					$.ajax({
 						type: 'POST',
 						url: $form.attr('action'),
-						// data: data
+						data: data
 
-						data: {
-							name: $form.find('#name').val(),
-							email: $form.find('#email').val(),
-							subject: $form.find('#subject').val(),
-							message: $form.find('#message').val()
-						}
 					}).always(function (data, textStatus, jqXHR) {
 
 						$errorMessage.empty().hide();
