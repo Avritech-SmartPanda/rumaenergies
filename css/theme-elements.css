@@ -13194,7 +13194,7 @@ ul.nav-pills > li > a.active:hover, ul.nav-pills > li > a.active:focus {
 
 /* Boxed */
 html.boxed .nav-secondary.sticky-active {
-	max-width: 1200px;
+	max-width: 980px;
 	left: auto !important;
 }
 
@@ -14903,7 +14903,7 @@ html.side-panel.side-panel-open.side-panel-push.side-panel-right .body {
 /* Home Slider - Revolution Slider */
 .slider-container {
 	background: #151719;
-	height: 500px;
+	height:300px;
 	overflow: hidden;
 	width: 100%;
 	direction: ltr;
@@ -19395,22 +19395,36 @@ section.section-custom-map section.section {
 
 /* Home Intro */
 .home-intro {
-	background-color: #212529;
-	margin-bottom: 60px;
+	background-color: #FF4313;
 	overflow: hidden;
-	padding: 38.4px 0;
-	padding: 2.4rem 0;
+	padding: 8px;
 	position: relative;
-	text-align: left;
-	letter-spacing: -0.5px;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.home-intro h4 {
+	color: #FFF;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 4px;
 }
 
 .home-intro p {
 	color: #FFF;
 	display: inline-block;
-	font-size: 1.4em;
-	font-weight: 600;
+	font-size: 13px!important;
+	font-weight: 500;
 	margin-bottom: 0;
+}
+.home-intro a {
+	color: #FFF; 
+	font-size: 13px;
+	font-weight: 500; 
+}
+.home-intro a:hover {
+	text-decoration: none;
+	color:#000;
 }
 
 .home-intro p span:not(.highlighted-word) {

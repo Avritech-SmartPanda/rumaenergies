@@ -5276,15 +5276,17 @@ html[dir="rtl"] #header .tip-light:before {
 
 @media (max-width: 991px) {
 	#header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a {
-		color: #FF4313;
+		color: #535353;
 	}
 
 	#header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a:active {
 		color: #FF4313;
+		
 	}
 
 	#header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a.active {
-		background: #FF4313;
+		background: transparent;
+		color: #FF4313!important;
 	}
 
 	#header .header-nav-main:not(.header-nav-main-mobile-dark) nav > ul > li > a.active:focus,
@@ -6877,7 +6879,8 @@ html .home-intro-light {
 }
 
 html .slide-overlay-primary .slotholder:after {
-	background-color: #FF4313 !important;
+	background-color: #FF4313 !important;	
+	background-color: #000 !important;
 }
 
 html .slider-container .tp-caption-overlay-primary {

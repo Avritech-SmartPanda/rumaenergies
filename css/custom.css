@@ -1,0 +1,48 @@
+.relative{
+    position: relative;
+}
+
+.-right-19{
+    right: -20%;
+}
+.-right-35{
+    right: -37px;
+}
+.rounded-4{
+    border-radius: 4px;
+}
+.w-235{ 
+    position: absolute;
+    right: 20px;
+}
+.banner-row {
+    display: flex;
+    flex-grow: 1;
+    align-self: stretch;
+    max-height: 100%;
+}
+
+.banner-column {
+	display: flex;
+    flex-grow: 1;
+    align-self: stretch;
+    max-height: 100%;
+	flex-direction: column;
+}
+
+
+.qoute p {
+	display: inline-block;
+	font-size: 13px!important;
+	font-weight: 500;
+	margin-bottom: 0;
+    letter-spacing: 1px;
+}
+.qoute h2 {
+	display: inline-block;
+	font-weight: 500;
+    letter-spacing: 1px;
+}
+.ls-1{
+    letter-spacing: 1px;
+}

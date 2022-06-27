@@ -60,7 +60,6 @@
 
 	<!-- Head Libs -->
 	<script src="vendor/modernizr/modernizr.min.js"></script>
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 </head>
 
@@ -176,16 +175,15 @@
 							<h1 data-title-border>Contact us</h1>
 						</div>
 						<div class="col-md-4  order-md-2 align-self-center">
-							<ul class="breadcrumb d-block text-md-right">
-								<li><a href="#">Home</a></li>
+							<ul class="breadcrumb d-block text-md-right relative -right-35">
+								<li><a href="index.html">Home</a></li>
 								<li class="active">Contact us</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
-			<!-- <div id="googlemaps" class="google-map mt-0" style="height: 500px;"></div> -->
+
 
 			<div class="container">
 
@@ -202,49 +200,57 @@
 								data-appear-animation-delay="400">Feel free to ask for details, don't save any
 								questions!</p>
 						</div>
-						<form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php" method="POST" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+						<form id="contactForm" class="contact-form appear-animation" action="php/contact-form.php"
+							method="POST" data-appear-animation="fadeIn" data-appear-animation-delay="600">
 							<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
 								<strong>Success!</strong> Your message has been sent to us.
 							</div>
-						
+
 							<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
 								<strong>Error!</strong> There was an error sending your message.
 								<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
 							</div>
-							
-							<div class="form-row">
+
+							<div class="row">
 								<div class="form-group col-lg-6">
 									<label class="required font-weight-bold text-dark">Full Name</label>
-									<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+									<input type="text" value="" data-msg-required="Please enter your name."
+										maxlength="100" class="form-control" name="name" id="name" required>
 								</div>
 								<div class="form-group col-lg-6">
 									<label class="required font-weight-bold text-dark">Email Address</label>
-									<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+									<input type="email" value="" data-msg-required="Please enter your email address."
+										data-msg-email="Please enter a valid email address." maxlength="100"
+										class="form-control" name="email" id="email" required>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="row">
 								<div class="form-group col">
 									<label class="font-weight-bold text-dark">Subject</label>
-									<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required>
+									<input type="text" value="" data-msg-required="Please enter the subject."
+										maxlength="100" class="form-control" name="subject" id="subject" required>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="row">
 								<div class="form-group col">
 									<label class="required font-weight-bold text-dark">Message</label>
-									<textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control" name="message" id="message" required></textarea>
+									<textarea maxlength="5000" data-msg-required="Please enter your message." rows="8"
+										class="form-control" name="message" id="message" required></textarea>
 								</div>
 							</div>
-							<div class="form-row">
+							<div class="row">
 								<div class="form-group col">
-									<input type="submit" value="Send Message" class="btn btn-primary btn-modern" data-loading-text="Loading...">
+									<input type="submit" value="Send Message" class="btn btn-primary btn-modern"
+										data-loading-text="Loading...">
 								</div>
 							</div>
 						</form>
-					 </div>
+					</div>
 					<div class="col-lg-6">
 
-						<div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800">
-							<h4 class="mt-2 mb-1">Our <strong>Office</strong></h4>
+						<div class="appear-animation mb-1 mt-3" data-appear-animation="fadeIn"
+							data-appear-animation-delay="800">
+							<h4 class="mt-2 ">Our <strong>Office</strong></h4>
 							<ul class="list list-icons list-dark mt-2">
 								<li><i class="fas fa-map-marker-alt top-6 text-default"></i>
 									Unit 6, SNABurg Building <br>
@@ -262,11 +268,13 @@
 										8324</a>
 								</li>
 								<li class="mb-1"><i class="fa fa-phone  text-default"></i>
-									<a href="tel:+27736673158" class="text-color-default text-decoration-none">+27 73 667
+									<a href="tel:+27736673158" class="text-color-default text-decoration-none">+27 73
+										667
 										3158</a>
 								</li>
 								<li class="mb-1"><i class="fas fa-envelope text-default"></i><a
-										href="mailto:mail@example.com" class="text-color-default">mail@example.com</a></li>
+										href="mailto:admin@rumaenergies.co.za"
+										class="text-color-default">admin@rumaenergies.co.za</a></li>
 
 							</ul>
 						</div>
@@ -290,27 +298,28 @@
 				</div>
 
 			</div>
-
 		</div>
 
+
+		<!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+		<!-- <div id="googlemaps" class="google-map mt-0" style="height: 500px;"></div> -->
+
 		<section class="call-to-action call-to-action-strong-grey content-align-center call-to-action-in-footer">
-			<div class="container py-5">
-				<div class="row py-3">
+			<div class="container py-1">
+				<div class="row py-1">
 					<div class="col-md-12 col-lg-12">
 						<div class="call-to-action-content">
 							<h2 class="font-weight-normal text-7 mb-4">Get <strong>reliable</strong> &
 								<strong>affordable</strong> 24/7services for your facility with a 100% satisfaction
 								<strong>guaranteed</strong>!
 							</h2>
-							<!-- <p class="mb-0">The best HTML template for your new website.</p> -->
-
-
-							<div class="mt-12 text-center ">
+						
+							<div class="mt-2 text-center ">
 								<a href="quote.html"
-									class="btn btn-primary btn-outline custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 ms-lg-2 ">REQUEST
-									A QUOTE
-									<i class="fa fa-arrow-right "></i>
-								</a>
+								class="btn btn-primary btn-outline rounded-4 font-weight-bold text-3 btn-px-5 btn-py-3 ms-lg-2 ">REQUEST
+								A QUOTE
+								<i class="fa fa-arrow-right "></i>
+							</a>
 							</div>
 						</div>
 					</div>
@@ -318,7 +327,6 @@
 				</div>
 			</div>
 		</section>
-
 		<footer id="footer">
 			<div class="container">
 				<div class="row py-5 my-4">
@@ -358,7 +366,8 @@
 									</p>
 								</li>
 								<li class="mb-1"><i class="far fa-envelope text-color-primary"></i>
-									<p class="m-0"><a href="mailto:mail@example.com">mail@example.com</a></p>
+									<p class="m-0"><a
+											href="mailto:admin@rumaenergies.co.za">admin@rumaenergies.co.za</a></p>
 								</li>
 							</ul>
 						</div>
@@ -366,12 +375,12 @@
 					<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 						<h5 class="text-3 mb-3">Services</h5>
 						<ul class="list list-unstyled mb-0">
-							<li class="mb-0"><a href="services-detail.html">24/7 Service</a></li>
-							<li class="mb-0"><a href="services-detail.html">Domestic</a></li>
-							<li class="mb-0"><a href="services-detail.html">Commercial</a></li>
-							<li class="mb-0"><a href="services-detail.html">Multi-dwelling</a></li>
-							<li class="mb-0"><a href="services-detail.html">Industrial</a></li>
-							<li class="mb-0"><a href="services-detail.html">Diverse products</a></li>
+							<li class="mb-0"><a href="#">24/7 Service</a></li>
+							<li class="mb-0"><a href="#">Domestic</a></li>
+							<li class="mb-0"><a href="#">Commercial</a></li>
+							<li class="mb-0"><a href="#">Multi-dwelling</a></li>
+							<li class="mb-0"><a href="#">Industrial</a></li>
+							<li class="mb-0"><a href="#">Diverse products</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-3">
@@ -380,7 +389,10 @@
 							<li>Mon - Fri: 8:30 am to 5:00 pm</li>
 							<li>Saturday: 9:30 am to 1:00 pm</li>
 							<li>Sunday: Closed</li>
+							<li> </li>
 						</ul>
+
+
 					</div>
 				</div>
 			</div>
@@ -404,7 +416,7 @@
 											class="ml-1 text-decoration-none"> Services</a></li>
 									<li><i class="fas fa-angle-right"></i><a href="about-us.html"
 											class="ml-1 text-decoration-none"> About us</a></li>
-									<li><i class="fas fa-angle-right"></i><a href="contact-us.html"
+									<li><i class="fas fa-angle-right"></i><a href="contact.html"
 											class="ml-1 text-decoration-none"> Contact Us</a></li>
 								</ul>
 							</nav>
@@ -426,6 +438,7 @@
 	<script src="vendor/common/common.min.js"></script>
 	<script src="vendor//jquery.validation/jquery.validate.min.js"></script>
 	<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
 	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
 	<script src="vendor/isotope/jquery.isotope.min.js"></script>
 	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
@@ -445,6 +458,75 @@
 	<!-- Theme Initialization Files -->
 	<script src="js/theme.init.js"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOURKEY"></script>
+
+
+<script>
+
+	/*
+	Map Settings
+
+		Find the Latitude and Longitude of your address:
+			- https://www.latlong.net/
+			- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+
+	*/
+
+	// Map Markers
+	var mapMarkers = [{
+		address: "Unit 6, SNABurg Building, 14 Cascades Crescent",
+			html: "<strong>Unit 6, SNABurg Building</strong><br>14 Cascades Crescent<br>Montrose<br>Pietermaritzburg, 3201",
+		icon: {
+			image: "img/pin.png",
+			iconsize: [26, 46],
+			iconanchor: [12, 46]
+		},
+		popup: true
+	}];
+
+	// Map Initial Location
+	var initLatitude = -29.571430;
+		var initLongitude = 30.358250;
+
+	// Map Extended Settings
+	var mapSettings = {
+		controls: {
+			draggable: (($.browser.mobile) ? false : true),
+			panControl: true,
+			zoomControl: true,
+			mapTypeControl: true,
+			scaleControl: true,
+			streetViewControl: true,
+			overviewMapControl: true
+		},
+		scrollwheel: false,
+		markers: mapMarkers,
+		latitude: initLatitude,
+		longitude: initLongitude,
+		zoom: 11
+	};
+
+	var map = $('#googlemaps').gMap(mapSettings);
+
+	// Map text-center At
+	var mapCenterAt = function(options, e) {
+		e.preventDefault();
+		$('#googlemaps').gMap("centerAt", options);
+	}
+
+</script>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-12345678-1', 'auto');
+	ga('send', 'pageview');
+</script>
+ -->
 
 
 </body>

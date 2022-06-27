@@ -7289,7 +7289,7 @@ html.boxed .body {
 	border-top: 5px solid #CCC;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 	margin: 25px auto;
-	max-width: 1200px;
+	max-width: 980px;
 	height: auto;
 }
 
@@ -7298,7 +7298,7 @@ html.boxed #header .header-body {
 }
 
 html.boxed #header.header-effect-shrink .header-body {
-	max-width: 1200px;
+	max-width: 980px;
 }
 
 html.boxed .main {
@@ -7317,7 +7317,7 @@ html.boxed #footer {
 }
 
 html.boxed .footer-reveal {
-	max-width: 1200px;
+	max-width: 980px;
 	left: auto !important;
 }
 
@@ -7325,7 +7325,7 @@ html.boxed .footer-reveal {
 @media (min-width: 1200px) {
 	html.boxed.sticky-header-active #header .header-body {
 		width: 100%;
-		max-width: 1200px;
+		max-width: 980px;
 	}
 
 	html.boxed .footer-reveal {

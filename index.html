@@ -32,6 +32,8 @@
 	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
 	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
 	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap-star-rating/css/star-rating.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.css">
 
 
 
@@ -59,7 +61,6 @@
 
 	<!-- Head Libs -->
 	<script src="vendor/modernizr/modernizr.min.js"></script>
-	<script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
@@ -171,9 +172,9 @@
 
 		<div role="main" class="main">
 
-			<div class="slider-container rev_slider_wrapper" style="height: 600px;">
+			<div class="slider-container rev_slider_wrapper">
 				<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider
-					data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 600, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': false }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+					data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 300, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': false }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
 					<ul>
 						<li class="slide-overlay slide-overlay-primary" data-transition="fade">
 							<img src="img/slides/1.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
@@ -198,19 +199,23 @@
 								<img src="img/slides/slide-title-border.png" alt="">
 							</div>
 
-							<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2 my-12"
+							<h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
 								data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-								data-x="center" data-y="center" data-fontsize="['50','50','50','90']"
-								data-lineheight="['55','55','55','95']">Oil and Gas Supplier</h1>
+								data-x="center" data-y="center" data-fontsize="['50','50','50','100']"
+								data-lineheight="['55','55','55','100']">Oil and Gas Supplier</h1>
 
 
 
-							<div class="tp-caption text-light font-weight-light my-24"
+							<div class="tp-caption text-light font-weight-light "
 								data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 								data-x="center" data-y="center" data-voffset="['40','40','40','80']"
-								data-fontsize="['18','18','18','50']" data-lineheight="['20','20','20','55']">We
-								understand the importance of uninterrupted business operations and therefor offer a 24/7
-								delivery service in the Gauteng region</div>
+								data-fontsize="['18','18','18','50']" data-lineheight="['30','30','30','100']"
+								style="margin-top: 25px;">
+								We provide 24/7 support and delivery services to enable uninterrupted client business
+								operations
+							</div>
+
+
 
 						</li>
 
@@ -218,29 +223,53 @@
 				</div>
 			</div>
 
-
-			<section class="section border-0 m-0 appear-animation" data-appear-animation="fadeIn"
+			<div class="home-intro appear-animation" id="home-intro" data-appear-animation="fadeIn"
 				data-appear-animation-delay="1200">
 				<div class="container">
+
 					<div class="row align-items-center justify-content-center">
-						<div class="col-sm-9 col-md-12 col-lg-7 text-center text-lg-end mb-4 mb-lg-0">
-							<h2 class="font-weight-bold text-color-primary text-7 line-height-1 my-2 appear-animation"
-								data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1700">Our
-								depots are waiting for your order</h2>
-							<p class="font-weight-bold text-4 mb-0 appear-animation"
-								data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">
-								Request A Quote Today With Our Online Form</p>
+						<h4 class="font-weight-bold text-color-light text-4 line-height-1 my-2 appear-animation"
+							data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1700">
+							COVID-19 INFORMATION</h4>
+						<p class="row font-weight-light text-4 mb-0 appear-animation"
+							data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">
+							Emergency Hotline: 0800 029 999 | WhatsApp Support Line: 0600 123 | Website<a
+								href="https://sacoronavirus.co.za/" target="_blank">COVID-19
+								Website</a>
+						</p>
+					</div>
+
+				</div>
+			</div>
+			<section class="section border-0 m-0 appear-animation" data-appear-animation="fadeIn"
+				data-appear-animation-delay="1200">
+
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-xl-7 text-center text-lg-start mb-4 mb-lg-0 qoute">
+
+							<h3
+								class="ls-1 font-weight-bold text-transform-none text-4 line-height-2 line-height-lg-1 mb-1">
+								Our depots are waiting for your order</h3>
+							<p class="ls-1  text-4  mb-0">Make A Quote Today With
+								Our Online Form</p>
 						</div>
-						<div class="col-lg-5 text-center text-lg-start ps-lg-4">
-							<a href="quote.html"
-								class="btn btn-primary btn-outline custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 ms-lg-2 appear-animation"
-								data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1500">REQUEST
-								A QUOTE
-								<i class="fa fa-arrow-right "></i>
-							</a>
+						<div class="col-lg-6 col-xl-5">
+							<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
+								<a href="quote.html"
+									class="w-235 btn btn-primary btn-outline rounded-4 font-weight-bold text-3 btn-px-3 btn-py-2 mr-3 appear-animation"
+									data-appear-animation="fadeInLeftShorterPlus"
+									data-appear-animation-delay="1500">REQUEST
+									A QUOTE
+									<i class="fa fa-arrow-right "></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
+
+
+
 			</section>
 
 
@@ -248,11 +277,11 @@
 				class="section-height-3  border-0 m-0 appear-animation animated fadeIn appear-animation-visible"
 				data-appear-animation="fadeIn" style="animation-delay: 100ms;">
 				<div class="container my-3">
-					<div class="row mb-5">
+					<div class="row my-5">
 						<div class="col text-center appear-animation animated fadeInUpShorter appear-animation-visible"
 							data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200"
 							style="animation-delay: 200ms;">
-							<h2 class="text-color-dark font-weight-normal text-6 mb-2 pb-1 appear-animation"
+							<h2 class="text-color-dark font-weight-normal text-6 mb-1 pb-1 appear-animation"
 								data-appear-animation="maskUp" data-appear-animation-delay="250">Our <strong
 									class="font-weight-extra-bold">Services</strong></h2>
 
@@ -270,10 +299,9 @@
 									<i class="icons icon-support "></i>
 								</div>
 								<div class="feature-box-info">
-									<h4 class="font-weight-bold  text-4 mb-2">Domestic</h4>
+									<h4 class="font-weight-bold  text-4 mb-2">Industrial</h4>
 									<p class=" opacity-7">
-										New LP Gas connections to natural gas for gas cookers, gas hobs, gas ovens,
-										freestanding gas cookers, gas
+										Liquefied Petroleum Gas for various industries such as mining and agriculture.
 									</p>
 								</div>
 							</div>
@@ -287,8 +315,7 @@
 								<div class="feature-box-info">
 									<h4 class="font-weight-bold  text-4 mb-2">Commercial</h4>
 									<p class=" opacity-7">
-										Gas solutions for restaurants, shopping centres, commercial kitchens, bakeries,
-										catering
+										Gas for hospitals, shopping malls, commercial kitchens, bakeries, private
 										companies etc.
 									</p>
 								</div>
@@ -302,11 +329,9 @@
 									<i class="icons icon-menu "></i>
 								</div>
 								<div class="feature-box-info">
-									<h4 class="font-weight-bold  text-4 mb-2">Multi-dwelling</h4>
+									<h4 class="font-weight-bold  text-4 mb-2">Domestic</h4>
 									<p class=" opacity-7">
-										Gas installations for apartments, residential developments, housing estates,
-										flats etc. -
-										Central gas hot water heating – Gas-powered.
+										Gas solutions for residential and private consumption.
 									</p>
 								</div>
 							</div>
@@ -321,11 +346,10 @@
 									<i class="icons icon-user "></i>
 								</div>
 								<div class="feature-box-info">
-									<h4 class="font-weight-bold  text-4 mb-2">Diverse products</h4>
+									<h4 class="font-weight-bold  text-4 mb-2">Petroleum Products</h4>
 									<p class=" opacity-7">
-										Diesel 50pp; petrol ULP + LRP 93; petrol ULP 95; illuminating paraffin; quality
-										oils for
-										trucks; diesel.
+										Supply of products such as Diesel, Petrol, Paraffin, Jet Fuel, Aviation Gasoline
+										etc.
 									</p>
 								</div>
 							</div>
@@ -338,9 +362,10 @@
 									<i class="icons icon-screen-desktop "></i>
 								</div>
 								<div class="feature-box-info">
-									<h4 class="font-weight-bold  text-4 mb-2">24/7 Service</h4>
+									<h4 class="font-weight-bold  text-4 mb-2">Logistics</h4>
 									<p class=" opacity-7">
-										We are ready to serve you at any time. Contact us now for assistance.
+										Planning and execution of the efficient transportation and storage of petroleum
+										products from the point of origin to the point of consumption.
 									</p>
 								</div>
 							</div>
@@ -353,9 +378,9 @@
 									<i class="icons icon-doc "></i>
 								</div>
 								<div class="feature-box-info">
-									<h4 class="font-weight-bold  text-4 mb-2">Industrial</h4>
+									<h4 class="font-weight-bold  text-4 mb-2">Support Services</h4>
 									<p class=" opacity-7">
-										LPG gas solutions for various industries.
+										We are ready to serve you at any time. Contact us now for assistance.
 									</p>
 								</div>
 							</div>
@@ -373,38 +398,20 @@
 								class="text-color-light font-weight-medium text-3-5 line-height-2 line-height-sm-1 ls-0 mb-2 mb-lg-2">
 								LOOKING FOR HONEST AND RELIABLE SERVICES?</h2>
 							<h3
-								class="font-weight-bold text-color-light text-transform-none text-8 line-height-2 line-height-lg-1 mb-1">
+								class="ls-1 font-weight-bold text-color-light text-transform-none text-6 line-height-2 line-height-lg-1 mb-1">
 								Our depots are waiting for your order</h3>
-							<p class="font-weight-bold text-color-light text-4 opacity-7 mb-0">Make A Quote Today With
+							<p class="ls-1 text-color-light text-4 opacity-7 mb-0">Make A Quote Today With
 								Our Online Form</p>
 						</div>
 						<div class="col-lg-6 col-xl-5">
 							<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
-								<div class="feature-box align-items-center mb-3 mb-lg-0">
-									<!-- <div class="feature-box-icon bg-transparent">
-										<i class="icons icon-phone text-6 text-color-light"></i>
-									</div> -->
-									<div class="feature-box-info line-height-2 ps-1">
-										<span class="d-block text-1 font-weight-semibold text-color-light mb-1">CALL US
-											NOW</span>
-										<div class="">
-											<p>
-												<a href="tel:+27733388324"
-													class="text-color-light text-decoration-none ">+27
-													73 338 8324</a>
-											</p>
-											<p>
-
-												<a href="tel:+27736673158"
-													class="text-color-light text-decoration-none">+27
-													73 667 3158</a>
-											</p>
-										</div>
-									</div>
-								</div>
 								<a href="quote.html"
-									class="btn btn-light btn-outline custom-btn-border-radius font-weight-bold text-color-light text-color-hover-dark bg-color-hover-light btn-px-5 btn-py-3">REQUEST
-									A QUOTE</a>
+									class="w-235 btn btn-primary btn-outline rounded-4 font-weight-bold text-3 btn-px-3 btn-py-2 ms-lg-2 appear-animation"
+									data-appear-animation="fadeInLeftShorterPlus"
+									data-appear-animation-delay="1500">REQUEST
+									A QUOTE
+									<i class="fa fa-arrow-right "></i>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -416,34 +423,33 @@
 			<section class="section-height-3  border-0 m-0 appear-animation animated fadeIn appear-animation-visible"
 				data-appear-animation="fadeIn" style="animation-delay: 100ms;">
 				<div class="container my-3">
+					<div class="row my-5">
+						<div class="col text-center appear-animation animated fadeInUpShorter appear-animation-visible"
+							data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200"
+							style="animation-delay: 200ms;">
+							<h2 class="text-color-dark font-weight-normal text-6 mb-1 pb-1 appear-animation"
+								data-appear-animation="maskUp" data-appear-animation-delay="250">Our <strong
+									class="font-weight-extra-bold"> Reach</strong></h2>
 
+							<p class="font-weight-light text-3-5 mb-5 appear-animation"
+								data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">We supply and
+								transport to regional destinations including:
+							</p>
+						</div>
+					</div>
 
-					<div class="container pt-2 pb-4 mb-5">
-
+					<div class="container mb-5">
 						<div class="row">
 							<div class="col-lg-7">
-
-								<div class="row">
-									<div class="col">
-
-										<div class="lightbox mt-3"
-											data-plugin-options="{'delegate': 'a.lightbox-portfolio', 'type': 'image', 'gallery': {'enabled': true}}">
-											<div class="row portfolio-list">
-												<div class="col-lg-12 appear-animation animated fadeInLeftShorter appear-animation-visible"
-													data-appear-animation="fadeInLeftShorter"
-													data-appear-animation-delay="600" style="animation-delay: 600ms;">
-													<div class="w-96">
-														<img src="img/our-reach.png" class="img-fluid" alt="">
-													</div>
-												</div>
-
-											</div>
-										</div>
-
+								<div class="appear-animation animated fadeInLeftShorter appear-animation-visible"
+									data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="600"
+									style="animation-delay: 600ms;">
+									<div class="">
+										<img src="img/our-reach.png" class="img-fluid" alt="" width="380">
 									</div>
 								</div>
-
 							</div>
+
 							<div class="col-lg-5 mt-4 mt-lg-0 appear-animation animated fadeInRightShorter appear-animation-visible"
 								data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300"
 								style="animation-delay: 300ms;">
@@ -453,12 +459,6 @@
 
 									<div class="row">
 										<div class="col-md-6 order-1 order-md-2 text-md-left mb-5 mb-md-0">
-											<h2 class="text-color-dark font-weight-normal text-6 mb-2 pb-1">Our <strong
-													class="font-weight-extra-bold">Reach</strong></h2>
-											<p class="mb-4">We supply and transport to regional destinations including:
-											</p>
-
-
 											<div class="col">
 												<p>
 													<i class="fas fa-caret-right mr-2"></i>
@@ -484,10 +484,10 @@
 								</aside>
 
 							</div>
-
 						</div>
-
 					</div>
+
+				</div>
 
 
 			</section>
@@ -533,7 +533,8 @@
 									</p>
 								</li>
 								<li class="mb-1"><i class="far fa-envelope text-color-primary"></i>
-									<p class="m-0"><a href="mailto:mail@example.com">mail@example.com</a></p>
+									<p class="m-0"><a
+											href="mailto:admin@rumaenergies.co.za">admin@rumaenergies.co.za</a></p>
 								</li>
 							</ul>
 						</div>
@@ -541,12 +542,12 @@
 					<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 						<h5 class="text-3 mb-3">Services</h5>
 						<ul class="list list-unstyled mb-0">
-							<li class="mb-0"><a href="services-detail.html">24/7 Service</a></li>
-							<li class="mb-0"><a href="services-detail.html">Domestic</a></li>
-							<li class="mb-0"><a href="services-detail.html">Commercial</a></li>
-							<li class="mb-0"><a href="services-detail.html">Multi-dwelling</a></li>
-							<li class="mb-0"><a href="services-detail.html">Industrial</a></li>
-							<li class="mb-0"><a href="services-detail.html">Diverse products</a></li>
+							<li class="mb-0"><a href="#">24/7 Service</a></li>
+							<li class="mb-0"><a href="#">Domestic</a></li>
+							<li class="mb-0"><a href="#">Commercial</a></li>
+							<li class="mb-0"><a href="#">Multi-dwelling</a></li>
+							<li class="mb-0"><a href="#">Industrial</a></li>
+							<li class="mb-0"><a href="#">Diverse products</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-3">
@@ -579,7 +580,7 @@
 											class="ml-1 text-decoration-none"> Services</a></li>
 									<li><i class="fas fa-angle-right"></i><a href="about-us.html"
 											class="ml-1 text-decoration-none"> About us</a></li>
-									<li><i class="fas fa-angle-right"></i><a href="contact-us.html"
+									<li><i class="fas fa-angle-right"></i><a href="contact.html"
 											class="ml-1 text-decoration-none"> Contact Us</a></li>
 								</ul>
 							</nav>
@@ -610,8 +611,6 @@
 	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 	<script src="vendor/vide/jquery.vide.min.js"></script>
 	<script src="vendor/vivus/vivus.min.js"></script>
-	<script src="vendor/bootstrap-star-rating/js/star-rating.min.js"></script>
-	<script src="vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.js"></script>
 
 
 

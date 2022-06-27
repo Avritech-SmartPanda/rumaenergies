@@ -6875,7 +6875,8 @@ html .home-intro-light {
 }
 
 html .slide-overlay-primary .slotholder:after {
-	background-color: #FF4313 !important;
+	background-color: #FF4313 !important;	
+	background-color: #000 !important;
 }
 
 html .slider-container .tp-caption-overlay-primary {

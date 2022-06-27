@@ -8212,7 +8212,7 @@ html.ie .nav-active-style-1 > li {
 
 /* Boxed */
 html.boxed .nav-secondary.sticky-active {
-	max-width: 1200px;
+	max-width: 980px;
 	left: auto !important;
 }
 
@@ -9312,7 +9312,7 @@ html.side-panel.side-panel-open.side-panel-push.side-panel-right .body {
 /* Home Slider - Revolution Slider */
 .slider-container {
 	background: #151719;
-	height: 500px;
+	height:300px;
 	overflow: hidden;
 	width: 100%;
 	direction: ltr;
