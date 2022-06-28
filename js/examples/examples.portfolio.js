@@ -103,7 +103,7 @@ Theme Version:	7.5.0
 			stopAfterLoops: 0,
 			stopAtSlide: -1,
 			shuffle: "off",
-			autoHeight: "on",
+			autoHeight: "off",
 			disableProgressBar: "on",
 			hideThumbsOnMobile: "off",
 			hideSliderAtLimit: 0,

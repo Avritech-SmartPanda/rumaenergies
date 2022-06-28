@@ -8212,7 +8212,7 @@ html.ie .nav-active-style-1 > li {
 
 /* Boxed */
 html.boxed .nav-secondary.sticky-active {
-	max-width: 980px;
+	max-width: 1200px;
 	left: auto !important;
 }
 

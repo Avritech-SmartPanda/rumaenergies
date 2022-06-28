@@ -2053,7 +2053,7 @@ Theme Version:	9.7.0
 	opacity: 0.5;
 	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
-	content: "\f105";
+	content: "\f054";
 	padding: 0 7px 0 5px;
 }
 
@@ -4977,8 +4977,7 @@ html.sticky-header-active .hamburguer-btn.hamburguer-btn-sticky-dark .close span
 .counters label {
 	display: block;
 	font-weight: 100;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 20px; 
 }
 
 .counters .counter-side-icon [class*="fa-"], .counters .counter-side-icon .icons, .counters .counter-side-icon strong {
@@ -5231,8 +5230,9 @@ hr.invisible {
 }
 
 .divider.divider-small {
-	margin: 22px auto;
+	/* margin: 22px auto; */
 	background: transparent;
+	top: -16px;
 }
 
 .divider.divider-small hr {
@@ -19395,7 +19395,7 @@ section.section-custom-map section.section {
 
 /* Home Intro */
 .home-intro {
-	background-color: #FF4313;
+	background-color: #fcac14;
 	overflow: hidden;
 	padding: 8px;
 	position: relative;
