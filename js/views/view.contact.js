@@ -124,6 +124,99 @@ Theme Version:	7.5.0
 	});
 
 	/*
+	Quote Form: Basic
+	*/
+	$('.quote-form').each(function () {
+		$(this).validate({
+			submitHandler: function (form) {
+
+				var $form = $(form),
+					$messageSuccess = $form.find('.quote-form-success'),
+					$messageError = $form.find('.quote-form-error'),
+					$submitButton = $(this.submitButton),
+					$errorMessage = $form.find('.mail-error-message'),
+					submitButtonText = $submitButton.val();
+
+				$submitButton.val($submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...').attr('disabled', true);
+
+				// Fields Data
+				var formData = $form.serializeArray(),
+					data = {};
+
+				$(formData).each(function (index, obj) {
+					data[obj.name] = obj.value;
+				});
+
+				// Google Recaptcha v2
+				if (data["g-recaptcha-response"] != undefined) {
+					data["g-recaptcha-response"] = $form.find('#g-recaptcha-response').val();
+				}
+					// Ajax Submit
+					$.ajax({
+						type: 'POST',
+						url: $form.attr('action'),
+						data: data
+
+					}).always(function (data, textStatus, jqXHR) {
+
+						$errorMessage.empty().hide();
+
+						if (data.response == 'success') {
+
+							// Uncomment the code below to redirect for a thank you page
+							// self.location = 'thank-you.html';
+
+							$messageSuccess.removeClass('d-none');
+							$messageError.addClass('d-none');
+
+							// Reset Form
+							$form.find('.form-control')
+								.val('')
+								.blur()
+								.parent()
+								.removeClass('has-success')
+								.removeClass('has-danger')
+								.find('label.error')
+								.remove();
+
+							if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
+								$('html, body').animate({
+									scrollTop: $messageSuccess.offset().top - 80
+								}, 300);
+							}
+
+							$form.find('.form-control').removeClass('error');
+
+							$submitButton.val(submitButtonText).attr('disabled', false);
+
+							return;
+
+						} else if (data.response == 'error' && typeof data.errorMessage !== 'undefined') {
+							$errorMessage.html(data.errorMessage).show();
+						} else {
+							$errorMessage.html(data.responseText).show();
+						}
+
+						$messageError.removeClass('d-none');
+						$messageSuccess.addClass('d-none');
+
+						if (($messageError.offset().top - 80) < $(window).scrollTop()) {
+							$('html, body').animate({
+								scrollTop: $messageError.offset().top - 80
+							}, 300);
+						}
+
+						$form.find('.has-success')
+							.removeClass('has-success');
+
+						$submitButton.val(submitButtonText).attr('disabled', false);
+
+					});
+			}
+		});
+	});
+
+	/*
 	Contact Form: Advanced
 	*/
 	$('#contactFormAdvanced').validate({

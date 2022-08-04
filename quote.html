@@ -39,7 +39,7 @@
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="css/theme.css">
 	<link rel="stylesheet" href="css/theme-elements.css">
-	
+
 	<link rel="stylesheet" href="css/theme-shop.css">
 
 	<!-- Demo CSS -->
@@ -53,6 +53,7 @@
 	<link rel="stylesheet" href="css/default.css">
 
 	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="css/tailwind.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 
 </head>
@@ -188,54 +189,38 @@
 				<div class="row">
 					<div class="col">
 
-						<form id="contactForm" class="contact-form" action="php/contact-form.php" method="POST">
-							<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
+						<form id="contactForm" class="quote-form" action="php/quote-form.php" method="POST">
+							<div class="quote-form-success alert alert-success d-none mt-4" id="contactSuccess">
 								<strong>Success!</strong> Your message has been sent to us.
 							</div>
 
-							<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
+							<div class="quote-form-error alert alert-danger d-none mt-4" id="contactError">
 								<strong>Error!</strong> There was an error sending your message.
 								<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
 							</div>
 
-
-
-
-
-
-
-
-							<div class="form-row">
+							<div class="row">
 
 								<div class="form-group col-md-6">
-									<p class="mb-2">Do you own a filling station?</p>
+									<p class="mb-2 font-weight-bold text-dark text-2">Do you own a filling station?</p>
 									<div class="form-check form-check-inline">
 										<label class="form-check-label">
 											<input class="form-check-input" type="radio" name="radios"
 												data-msg-required="Please select at least one option." id="yes"
-												value="yes"> Yes
+												value="Yes"> Yes
 										</label>
 									</div>
 									<div class="form-check form-check-inline">
 										<label class="form-check-label">
 											<input class="form-check-input" type="radio" name="radios"
 												data-msg-required="Please select at least one option." id="no"
-												value="no"> No
+												value="No"> No
 										</label>
 									</div>
 								</div>
 							</div>
 
-
-
-
-							<div class="row">
-								<div class="col">
-									<h2 class="text-color-dark font-weight-bold text-4-5 mb-3">Personal Information:
-									</h2>
-								</div>
-							</div>
-
+							<!-- Section -->
 							<div class="flex flex-row justify-between gap-4">
 								<div class="form-group w-full">
 									<label class="required font-weight-bold text-dark text-2">Full Name</label>
@@ -249,117 +234,144 @@
 										class="form-control" name="email" id="email" required>
 								</div>
 							</div>
-							<div class="flex flex-row justify-between gap-4">
+							<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 								<div class="form-group w-full">
 									<label class="required font-weight-bold text-dark text-2">Phone</label>
 									<input type="text" value="" data-msg-required="Please enter your name."
-										maxlength="100" class="form-control" name="name" id="name" required>
+										maxlength="100" class="form-control" name="phone" id="phone" required>
 								</div>
-								<div class="form-group w-full">
+								<div class="form-group ">
 									<label class="required font-weight-bold text-dark text-2">Delivery Address</label>
-									<input type="email" value="" data-msg-required="Please enter your email address."
-										data-msg-email="Please enter a valid email address." maxlength="100"
-										class="form-control" name="email" id="email" required>
+									<input type="text" value="" data-msg-required="Please enter your delivery address."
+										maxlength="100" class="form-control" name="address" id="address" required>
+
 								</div>
 							</div>
 
 
 
-							<div class="form-row">
-								<div class="form-group col-md-12">
-									<label class="font-weight-bold text-dark text-2">The industry you operate
-										in:</label>
-									<select data-msg-required="Please enter the subject." class="form-control"
-										name="subject" id="subject" required>
-										<option value="">...</option>
-										<option value="Filling Station">Filling Station</option>
-										<option value="Logistic Enterprise">Logistic Enterprise</option>
-										<option value="Tender / Project">Tender / Project</option>
-										<option value="Transporter">Transporter</option>
-										<option value="Bulk Diesel">Bulk Diesel</option>
-										<option value="Government">Government</option>
-										<option value="Other">Other</option>
-									</select>
-								</div>
+
+							<div class="form-group w-full">
+								<label class="font-weight-bold text-dark text-2">The industry you operate
+									in:</label>
+								<select data-msg-required="Please select the industry you operate in."
+									class="form-control" name="industry" id="industry" required>
+									<option value="">...</option>
+									<option value="Filling Station">Filling Station</option>
+									<option value="Logistic Enterprise">Logistic Enterprise</option>
+									<option value="Tender / Project">Tender / Project</option>
+									<option value="Transporter">Transporter</option>
+									<option value="Bulk Diesel">Bulk Diesel</option>
+									<option value="Government">Government</option>
+									<option value="Other">Other</option>
+								</select>
+
 							</div>
+							<p class="mb-2">
+								<label class="font-weight-bold text-dark text-2">Please quote me
+									on:</label>
+							</p>
+							<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2">
+
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-4 py-2  whitespace-no-wrap font-medium text-xs text-gray-900">
+											Bulk Petrol</span>
+										<input name="bulk-petrol" id="bulk-petrol"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none placeholder:text-xs"
+											type="text" placeholder="Quantity..." />
+									</div>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
+									</div>
+
+								</div>
 
 
 
-							<div class="form-row">
-								<div class="form-group col-md-12">
-									<p class="mb-2"> <label class="font-weight-bold text-dark text-2">The industry you
-											operate in:</label></p>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk Petrol"> Bulk Petrol
-										</label>
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-4 py-2  whitespace-no-wrap font-medium text-xs text-gray-900">Bulk Jet A1</span>
+										<input name="bulk-jet-a1" id="bulk-jet-a1"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none"
+											type="text" placeholder="Quantity..." />
 									</div>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk Jet A1"> Bulk Jet A1
-										</label>
-									</div>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk IL Paraffin"> Bulk IL Paraffin
-										</label>
-									</div>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk Diesel"> Bulk Diesel
-										</label>
-									</div>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk AVGAS"> Bulk AVGAS
-										</label>
-									</div>
-									<div class="form-check form-check-inline">
-										<label class="form-check-label">
-											<input class="form-check-input" name="checkboxes[]" type="checkbox"
-												data-msg-required="Please select at least one option."
-												id="inlineCheckbox1" value="Bulk LP GAS">Bulk LP GAS
-										</label>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
 									</div>
 								</div>
 
+
+
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-3 py-2 items-center whitespace-no-wrap font-medium text-xs text-gray-900">Bulk	IL Paraffin</span>
+										<input name="bulk-il-paraffin" id="bulk-il-paraffin"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none"
+											type="text" placeholder="Quantity..." />
+									</div>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
+									</div>
+								</div>
+
+
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-4 py-2  whitespace-no-wrap font-medium text-xs text-gray-900">Bulk Diesel</span>
+										<input name="bulk-diesel" id="bulk-diesel"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none"
+											type="text" placeholder="Quantity..." />
+									</div>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
+									</div>
+								</div>
+
+
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-4 py-2  whitespace-no-wrap font-medium text-xs text-gray-900">Bulk AVGAS</span>
+										<input name="bulk-avgas" id="bulk-avgas"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none"
+											type="text" placeholder="Quantity..." />
+									</div>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
+									</div>
+								</div>
+
+								<div class="flex flex-col ">
+									<div class="flex h-10">
+										<span
+											class="w-44 border border-2 rounded-l px-4 py-2  whitespace-no-wrap font-medium text-xs text-gray-900">Bulk LP GAS</span>
+										<input name="bulk-lpg" id="bulk-lpg"
+											class="border border-2 rounded-r px-4 py-2 w-full focus:outline-none"
+											type="text" placeholder="Quantity..." />
+									</div>
+									<div class="flex flex-row justify-between">
+										<div></div>
+										<div class="mt-1 text-xs text-gray-500">Min 5000Lt.</div>
+									</div>
+								</div>
 							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 							<div class="form-row">
 								<div class="form-group col-md-12 mb-4">
-									<label class="required font-weight-bold text-dark text-2">Additional Information</label>
-									<textarea maxlength="5000" data-msg-required="Please enter your message." rows="6"
+									<label class="required font-weight-bold text-dark text-2">Additional
+										Information</label>
+									<textarea maxlength="5000" data-msg-required="Please enter your message." rows="4"
 										class="form-control" name="message" id="message" required></textarea>
 								</div>
 							</div>
@@ -373,133 +385,14 @@
 							<div class="form-row">
 								<div class="form-group col-md-12 mb-5">
 									<input type="submit" id="contactFormSubmit" value="Send Request"
-										class="btn btn-primary btn-outline rounded-4  font-weight-bold text-3 btn-px-5 btn-py-3 ms-lg-2 " data-loading-text="Loading...">
-										
+										class="btn btn-primary btn-outline rounded-4  font-weight-bold text-3 btn-px-5 btn-py-3 ms-lg-2 "
+										data-loading-text="Loading...">
+
 								</div>
 							</div>
 
 						</form>
-						<!-- <form class="contact-form custom-form-style-1" action="php/contact-form.php" method="POST">
-                                <div class="contact-form-success alert alert-success d-none mt-4">
-                                    <strong>Success!</strong> Your appointment has been sent to us.
-                                </div>
-
-                                <div class="contact-form-error alert alert-danger d-none mt-4">
-                                    <strong>Error!</strong> There was an error sending your appointment.
-                                    <span class="mail-error-message text-1 d-block"></span>
-                                </div>
-
-                                <div class="row">
-                                	<div class="col">
-                                		<h2 class="text-color-dark font-weight-bold text-4-5 mb-3">Personal Information:</h2>
-                                	</div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input type="text" value="" data-msg-required="Please enter your first name." maxlength="100" class="form-control" name="firstName" id="firstName" required placeholder="First Name">
-                                    </div>
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input type="text" value="" data-msg-required="Please enter your last name." maxlength="100" class="form-control" name="lastName" id="lastName" required placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required placeholder="E-mail Address">
-                                    </div>
-                                    <div class="form-group col-md-6 mb-3">
-                                        <input type="email" value="" data-msg-required="Please enter your phone." maxlength="100" class="form-control" name="phone" id="phone" required placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                	<div class="col">
-                                		<h2 class="text-color-dark font-weight-bold text-4-5 mb-3">Vehicle Information:</h2>
-                                	</div>
-                                </div>
-                                <div class="row pb-2 mb-4">
-	                                <div class="form-group col-md-4 mb-md-0">
-		                                <div class="custom-select-1 custom-select-1-arrow-position">
-											<select class="form-select form-control" name="make" data-msg-required="Please select make of vehicle." required>
-												<option value="">Make</option>
-												<option value="lorem">LOREM</option>
-												<option value="ipsum">IPSUM</option>
-												<option value="dolor">DOLOR</option>
-												<option value="sit">SIT</option>
-												<option value="met">MET</option>
-											</select>
-										</div>
-									</div>
-	                                <div class="form-group col-md-4 mb-md-0">
-	                                    <input type="text" value="" data-msg-required="Please enter model of vehicle." maxlength="100" class="form-control" name="model" id="model" required placeholder="Model">
-	                                </div>
-	                                <div class="form-group col-md-4 mb-md-0">
-	                                    <input type="text" value="" data-msg-required="Please enter year of vehicle." maxlength="100" class="form-control" name="year" id="year" required placeholder="Year">
-	                                </div>
-	                            </div> 
-	                            <div class="row">
-                                	<div class="col">
-                                		<h2 class="text-color-dark font-weight-bold text-4-5 mb-3">Tell Us Your Reason For Shceduling An Appointment:</h2>
-                                	</div>
-                                </div>
-                                <div class="row mb-3">
-	                                <div class="form-group col">
-		                                <textarea maxlength="5000" data-msg-required="Please enter your reason." rows="10" class="form-control" name="reason" id="reason" required></textarea>
-									</div>
-	                            </div>
-	                            <div class="row">
-                                	<div class="col">
-                                		<h2 class="text-color-dark font-weight-bold text-4-5 mb-1">Choose Date and Time:</h2>
-                                	</div>
-                                </div>
-                                <div class="row mb-2">
-                                	<div class="col-lg-6">
-                                		<div class="row">
-                                			<div class="col">
-                                				<p class="font-weight-semibold mb-2">FIRST CHOICE</p>
-                                			</div>
-                                		</div>
-                                		<div class="row">
-		                                	<div class="form-group col-md-6">
-			                                    <input type="text" value="" data-msg-required="Please select a date." maxlength="100" class="form-control custom-datepicker" name="firstDate" id="firstDate" required placeholder="Date">
-			                                </div>
-			                                <div class="form-group col-md-6">
-			                                    <input type="text" value="" data-msg-required="Please select a time." maxlength="100" class="form-control custom-timepicker" name="firstTime" id="firstTime" required placeholder="Time">
-			                                </div>
-			                            </div>
-		                            </div>
-		                            <div class="col-lg-6">
-                                		<div class="row">
-                                			<div class="col">
-                                				<p class="font-weight-semibold mb-2">SECOND CHOICE</p>
-                                			</div>
-                                		</div>
-                                		<div class="row">
-			                                <div class="form-group col-md-6">
-			                                    <input type="text" value="" data-msg-required="Please select a date." maxlength="100" class="form-control custom-datepicker" name="secondDate" id="secondDate" required placeholder="Date">
-			                                </div>
-			                                <div class="form-group col-md-6">
-			                                    <input type="text" value="" data-msg-required="Please select a time." maxlength="100" class="form-control custom-timepicker" name="secondTime" id="secondTime" required placeholder="Time">
-			                                </div>
-			                            </div>
-		                            </div>
-                                </div>
-                                <div class="row pb-2 mb-4">
-                                	<div class="col">
-                                		<div class="alert alert-warning custom-alert-bg-color-1">
-                                			<p class="text-2 mb-0"><i class="fas fa-info-circle me-1"></i> Please note that the date and time you requested may not be available. We will contact you to confirm your actual appointment details.</p>
-                                		</div>
-                                	</div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col mb-0">
-                                        <button type="submit" class="btn btn-primary btn-modern font-weight-bold custom-btn-border-radius custom-btn-arrow-effect-1 text-3 px-5 py-3" data-loading-text="Loading...">
-                                        	SUBMIT
-                                        	<svg class="ms-2" version="1.1" viewBox="0 0 15.698 8.706" width="17" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-												<polygon stroke="#FFF" stroke-width="0.1" fill="#FFF" points="11.354,0 10.646,0.706 13.786,3.853 0,3.853 0,4.853 13.786,4.853 10.646,8 11.354,8.706 15.698,4.353 "/>
-											</svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form> -->
+						
 					</div>
 				</div>
 			</div>
@@ -546,7 +439,8 @@
 								</li>
 								<li class="mb-1"><i class="far fa-envelope text-color-primary"></i>
 									<p class="m-0"><a
-											href="mailto:admin@rumaenergies.co.za">admin@rumaenergies.co.za</a></p>
+											href="mailto:admin@rumaenergies.co.za">admin@rumaenergies.co.za</a>
+									</p>
 								</li>
 							</ul>
 						</div>
@@ -554,12 +448,12 @@
 					<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 						<h5 class="text-3 mb-3">Services</h5>
 						<ul class="list list-unstyled mb-0">
+							<li class="mb-0"><a href="#">Bulk LPG Transportation</a></li>
+							<li class="mb-0"><a href="#">LPG and Petroleum Wholesale</a></li>
+							<li class="mb-0"><a href="#">Local and Cross-border Solutions</a></li>
 							<li class="mb-0"><a href="#">Industrial</a></li>
 							<li class="mb-0"><a href="#">Commercial</a></li>
 							<li class="mb-0"><a href="#">Domestic</a></li>
-							<li class="mb-0"><a href="#">Petroleum Products</a></li>
-							<li class="mb-0"><a href="#">Logistics</a></li>
-							<li class="mb-0"><a href="#">Support Services</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-lg-3">
@@ -578,7 +472,7 @@
 						<div
 							class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
 							<a href="index.html" class="logo pr-0 pr-lg-3">
-								<img src="img/logo.png"  height="22" />
+								<img src="img/logo.png" height="22" />
 							</a>
 						</div>
 						<div
